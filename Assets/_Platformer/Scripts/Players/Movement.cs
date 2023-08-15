@@ -191,7 +191,6 @@ public class Movement : MonoBehaviour
             IsNearLadder = false;
             characterController.enabled = false;
             transform.position = exitPosition;
-            //transform.position = Vector3.MoveTowards(transform.position, exitPosition, Time.deltaTime * currentMoveSpeed);
             characterController.enabled = true;
         }
     }
