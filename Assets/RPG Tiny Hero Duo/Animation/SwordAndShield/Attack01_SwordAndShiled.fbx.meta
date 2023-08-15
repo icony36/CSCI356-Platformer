@@ -61,21 +61,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.1754386
-        functionName: EventHit
+        functionName: AnimEvents_Hit
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.8238437
-        functionName: EventHitEnd
+        functionName: AnimEvents_HitEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.96491224
-        functionName: EventAnimEnd
+        functionName: AnimEvents_End
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

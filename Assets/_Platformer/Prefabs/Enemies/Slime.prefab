@@ -96,7 +96,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169954523762822165}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 23.71, y: 5.38, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,7 +104,7 @@ Transform:
   - {fileID: 5496408687271593646}
   - {fileID: 4359887014539613860}
   - {fileID: 3138867740019280754}
-  - {fileID: 4987864542286188078}
+  - {fileID: 3999949922275997324}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05eec77db7c8534e9795c7d4e27c5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <isBot>k__BackingField: 1
+  <IsBot>k__BackingField: 1
   <TargetTag>k__BackingField: Player
   <PlayerColor>k__BackingField: {r: 0, g: 255, b: 0, a: 1}
   <EnemyColor>k__BackingField: {r: 255, g: 0, b: 0, a: 1}
@@ -379,7 +379,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
---- !u!224 &4987864542286188078 stripped
+--- !u!224 &3999949922275997324 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2666045165370765212, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
   m_PrefabInstance: {fileID: 1404310205907261712}

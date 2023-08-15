@@ -113,7 +113,7 @@ public class Combat : MonoBehaviour
     }
 
     // Animation Event
-    public void EventHit()
+    public void AnimEvents_Hit()
     {
         HitBox.EnableHitBox();
 
@@ -121,13 +121,13 @@ public class Combat : MonoBehaviour
     }
 
     // Animation Event
-    public void EventHitEnd()
+    public void AnimEvents_HitEnd()
     {
         HitBox.DisableHitBox();
     }
 
     // Animation Event
-    public void EventAnimEnd()
+    public void AnimEvents_End()
     {
         player?.SwitchPlayerState(Player.PlayerState.Normal);
         bot?.SwitchBotState(Bot.BotState.Patrolling);

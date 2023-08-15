@@ -200,6 +200,7 @@ public class Bot : MonoBehaviour
     public void PlayAnimAttack()
     {
         animator.SetTrigger(ANIM_ATTACK);
+        Debug.Log("Play anim attack");
     }
 
     public void PlayAnimStop()
@@ -213,7 +214,7 @@ public class Bot : MonoBehaviour
     }
 
     // Animation Event
-    public void EventAnimDeadEnd()
+    public void AnimEvents_DeadEnd()
     {
         gameObject.SetActive(false);
     }
