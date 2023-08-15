@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3249639456548991574}
   - {fileID: 2467464428928446142}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &7402399488150419823
 BoxCollider:
@@ -208,7 +208,7 @@ MonoBehaviour:
   numberOfSteps: 18
   stepResolution: 12
   autoCenter: 1
-  editMode: 0
+  editMode: 1
   editOrientation: 1
 --- !u!1 &4192211521373419110
 GameObject:
