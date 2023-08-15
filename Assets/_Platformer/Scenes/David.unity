@@ -764,6 +764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneName
       objectReference: {fileID: 0}
+    - target: {fileID: 5053400087865159296, guid: 531d02057c468c44e98ccb3529700990, type: 3}
+      propertyPath: m_text
+      value: David
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
