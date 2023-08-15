@@ -8,7 +8,7 @@ public class Combat : MonoBehaviour
 {
 
     [field: Header("Settings")]
-    [field: SerializeField] public bool isBot { get; private set; } = false;
+    [field: SerializeField] public bool IsBot { get; private set; } = false;
     [field: SerializeField] public string TargetTag { get; private set; } = "Enemy";
     [field: Tooltip("Only for player.")]
     [field: SerializeField] public Color PlayerColor { get; private set; } = new Color(0, 255, 0);
@@ -44,7 +44,7 @@ public class Combat : MonoBehaviour
 
     private void Start()
     {
-        if (isBot)
+        if (IsBot)
         {
             bot = GetComponent<Bot>();
         }
