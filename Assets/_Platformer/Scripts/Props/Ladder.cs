@@ -13,13 +13,4 @@ public class Ladder : MonoBehaviour
             movement.IsNearLadder = true;
         }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Movement movement = other.GetComponent<Movement>();
-        if (movement != null)
-        {
-            movement.IsNearLadder = false;
-        }
-    }
 }

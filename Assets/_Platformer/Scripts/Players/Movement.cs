@@ -41,12 +41,17 @@ public class Movement : MonoBehaviour
     private Player player;
     private CharacterController characterController;
 
+    private float startingColliderRadius;
+    private Vector3 climbEndPosition;
+
+
     private void Start()
     {
         player = GetComponent<Player>();
         characterController = GetComponent<CharacterController>();
 
         currentMoveSpeed = baseMoveSpeed;
+        startingColliderRadius = characterController.radius;
     }
 
     private void Update()
@@ -57,7 +62,7 @@ public class Movement : MonoBehaviour
 
             if (isFallingTimer >= fallingDeathThreshold && player.CurrentState != Player.PlayerState.Dead)
             {
-                player.SwitchPlayerState(Player.PlayerState.Dead);
+                player.Combat.InstantKill();
             }
         }
         else
@@ -154,8 +159,7 @@ public class Movement : MonoBehaviour
 
         if (shouldJump)
         {
-            isClimbing = false;
-            player.PlayAnimOnClimb(false);           
+            CancelClimb();
         }
 
         if (IsNearLadder)
@@ -164,6 +168,8 @@ public class Movement : MonoBehaviour
             {
                 isClimbing = true;
                 player.PlayAnimOnClimb(true);
+                characterController.radius = 0.2f;
+                characterController.Move(Vector3.right);
             }
             else if (isClimbing)
             {                               
@@ -176,23 +182,29 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            isClimbing = false;
-            player.PlayAnimOnClimb(false);           
+            CancelClimb();
         }
     }
 
     public void ExitClimb(Vector3 exitPosition)
     {
+        climbEndPosition = exitPosition;
         if (isClimbing)
         {
-            isClimbing = false;
-            player.PlayAnimOnClimb(false);           
-
-            IsNearLadder = false;
             characterController.enabled = false;
-            transform.position = exitPosition;
+            transform.position = climbEndPosition;
             characterController.enabled = true;
+
+            CancelClimb();
         }
+    }
+
+    private void CancelClimb()
+    {
+        IsNearLadder = false;
+        isClimbing = false;
+        player.PlayAnimOnClimb(false);
+        characterController.radius = startingColliderRadius;
     }
 }
 

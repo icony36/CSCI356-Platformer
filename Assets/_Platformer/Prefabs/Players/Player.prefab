@@ -98,7 +98,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2175869368798086903}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -3.32, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -151,7 +151,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.8
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05eec77db7c8534e9795c7d4e27c5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <isBot>k__BackingField: 0
+  <IsBot>k__BackingField: 0
   <TargetTag>k__BackingField: Enemy
   <PlayerColor>k__BackingField: {r: 0, g: 255, b: 0, a: 1}
   <EnemyColor>k__BackingField: {r: 255, g: 0, b: 0, a: 1}

@@ -29,6 +29,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private float baseAttackSpeed = 1f;
     [Tooltip("Only shown for testing purpose")]
     [SerializeField] private float currentAttackSpeed;
+    [SerializeField] private float attackGapTime = 5f;
 
     // Public Variables
     public bool CanAttack = true;
@@ -40,7 +41,8 @@ public class Combat : MonoBehaviour
     
     // Local Variables
     private int currentAttackIndex = 0;
-
+    private float currentAttackTimer = 0f;
+    
 
     private void Start()
     {
@@ -55,6 +57,16 @@ public class Combat : MonoBehaviour
 
         CurrentHealth = MaxHealth;
         currentAttackSpeed = baseAttackSpeed;
+    }
+
+    private void Update()
+    {
+        currentAttackTimer += Time.deltaTime;
+        if (currentAttackTimer >= attackGapTime)
+        {
+            currentAttackTimer = 0f;
+            currentAttackIndex = 0;
+        }
     }
 
     public void TakeDamage(int damage, Vector3 attackerPos = new Vector3())
@@ -79,6 +91,13 @@ public class Combat : MonoBehaviour
             player?.SwitchPlayerState(Player.PlayerState.Dead);
             bot?.SwitchBotState(Bot.BotState.Dead);
         }
+    }
+
+    public void InstantKill()
+    {
+        CurrentHealth = 0;
+
+        CheckIsDead();
     }
 
     public void SetAttackSpeed(float speed)
