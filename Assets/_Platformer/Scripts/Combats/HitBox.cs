@@ -10,7 +10,7 @@ public class HitBox : MonoBehaviour
     private Collider hitBoxCollider;
     private List<Collider> hitTargetList;
 
-    private int damageToInflict;
+    private float damageToInflict;
 
     private void Start()
     {
@@ -39,7 +39,7 @@ public class HitBox : MonoBehaviour
         }
     }
 
-    public void EnableHitBox(int damage)
+    public void EnableHitBox(float damage)
     {
         hitTargetList.Clear();
 

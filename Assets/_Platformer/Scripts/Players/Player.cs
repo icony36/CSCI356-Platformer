@@ -83,9 +83,7 @@ public class Player : MonoBehaviour
                 DisableAllActions();
                 break;
             case PlayerState.Casting:
-                Movement.CanClimb = false;
-                PlayerCombat.CanAttack = false;
-                PlayerCombat.CanSkill = false;
+                DisableAllActions();
                 break;
             case PlayerState.Dead:
                 Animator.SetTrigger(ANIM_DEAD);

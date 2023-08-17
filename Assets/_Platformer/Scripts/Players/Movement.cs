@@ -15,6 +15,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 5f;
     [SerializeField] private float terminalVelocity = -20.0f;
     [SerializeField] private float gravity = -9.81f;
+    [Header("Dash")]
+    [SerializeField] private bool isDashing = false;
+    [SerializeField] private float dashSpeed = 10f;
+    [SerializeField] private float dashTime = 5f;
     [Tooltip("In seconds")]
     [SerializeField] private float fallingDeathThreshold = 3.0f;
 
@@ -29,7 +33,6 @@ public class Movement : MonoBehaviour
     // Jump
     private float yVelocity = 0f;
     private bool isJumping = false;
-    private bool isDashing = false;
     private bool isFalling = false;
     private float isFallingTimer = 0f;
 
@@ -40,6 +43,7 @@ public class Movement : MonoBehaviour
     private Player player;
     private PlayerData playerData;
     private CharacterController characterController;
+    private TrailRenderer motionTrail;
 
     private float startingColliderRadius;
     private Vector3 climbEndPosition;
@@ -48,6 +52,8 @@ public class Movement : MonoBehaviour
     {
         player = GetComponent<Player>();
         characterController = GetComponent<CharacterController>();
+        motionTrail = GetComponentInChildren<TrailRenderer>();
+        motionTrail.emitting = false;
 
         playerData = player.playerData;
         playerData.currentHealth = playerData.maxHealth;
@@ -108,36 +114,18 @@ public class Movement : MonoBehaviour
             jumpCounter = 0;
             isJumping = false;
             isFalling = false;
+            player.PlayerCombat.CanSkill = true;
+            motionTrail.emitting = false;
 
             player.PlayAnimLand(true);
             player.PlayAnimJump(false);
             player.PlayAnimFall(false);
-
-            // jump
-            if (CanMove && shouldJump)
-            {
-                Jump();
-            }
-
-            // dash
-            if(CanMove && shouldDash)
-            {
-                Dash();
-            }
         }
         else // falling
         {
             isFalling = true;
-
-            if (jumpCounter < playerData.maxJumps && shouldJump)
-            {
-                Jump();
-            }
-
-            if (shouldDash)
-            {
-                Dash();
-            }
+            player.PlayerCombat.CanSkill = false;
+            motionTrail.emitting = true;
 
             player.PlayAnimLand(false);
 
@@ -145,6 +133,18 @@ public class Movement : MonoBehaviour
             {
                 player.PlayAnimFall(true);
             }
+        }
+
+        // jump
+        if (CanMove && jumpCounter < playerData.maxJumps && shouldJump)
+        {
+            Jump();
+        }
+
+        // dash
+        if (!isDashing && shouldDash && movement != Vector3.zero)
+        {
+            StartCoroutine(Dash(movement));
         }
 
         // add movement speed before apply gravity
@@ -179,10 +179,26 @@ public class Movement : MonoBehaviour
 
         jumpCounter++;
     }
-
-    private void Dash()
+    IEnumerator Dash(Vector3 movement)
     {
+        motionTrail.emitting = true;
 
+        isDashing = true;
+        CanMove = false;
+
+        float startTime = Time.time;
+
+        while (Time.time < startTime + dashTime)
+        {
+            characterController.Move(movement * dashSpeed * Time.deltaTime);
+
+            yield return null;
+        }
+
+        motionTrail.emitting = false;
+
+        isDashing = false;
+        CanMove = true;
     }
 
     public void Climb(float climbValue, bool shouldJump)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,12 @@ public class PlayerCombat : Combat
     //[SerializeField] private float baseAttackSpeed = 1f;
     //[Tooltip("Only shown for testing purpose")]
     //[SerializeField] private float currentAttackSpeed;
-    [SerializeField] private float attackGapTime = 5f;
-
+    [SerializeField] private float attackInterval = 5f;
+    [field: Header("Skill")]
+    [SerializeField] private float skillCooldown = 5f;
+    [SerializeField] private bool skillUsed = false;
+    [field: Header("Skill")]
+    [SerializeField] private GameObject skillPrefab;
     [field: Header("Floating Damage")]
     [field: SerializeField] public GameObject DamageText { get; private set; }
 
@@ -25,7 +30,7 @@ public class PlayerCombat : Combat
     // Local Variables
     private int currentAttackIndex = 0;
     private float currentAttackTimer = 0f;
-    
+
 
     private void Start()
     {
@@ -39,7 +44,7 @@ public class PlayerCombat : Combat
     private void Update()
     {
         currentAttackTimer += Time.deltaTime;
-        if (currentAttackTimer >= attackGapTime)
+        if (currentAttackTimer >= attackInterval)
         {
             currentAttackTimer = 0f;
             currentAttackIndex = 0;
@@ -74,11 +79,33 @@ public class PlayerCombat : Combat
 
     public override void UseSkill()
     {
-        if (!CanSkill) { return; }
+        if (!CanSkill || skillUsed) { return; }
 
         // for player
         player?.SwitchPlayerState(Player.PlayerState.Casting);
         player?.PlayAnimSkill();
+
+        GameObject skill = Instantiate(skillPrefab);
+        skill.transform.position = transform.position;
+        skill.transform.rotation = transform.rotation;
+
+        skillUsed = true;
+
+        StartCoroutine(SkillCooldown());
+    }
+
+    IEnumerator SkillCooldown()
+    {
+        float startTime = 0f;
+
+        while (startTime < skillCooldown)
+        {
+            startTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        skillUsed = false;
     }
 
     public override void CheckIsDead()

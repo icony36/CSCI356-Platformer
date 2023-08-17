@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb74fe41dbae084aaaef0ea58e5e3d3, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  attackDamage: 0
-  baseAttackSpeed: 0
-  currentAttackSpeed: 0
-  baseMoveSpeed: 0
-  currentMoveSpeed: 0
-  maxJumps: 0
+  maxHealth: 100
+  currentHealth: 90
+  attackDamage: 10
+  baseAttackSpeed: 1
+  currentAttackSpeed: 1
+  baseMoveSpeed: 5
+  currentMoveSpeed: 5
+  maxJumps: 1

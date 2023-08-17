@@ -45,8 +45,11 @@ public class PlayerController : MonoBehaviour
         if (moveAction == null) { return; }
         if (jumpAction == null) { return; }
 
+        if (player.Animator.GetCurrentAnimatorStateInfo(0).IsName("Skill") && player.Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+            return;
+
         // back to normal state if can
-        if (moveAction.triggered)
+        if (moveAction.inProgress)
         {
             if (player.CurrentState != Player.PlayerState.Normal && player.CurrentState != Player.PlayerState.Dead)
             {
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         if (skillAction == null) { return; }
 
-        if (attackAction.triggered)
+        if (skillAction.triggered)
         {
             player.PlayerCombat.UseSkill();
         }

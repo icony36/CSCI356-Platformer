@@ -67,7 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  combat: {fileID: 1031537340107917523}
 --- !u!1 &4169954523762822165
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,12 +211,11 @@ MonoBehaviour:
   isInvincible: 0
   CanAttack: 1
   CanSkill: 1
+  <TagColor>k__BackingField: {r: 255, g: 0, b: 0, a: 1}
   <MaxHealth>k__BackingField: 100
   <CurrentHealth>k__BackingField: 0
   <AttackDamage>k__BackingField: 10
-  baseAttackSpeed: 1
-  currentAttackSpeed: 0
-  attackGapTime: 5
+  <DamageText>k__BackingField: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
 --- !u!1 &7744429991069173854
 GameObject:
   m_ObjectHideFlags: 0
