@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
 
             if (isFallingTimer >= fallingDeathThreshold && player.CurrentState != Player.PlayerState.Dead)
             {
-                player.Combat.InstantKill();
+                player.PlayerCombat.InstantKill();
             }
         }
         else

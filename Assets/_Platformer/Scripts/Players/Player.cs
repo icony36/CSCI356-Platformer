@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // Public References
     public PlayerState CurrentState { get; protected set; }
     public Animator Animator { get; private set; }
-    public Combat Combat { get; private set; }
+    public PlayerCombat PlayerCombat { get; private set; }
     public PlayerController PlayerController { get; private set; }
     public Movement Movement { get; private set; }
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     protected void Awake()
     {
         Animator = GetComponent<Animator>();
-        Combat = GetComponent<Combat>();
+        PlayerCombat = GetComponent<PlayerCombat>();
         PlayerController = GetComponent<PlayerController>();
         Movement = GetComponent<Movement>();
 
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
             case PlayerState.Normal:
                 break;
             case PlayerState.Attacking:
-                Combat.AttackHitbox.DisableHitBox();
+                PlayerCombat.AttackHitbox.DisableHitBox();
                 Animator.ResetTrigger(ANIM_ATTACK);
                 break;
             case PlayerState.Casting:
@@ -84,8 +84,8 @@ public class Player : MonoBehaviour
                 break;
             case PlayerState.Casting:
                 Movement.CanClimb = false;
-                Combat.CanAttack = false;
-                Combat.CanSkill = false;
+                PlayerCombat.CanAttack = false;
+                PlayerCombat.CanSkill = false;
                 break;
             case PlayerState.Dead:
                 Animator.SetTrigger(ANIM_DEAD);
@@ -100,16 +100,16 @@ public class Player : MonoBehaviour
     {
         Movement.CanMove = true;
         Movement.CanClimb = true;
-        Combat.CanAttack = true;
-        Combat.CanSkill = true;
+        PlayerCombat.CanAttack = true;
+        PlayerCombat.CanSkill = true;
     }
 
     private void DisableAllActions()
     {
         Movement.CanMove = false;
         Movement.CanClimb = false;
-        Combat.CanAttack = false;
-        Combat.CanSkill = false;
+        PlayerCombat.CanAttack = false;
+        PlayerCombat.CanSkill = false;
     }
 
     public void ResetAllAnimTriggers()

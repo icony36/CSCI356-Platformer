@@ -15,14 +15,29 @@ public class OverheadCanvas : MonoBehaviour
     [SerializeField] private Image healthFill;
 
     [Header("Settings")]
-    [SerializeField] private Color healthbarColor = new Color(0, 255, 0);
     [SerializeField] private float currentValue;
     [SerializeField] private float maxValue;
     [SerializeField] private float healthBarDropSpeed = 50f;
 
+    private EnemyCombat enemyCombat;
+    private Player player;
+    private Color healthbarColor;
+
     private void Start()
     {
         parent = gameObject.transform.parent.gameObject;
+
+        if (parent.tag == "Enemy")
+        {
+            enemyCombat = parent.GetComponent<EnemyCombat>();
+            healthbarColor = enemyCombat.TagColor;
+        }
+        else if (parent.tag == "Player")
+        {
+            player = parent.GetComponent<Player>();
+            healthbarColor = player.PlayerCombat.TagColor;
+        }
+
         healthBarOutline.color = healthbarColor;
         healthFill.color = healthbarColor;
     }
@@ -31,13 +46,13 @@ public class OverheadCanvas : MonoBehaviour
     {
         if (parent.tag == "Enemy")
         {
-            currentValue = parent.GetComponent<EnemyCombat>().CurrentHealth;
-            maxValue = parent.GetComponent<EnemyCombat>().MaxHealth;
+            currentValue = enemyCombat.CurrentHealth;
+            maxValue = enemyCombat.MaxHealth;
         }
         else if (parent.tag == "Player")
         {
-            currentValue = parent.GetComponent<Player>().playerData.currentHealth;
-            maxValue = parent.GetComponent<Player>().playerData.maxHealth;
+            currentValue = player.playerData.currentHealth;
+            maxValue = player.playerData.maxHealth;
         }
 
         float percentage = (float)currentValue / maxValue;

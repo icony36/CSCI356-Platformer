@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyCombat : Combat
 {
+    [field: SerializeField] public Color TagColor { get; private set; } = new Color(255, 0, 0);
+
     [field: Header("Health")]
     [field: SerializeField] public int MaxHealth { get; private set; } = 100;
     [field: SerializeField] public int CurrentHealth { get; private set; }
@@ -41,7 +43,7 @@ public class EnemyCombat : Combat
         if (!CanAttack) { return; }
 
         // for bot
-        bot?.PlayAnimAttack();
+        bot.PlayAnimAttack();
     }
 
     public override void UseSkill()
@@ -53,7 +55,7 @@ public class EnemyCombat : Combat
     {
         if (CurrentHealth <= 0)
         {
-            bot?.SwitchBotState(Bot.BotState.Dead);
+            bot.SwitchBotState(Bot.BotState.Dead);
         }
     }
 
@@ -63,7 +65,7 @@ public class EnemyCombat : Combat
 
         CurrentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
 
-        bot?.PlayAnimHurt();
+        bot.PlayAnimHurt();
 
         // play sfx
         // play vfx
@@ -88,6 +90,6 @@ public class EnemyCombat : Combat
     // Animation Event
     public void AnimEvents_End()
     {
-        bot?.SwitchBotState(Bot.BotState.Patrolling);
+        bot.SwitchBotState(Bot.BotState.Patrolling);
     }
 }

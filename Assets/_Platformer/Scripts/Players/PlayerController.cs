@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.triggered)
         {
-            player.Combat.Attack();
+            player.PlayerCombat.Attack();
         }
     }
 
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.triggered)
         {
-            player.Combat.UseSkill();
+            player.PlayerCombat.UseSkill();
         }
     }
 }

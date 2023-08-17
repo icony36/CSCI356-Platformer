@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class PlayerCombat : Combat
 {
+    [field: SerializeField] public Color TagColor { get; private set; } = new Color(0, 255, 0);
+
     [field: Header("Normal Attack")]
     //[field: SerializeField] public int AttackDamage { get; private set; } = 10;
     //[SerializeField] private float baseAttackSpeed = 1f;
