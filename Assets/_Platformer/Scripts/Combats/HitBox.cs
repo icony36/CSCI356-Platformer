@@ -6,10 +6,11 @@ using UnityEngine;
 public class HitBox : MonoBehaviour
 {
     [SerializeField] private string targetTag;
-    [SerializeField] private Combat combat;
     
     private Collider hitBoxCollider;
-    private List<Collider> hitTargetList;  
+    private List<Collider> hitTargetList;
+
+    private int damageToInflict;
 
     private void Start()
     {
@@ -29,20 +30,22 @@ public class HitBox : MonoBehaviour
                 // play sfx
                 // play vfx
 
-                Debug.Log(combat.gameObject.name + " is attacking: " +  targetCombat.gameObject.name);
+               //Debug.Log(combat.gameObject.name + " is attacking: " +  targetCombat.gameObject.name);
 
-                targetCombat.TakeDamage(combat.AttackDamage, transform.parent.position);
+                targetCombat.InflictDamage(damageToInflict);
             }
 
             hitTargetList.Add(other);
         }
     }
 
-    public void EnableHitBox()
+    public void EnableHitBox(int damage)
     {
         hitTargetList.Clear();
 
         hitBoxCollider.enabled = true;
+
+        damageToInflict = damage; 
     }
     public void DisableHitBox()
     {

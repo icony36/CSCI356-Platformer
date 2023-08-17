@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class Healthbar : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Combat combat;
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private Slider healthBar;
 
     [Header("Settings")]
@@ -18,7 +18,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        float percentage = (float)combat.CurrentHealth / combat.MaxHealth;
+        float percentage = playerData.currentHealth / playerData.maxHealth;
         healthBar.value = Mathf.Lerp(healthBar.value, percentage, Time.deltaTime * healthBarDropSpeed);
     }
 }

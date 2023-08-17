@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public PlayerController PlayerController { get; private set; }
     public Movement Movement { get; private set; }
 
+    public PlayerData playerData; 
+    public PlayerData initData;
+
     // Animation Params
     public const string ANIM_ATTACK = "Attack";
     public const string ANIM_ATTACK_INDEX = "AttackIndex";
@@ -38,6 +41,13 @@ public class Player : MonoBehaviour
         Combat = GetComponent<Combat>();
         PlayerController = GetComponent<PlayerController>();
         Movement = GetComponent<Movement>();
+
+        //ideally this initialization should be done in GameManager
+        playerData.maxHealth = initData.maxHealth;
+        playerData.attackDamage = initData.attackDamage;
+        playerData.baseAttackSpeed = initData.baseAttackSpeed;
+        playerData.baseMoveSpeed = initData.baseMoveSpeed;
+        playerData.maxJumps= initData.maxJumps;
     }
 
     public void SwitchPlayerState(PlayerState newState)
@@ -48,7 +58,7 @@ public class Player : MonoBehaviour
             case PlayerState.Normal:
                 break;
             case PlayerState.Attacking:
-                Combat.HitBox.DisableHitBox();
+                Combat.AttackHitbox.DisableHitBox();
                 Animator.ResetTrigger(ANIM_ATTACK);
                 break;
             case PlayerState.Casting:
@@ -139,7 +149,7 @@ public class Player : MonoBehaviour
         Animator.SetTrigger(ANIM_ATTACK);
     }
 
-    public void PlayAnimHurt(Vector3 hurtDirection)
+    public void PlayAnimHurt()
     {
         Animator.SetTrigger(ANIM_HURT);
     }

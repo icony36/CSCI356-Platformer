@@ -67,7 +67,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Enemy
-  combat: {fileID: 7741485691364502740}
 --- !u!1 &2175869368798086903
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +82,7 @@ GameObject:
   - component: {fileID: 8372227158924380937}
   - component: {fileID: 8905210557396807550}
   - component: {fileID: 4722445058369524967}
-  - component: {fileID: 7741485691364502740}
+  - component: {fileID: 2307570018985288636}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -103,9 +102,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7645440465325310800}
   - {fileID: 2984291561087942217}
+  - {fileID: 7645440465325310800}
   - {fileID: 8745959960735124816}
+  - {fileID: 1551388869097233083}
   - {fileID: 3907500962446965306}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40df59f70a259ed46bb2c7c877a33570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 979bf486bbdd4ff488d791416b2d84d1, type: 2}
 --- !u!114 &8905210557396807550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,10 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a255acca812ea4ab6c7dae3f280119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: 6
   turnSpeed: 25
-  currentMoveSpeed: 0
-  jumpSpeed: 6
+  jumpCounter: 0
+  jumpSpeed: 7.5
   terminalVelocity: -20
   gravity: -20
   fallingDeathThreshold: 3
@@ -234,7 +234,7 @@ MonoBehaviour:
   CanMove: 1
   CanClimb: 1
   IsNearLadder: 0
---- !u!114 &7741485691364502740
+--- !u!114 &2307570018985288636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,22 +243,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 2175869368798086903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05eec77db7c8534e9795c7d4e27c5d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bc0604eacc0be845b6688c2e21532dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <IsBot>k__BackingField: 0
   <TargetTag>k__BackingField: Enemy
-  <PlayerColor>k__BackingField: {r: 0, g: 255, b: 0, a: 1}
-  <EnemyColor>k__BackingField: {r: 255, g: 0, b: 0, a: 1}
-  <MaxHealth>k__BackingField: 100
-  <CurrentHealth>k__BackingField: 0
+  <AttackHitbox>k__BackingField: {fileID: 3088192774514764110}
   isInvincible: 0
-  <HitBox>k__BackingField: {fileID: 3088192774514764110}
-  <AttackDamage>k__BackingField: 10
-  baseAttackSpeed: 1
-  currentAttackSpeed: 0
   CanAttack: 1
   CanSkill: 1
+  attackGapTime: 5
+--- !u!1 &4308647071847887426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551388869097233083}
+  m_Layer: 0
+  m_Name: BuffHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1551388869097233083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308647071847887426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3729929472695666033}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8427458968044988725
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,9 +419,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4011327085595404846, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
-      propertyPath: combat
+      propertyPath: parent
       value: 
-      objectReference: {fileID: 7741485691364502740}
+      objectReference: {fileID: 2175869368798086903}
     - target: {fileID: 6088627269613037726, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_Value
       value: 1

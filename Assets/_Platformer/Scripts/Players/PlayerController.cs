@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     // Input Action
     private InputAction moveAction;
     private InputAction jumpAction;
+    private InputAction dashAction;
     private InputAction attackAction;
     private InputAction skillAction;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+        dashAction = playerInput.actions["Dash"];
         attackAction = playerInput.actions["Attack"];
         skillAction = playerInput.actions["Skill"];
     }
@@ -52,15 +54,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         // move
-        player.Movement.MovePlayer(moveValue.x, jumpAction.triggered);
+        player.Movement.MovePlayer(moveValue.x, jumpAction.triggered, dashAction.triggered);
         // climb
         player.Movement.Climb(moveValue.y, jumpAction.triggered);
     }
-
-
 
     private void HandleAttackInput()
     {
@@ -78,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if (attackAction.triggered)
         {
-            player.Combat.Skill();
+            player.Combat.UseSkill();
         }
     }
 }

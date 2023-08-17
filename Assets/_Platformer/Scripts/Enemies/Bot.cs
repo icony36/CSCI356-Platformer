@@ -208,7 +208,7 @@ public class Bot : MonoBehaviour
         animator.SetFloat(ANIM_SPEED, 0f);
     }
 
-    public void PlayAnimHurt(Vector3 hurtDirection)
+    public void PlayAnimHurt()
     {
         animator.SetTrigger(ANIM_HURT);
     }

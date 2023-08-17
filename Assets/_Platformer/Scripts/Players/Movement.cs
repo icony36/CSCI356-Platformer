@@ -8,12 +8,10 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Movement : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float baseMoveSpeed = 5f;
     [SerializeField] private float turnSpeed = 25f;
-    [Tooltip("Only shown for testing purpose.")]
-    [SerializeField] private float currentMoveSpeed;
 
     [Header("Jump")]
+    [SerializeField] private int jumpCounter = 0;
     [SerializeField] private float jumpSpeed = 5f;
     [SerializeField] private float terminalVelocity = -20.0f;
     [SerializeField] private float gravity = -9.81f;
@@ -31,6 +29,7 @@ public class Movement : MonoBehaviour
     // Jump
     private float yVelocity = 0f;
     private bool isJumping = false;
+    private bool isDashing = false;
     private bool isFalling = false;
     private float isFallingTimer = 0f;
 
@@ -39,18 +38,21 @@ public class Movement : MonoBehaviour
 
     // References
     private Player player;
+    private PlayerData playerData;
     private CharacterController characterController;
 
     private float startingColliderRadius;
     private Vector3 climbEndPosition;
-
 
     private void Start()
     {
         player = GetComponent<Player>();
         characterController = GetComponent<CharacterController>();
 
-        currentMoveSpeed = baseMoveSpeed;
+        playerData = player.playerData;
+        playerData.currentHealth = playerData.maxHealth;
+        playerData.currentAttackSpeed = playerData.baseAttackSpeed;
+        playerData.currentMoveSpeed = playerData.baseMoveSpeed;
         startingColliderRadius = characterController.radius;
     }
 
@@ -71,10 +73,10 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void MovePlayer(float moveValue, bool shouldJump)
+    public void MovePlayer(float moveValue, bool shouldJump, bool shouldDash)
     {
         if (isClimbing) { return; }
-        
+
         Vector3 movement = new Vector3(0, 0, 0);
 
         // add yVeloctiy with gravity
@@ -96,13 +98,14 @@ public class Movement : MonoBehaviour
             }
 
             // move animation
-            player.PlayAnimMove(movement.magnitude, baseMoveSpeed, currentMoveSpeed);            
+            player.PlayAnimMove(movement.magnitude, playerData.baseMoveSpeed, playerData.currentMoveSpeed);
         }
-       
+
         if (characterController.isGrounded)
         {
             yVelocity = -0.5f; // set to -0.5f to prevent jiggle
 
+            jumpCounter = 0;
             isJumping = false;
             isFalling = false;
 
@@ -113,19 +116,31 @@ public class Movement : MonoBehaviour
             // jump
             if (CanMove && shouldJump)
             {
-                yVelocity = jumpSpeed;
-            
-                player.PlayAnimJump(true);
+                Jump();
+            }
 
-                isJumping = true;
+            // dash
+            if(CanMove && shouldDash)
+            {
+                Dash();
             }
         }
         else // falling
         {
             isFalling = true;
 
+            if (jumpCounter < playerData.maxJumps && shouldJump)
+            {
+                Jump();
+            }
+
+            if (shouldDash)
+            {
+                Dash();
+            }
+
             player.PlayAnimLand(false);
-            
+
             if ((isJumping && yVelocity < 0) || yVelocity < -2)
             {
                 player.PlayAnimFall(true);
@@ -133,7 +148,7 @@ public class Movement : MonoBehaviour
         }
 
         // add movement speed before apply gravity
-        movement *= currentMoveSpeed;
+        movement *= playerData.currentMoveSpeed;
 
         // clamp yVeloctiy at terminal veloctiy
         if (yVelocity < terminalVelocity)
@@ -148,9 +163,26 @@ public class Movement : MonoBehaviour
         characterController.Move(movement * Time.deltaTime);
     }
 
-    public void SetMoveSpeed(float speed)
+    //public void SetMoveSpeed(float speed)
+    //{
+    //    playerData.currentMoveSpeed = Mathf.Clamp(speed, 0f, speed);
+    //}
+    private void Jump()
     {
-        currentMoveSpeed = Mathf.Clamp(speed, 0f, speed);
+        yVelocity = jumpSpeed;
+
+        player.PlayAnimJump(true);
+        // play sfx
+        // play vfx
+
+        isJumping = true;
+
+        jumpCounter++;
+    }
+
+    private void Dash()
+    {
+
     }
 
     public void Climb(float climbValue, bool shouldJump)

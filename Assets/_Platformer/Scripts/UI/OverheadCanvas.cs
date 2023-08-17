@@ -1,5 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,31 +9,38 @@ using UnityEngine.UI;
 public class OverheadCanvas : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Combat combat;
+    [SerializeField] private GameObject parent;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image healthBarOutline;
     [SerializeField] private Image healthFill;
 
     [Header("Settings")]
+    [SerializeField] private Color healthbarColor = new Color(0, 255, 0);
+    [SerializeField] private float currentValue;
+    [SerializeField] private float maxValue;
     [SerializeField] private float healthBarDropSpeed = 50f;
 
     private void Start()
-    {   
-        if (combat.gameObject.tag == "Enemy")
-        {
-            healthBarOutline.color = combat.EnemyColor; 
-            healthFill.color = combat.EnemyColor;
-        }
-        else
-        {
-            healthBarOutline.color = combat.PlayerColor;
-            healthFill.color = combat.PlayerColor;
-        }
+    {
+        parent = gameObject.transform.parent.gameObject;
+        healthBarOutline.color = healthbarColor;
+        healthFill.color = healthbarColor;
     }
 
     private void Update()
     {
-        float percentage = (float)combat.CurrentHealth / combat.MaxHealth;
+        if (parent.tag == "Enemy")
+        {
+            currentValue = parent.GetComponent<EnemyCombat>().CurrentHealth;
+            maxValue = parent.GetComponent<EnemyCombat>().MaxHealth;
+        }
+        else if (parent.tag == "Player")
+        {
+            currentValue = parent.GetComponent<Player>().playerData.currentHealth;
+            maxValue = parent.GetComponent<Player>().playerData.maxHealth;
+        }
+
+        float percentage = (float)currentValue / maxValue;
         healthBar.value = Mathf.Lerp(healthBar.value, percentage, Time.deltaTime * healthBarDropSpeed);
     }
 
