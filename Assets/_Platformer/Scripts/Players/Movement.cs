@@ -201,7 +201,7 @@ public class Movement : MonoBehaviour
                 isClimbing = true;
                 player.PlayAnimOnClimb(true);
                 characterController.radius = 0.2f;
-                characterController.Move(Vector3.right);
+                characterController.Move(transform.forward);
             }
             else if (isClimbing)
             {                               
