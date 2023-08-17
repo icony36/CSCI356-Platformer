@@ -45,7 +45,7 @@ public class HitBox : MonoBehaviour
 
         hitBoxCollider.enabled = true;
 
-        damageToInflict = damage; 
+        damageToInflict = damage;
     }
     public void DisableHitBox()
     {

@@ -14,6 +14,9 @@ public class EnemyCombat : Combat
     [field: Header("Normal Attack")]
     [field: SerializeField] public int AttackDamage { get; private set; } = 10;
 
+    [field: Header("Floating Damage")]
+    [field: SerializeField] public GameObject DamageText { get; private set; }
+
     // References
     private Bot bot;
 
@@ -66,6 +69,10 @@ public class EnemyCombat : Combat
         CurrentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
 
         bot.PlayAnimHurt();
+
+        // instantiate floating damage
+        DamageIndicator indicator = Instantiate(DamageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText(damageToInflict);
 
         // play sfx
         // play vfx

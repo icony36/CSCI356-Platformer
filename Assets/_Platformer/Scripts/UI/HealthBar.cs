@@ -10,15 +10,19 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Slider healthBar;
 
     [Header("Settings")]
+    [SerializeField] private float currentValue;
+    [SerializeField] private float maxValue;
     [SerializeField] private float healthBarDropSpeed = 50f;
+    
 
     void Start()
     {
+      
     }
 
     void Update()
     {
-        float percentage = playerData.currentHealth / playerData.maxHealth;
+        float percentage = (float)playerData.currentHealth / playerData.maxHealth;
         healthBar.value = Mathf.Lerp(healthBar.value, percentage, Time.deltaTime * healthBarDropSpeed);
     }
 }

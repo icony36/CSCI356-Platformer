@@ -15,6 +15,9 @@ public class PlayerCombat : Combat
     //[SerializeField] private float currentAttackSpeed;
     [SerializeField] private float attackGapTime = 5f;
 
+    [field: Header("Floating Damage")]
+    [field: SerializeField] public GameObject DamageText { get; private set; }
+
     // References
     private Player player;
     private PlayerData playerData;
@@ -92,6 +95,10 @@ public class PlayerCombat : Combat
         playerData.currentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
 
         player?.PlayAnimHurt();
+
+        // instantiate floating damage
+        DamageIndicator indicator = Instantiate(DamageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText(damageToInflict);
 
         // play sfx
         // play vfx
