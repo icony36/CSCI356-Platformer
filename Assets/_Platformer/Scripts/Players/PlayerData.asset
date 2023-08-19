@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 90
-  attackDamage: 10
+  currentHealth: 100
+  attackDamage: 11
   baseAttackSpeed: 1
   currentAttackSpeed: 1
-  baseMoveSpeed: 5
-  currentMoveSpeed: 5
-  maxJumps: 1
+  baseMoveSpeed: 5.5
+  currentMoveSpeed: 5.5
+  maxJumps: 2
