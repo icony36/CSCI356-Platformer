@@ -22,7 +22,7 @@ public class Skill : MonoBehaviour
 
     IEnumerator ActivateSkill()
     {
-        SkillHitbox.EnableHitBox(playerData.attackDamage * skillMult);
+        SkillHitbox.EnableHitBox(Mathf.Round(playerData.attackDamage * skillMult));
 
         yield return new WaitForSeconds(1);
 

@@ -19,15 +19,15 @@ public class Powerup : MonoBehaviour
 
     [SerializeField] PowerupType powerupType = new PowerupType();
 
-    [SerializeField] private GameObject jumpUpImage;
-    [SerializeField] private GameObject attackUpImage;
-    [SerializeField] private GameObject speedUpImage;
+    //[SerializeField] private GameObject jumpUpImage;
+    //[SerializeField] private GameObject attackUpImage;
+    //[SerializeField] private GameObject speedUpImage;
 
     private void Start()
     {
-        attackUpImage.gameObject.SetActive(false);
-        speedUpImage.gameObject.SetActive(false);
-        jumpUpImage.gameObject.SetActive(false);
+        //attackUpImage.gameObject.SetActive(false);
+        //speedUpImage.gameObject.SetActive(false);
+        //jumpUpImage.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,20 +45,20 @@ public class Powerup : MonoBehaviour
             {
                 playerData.attackDamage += (int)value;
 
-                attackUpImage.gameObject.SetActive(true);
+               // attackUpImage.gameObject.SetActive(true);
             }
             else if (powerupType.Equals(PowerupType.SpeedUp))
             {
                 playerData.baseMoveSpeed += value;
                 playerData.currentMoveSpeed += value;
 
-                speedUpImage.gameObject.SetActive(true);
+                //speedUpImage.gameObject.SetActive(true);
             }
             else if (powerupType.Equals(PowerupType.JumpUp))
             {
                 playerData.maxJumps += (int)value;
 
-                jumpUpImage.gameObject.SetActive(true);
+                //jumpUpImage.gameObject.SetActive(true);
             }
 
             // play vfx

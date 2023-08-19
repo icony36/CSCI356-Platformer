@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float turnSpeed = 25f;
+    [SerializeField] private Vector3 moveVec = Vector3.zero;
 
     [Header("Jump")]
     [SerializeField] private int jumpCounter = 0;
@@ -18,7 +19,12 @@ public class Movement : MonoBehaviour
     [Header("Dash")]
     [SerializeField] private bool isDashing = false;
     [SerializeField] private float dashSpeed = 10f;
-    [SerializeField] private float dashTime = 5f;
+    [SerializeField] private float dashTime = 0.3f;
+    [Header("Slide")]
+    [SerializeField] private bool isSliding = false;
+    [SerializeField] private bool onIceSurface = false;
+    [SerializeField] private float slideStartAccel = 8f;
+    [SerializeField] private float slideTime = 2f;
     [Tooltip("In seconds")]
     [SerializeField] private float fallingDeathThreshold = 3.0f;
 
@@ -29,6 +35,7 @@ public class Movement : MonoBehaviour
     public bool CanMove = true;
     public bool CanClimb = true;
     public bool IsNearLadder = false;
+    public bool facingRight;
 
     // Jump
     private float yVelocity = 0f;
@@ -76,14 +83,19 @@ public class Movement : MonoBehaviour
         else
         {
             isFallingTimer = 0f;
-        }
+        }            
     }
 
     public void MovePlayer(float moveValue, bool shouldJump, bool shouldDash)
     {
         if (isClimbing) { return; }
 
-        Vector3 movement = new Vector3(0, 0, 0);
+        if (moveValue > 0)
+            facingRight = true;
+        else if(moveValue < 0)
+            facingRight = false;
+
+        moveVec = new Vector3(0, 0, 0);
 
         // add yVeloctiy with gravity
         yVelocity += gravity * Time.deltaTime;
@@ -92,19 +104,22 @@ public class Movement : MonoBehaviour
         if (CanMove)
         {
             // only move on x axis
-            movement.x = moveValue;
+            moveVec.x = moveValue;
 
             // prevent move faster when moving diagonally
-            movement.Normalize();
+            moveVec.Normalize();
 
             // rotate to movement direction
-            if (movement != Vector3.zero) // prevent turning back to original rotation
+            if (moveVec != Vector3.zero) // prevent turning back to original rotation
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime * turnSpeed);
+                if(moveVec.x > 0)
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.right), Time.deltaTime * turnSpeed);
+                else if(moveVec.x < 0)
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.left), Time.deltaTime * turnSpeed);
             }
 
             // move animation
-            player.PlayAnimMove(movement.magnitude, playerData.baseMoveSpeed, playerData.currentMoveSpeed);
+            player.PlayAnimMove(moveVec.magnitude, playerData.baseMoveSpeed, playerData.currentMoveSpeed);
         }
 
         if (characterController.isGrounded)
@@ -120,19 +135,27 @@ public class Movement : MonoBehaviour
             player.PlayAnimLand(true);
             player.PlayAnimJump(false);
             player.PlayAnimFall(false);
+
         }
         else // falling
         {
-            isFalling = true;
-            player.PlayerCombat.CanSkill = false;
-            motionTrail.emitting = true;
-
-            player.PlayAnimLand(false);
-
-            if ((isJumping && yVelocity < 0) || yVelocity < -2)
+            if(isSliding)
             {
-                player.PlayAnimFall(true);
+                player.PlayAnimLand(true);
             }
+            else
+            {
+                isFalling = true;
+                player.PlayerCombat.CanSkill = false;
+                motionTrail.emitting = true;
+
+                player.PlayAnimLand(false);
+
+                if ((isJumping && yVelocity < 0) || yVelocity < -2)
+                {
+                    player.PlayAnimFall(true);
+                }
+            }     
         }
 
         // jump
@@ -142,13 +165,15 @@ public class Movement : MonoBehaviour
         }
 
         // dash
-        if (!isDashing && shouldDash && movement != Vector3.zero)
+        if (!isDashing && !isSliding && shouldDash && moveVec != Vector3.zero)
         {
-            StartCoroutine(Dash(movement));
+            StartCoroutine(Dash(moveVec));
         }
 
+        if (isDashing) { return; }
+
         // add movement speed before apply gravity
-        movement *= playerData.currentMoveSpeed;
+        moveVec *= playerData.currentMoveSpeed;
 
         // clamp yVeloctiy at terminal veloctiy
         if (yVelocity < terminalVelocity)
@@ -157,10 +182,16 @@ public class Movement : MonoBehaviour
         }
 
         // apply gravity
-        movement.y = yVelocity;
+        moveVec.y = yVelocity;
+
+        if (onIceSurface && !isSliding && moveVec.x != 0)
+        {
+            StartCoroutine(Slide());
+        }
 
         // pass the movement to the character controller
-        characterController.Move(movement * Time.deltaTime);
+        if (!isSliding)
+            characterController.Move(moveVec * Time.deltaTime);
     }
 
     //public void SetMoveSpeed(float speed)
@@ -179,6 +210,7 @@ public class Movement : MonoBehaviour
 
         jumpCounter++;
     }
+
     IEnumerator Dash(Vector3 movement)
     {
         motionTrail.emitting = true;
@@ -253,6 +285,40 @@ public class Movement : MonoBehaviour
         isClimbing = false;
         player.PlayAnimOnClimb(false);
         characterController.radius = startingColliderRadius;
+    }
+
+    IEnumerator Slide()
+    {
+        Vector3 movement = moveVec;
+        Debug.Log(movement);
+        isSliding = true;
+
+        float startTime = Time.time;
+
+        while (Time.time < startTime + slideTime)
+        {
+            characterController.Move(movement * Mathf.Lerp(slideStartAccel, 0f, -0.5f) * Time.deltaTime);
+            yield return null;
+        }
+
+        isSliding = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("IceSurface"))
+        {
+            onIceSurface = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("IceSurface"))
+        {
+            onIceSurface = false;
+            isSliding = false;
+        }
     }
 }
 

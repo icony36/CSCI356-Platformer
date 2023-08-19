@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 25
+  moveVec: {x: 0, y: 0, z: 0}
   jumpCounter: 0
   jumpSpeed: 7.5
   terminalVelocity: -20
@@ -397,11 +398,16 @@ MonoBehaviour:
   isDashing: 0
   dashSpeed: 10
   dashTime: 0.2
+  isSliding: 0
+  onIceSurface: 0
+  slideStartAccel: 2
+  slideTime: 0.5
   fallingDeathThreshold: 3
   climbSpeed: 3
   CanMove: 1
   CanClimb: 1
   IsNearLadder: 0
+  facingRight: 0
 --- !u!114 &2307570018985288636
 MonoBehaviour:
   m_ObjectHideFlags: 0

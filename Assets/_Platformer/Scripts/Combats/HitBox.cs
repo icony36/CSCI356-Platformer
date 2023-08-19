@@ -20,9 +20,12 @@ public class HitBox : MonoBehaviour
         hitBoxCollider.enabled = false;
 
         hitTargetList = new List<Collider>();
-
-        combat = GetComponentInParent<Combat>();
-        targetTag = combat?.TargetTag;
+        
+        if(GetComponent<Skill>() == null )
+        {
+            combat = GetComponentInParent<Combat>();
+            targetTag = combat?.TargetTag;
+        }       
     }
 
     private void OnTriggerEnter(Collider other)
