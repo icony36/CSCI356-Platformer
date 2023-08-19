@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Combat : MonoBehaviour, IDamageable
 {
     [field: Header("Settings")]
-    [field: SerializeField] public string TargetTag { get; private set; } = "Enemy";
+    [field: SerializeField] public string TargetTag { get; private set; }
     [field: SerializeField] public HitBox AttackHitbox { get; private set; }
     [Header("States")]
     [Tooltip("Only shown for testing purpose")]

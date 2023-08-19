@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 3583132844887684450}
   - component: {fileID: 1031537340107917523}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Slime_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,9 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4141231e9494984e8a5a1ef8c3f53ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TargetTag>k__BackingField: Player
   patrolEndPoint: {fileID: 3138867740019280754}
   agroRange: 10
+  attackRate: 1
+  attackCooldown: 0
   speed: 10
 --- !u!114 &1031537340107917523
 MonoBehaviour:
@@ -206,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db983e59e07e45f4885cb38318461bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <TargetTag>k__BackingField: Enemy
+  <TargetTag>k__BackingField: Player
   <AttackHitbox>k__BackingField: {fileID: 6222164141139454474}
   isInvincible: 0
   CanAttack: 1

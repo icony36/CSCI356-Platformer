@@ -5,12 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Bot : MonoBehaviour
 {
-    [field: Header("Settings")]
-    [field: SerializeField] public string TargetTag { get; private set; } = "Player";
-
     [Header("Patrolling")]
     [SerializeField] private Transform patrolEndPoint;
     [SerializeField] private float agroRange;
+
+    [Header("Chasing")]
+    [Tooltip("Attack speed of animation")]
+    [SerializeField] private float attackRate = 1f;
+    [Tooltip("In seconds")]
+    [SerializeField] private float attackCooldown;
 
     [Header("Movement")]
     [SerializeField] private float speed = 10;
@@ -22,9 +25,8 @@ public class Bot : MonoBehaviour
 
     // Animation Params
     private const string ANIM_ATTACK = "Attack";
-    private const string ANIM_DAMAGE_TYPE = "DamageType";
+    private const string ANIM_ATTACK_SPEED = "AttackSpeed";
     private const string ANIM_SPEED = "Speed";
-    private const string ANIM_JUMP = "Jump";
     private const string ANIM_HURT = "Hurt";
     private const string ANIM_DEAD = "Dead";
 
@@ -37,16 +39,20 @@ public class Bot : MonoBehaviour
     }
 
     // Variables
+    private string targetTag;
     private BotState currentState;
     private Vector3 startingPosition;
     private Vector3 endingPosition;
+    private float lastAttackTime = 0f;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         combat = GetComponent<Combat>();
+        
+        targetTag = combat?.TargetTag;
 
-        target = GameObject.FindWithTag(TargetTag).transform;
+        target = GameObject.FindWithTag(targetTag).transform;
 
         startingPosition = transform.position;
         endingPosition = patrolEndPoint.position;
@@ -137,7 +143,11 @@ public class Bot : MonoBehaviour
             {
                 PlayAnimStop();
 
-                combat.Attack();
+                if(Time.time - lastAttackTime >= attackCooldown)
+                {
+                    combat.Attack();
+                    lastAttackTime = Time.time;
+                }
             }
             else
             {
@@ -200,7 +210,7 @@ public class Bot : MonoBehaviour
     public void PlayAnimAttack()
     {
         animator.SetTrigger(ANIM_ATTACK);
-        Debug.Log("Play anim attack");
+        animator.SetFloat(ANIM_ATTACK_SPEED, attackRate);
     }
 
     public void PlayAnimStop()
