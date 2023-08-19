@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -59,7 +59,9 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartGame()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        print("Restart");
     }
 
 }
