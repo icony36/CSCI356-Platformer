@@ -34,7 +34,11 @@ public class DamageOrb : MonoBehaviour
             }        
         }
 
-        //Instantiate(hitVFX, transform.position, Quaternion.identity);
+        if(hitVFX != null)
+        {
+            Instantiate(hitVFX, transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 }

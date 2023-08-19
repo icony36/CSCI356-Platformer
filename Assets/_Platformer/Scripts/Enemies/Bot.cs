@@ -147,6 +147,7 @@ public class Bot : MonoBehaviour
 
                 if(Time.time - lastAttackTime >= attackCooldown)
                 {
+                    RotateToTarget();
                     combat.Attack();
                     lastAttackTime = Time.time;
                 }
@@ -224,6 +225,14 @@ public class Bot : MonoBehaviour
         return false;
     }
 
+    public void RotateToTarget()
+    {
+        if (currentState != BotState.Dead)
+        {
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z), Vector3.up);
+        }
+    }
+
 
     public void PlayAnimAttack()
     {
@@ -246,5 +255,7 @@ public class Bot : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
 
 }

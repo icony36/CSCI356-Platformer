@@ -194,7 +194,7 @@ MonoBehaviour:
   visionRange: 10
   attackRange: 1.6
   attackRate: 1
-  attackCooldown: 0.5
+  attackCooldown: 1
   speed: 10
 --- !u!114 &1031537340107917523
 MonoBehaviour:
