@@ -1712,18 +1712,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6501086846401293327, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
-      propertyPath: jumpUpImage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501086846401293327, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
-      propertyPath: speedUpImage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6501086846401293327, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
-      propertyPath: attackUpImage
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

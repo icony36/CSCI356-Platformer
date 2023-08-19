@@ -236,8 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 979bf486bbdd4ff488d791416b2d84d1, type: 2}
-  buffPrefab: {fileID: 0}
-  value: 1
+  effectPrefab: {fileID: 5340921126839148895, guid: 07e7019a86b7e2c4ebbcd52a80927ced, type: 3}
+  value: 5
+  duration: 15
   powerupType: 1
 --- !u!1 &8009621096325184582
 GameObject:

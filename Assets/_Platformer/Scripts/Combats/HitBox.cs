@@ -21,7 +21,7 @@ public class HitBox : MonoBehaviour
 
         hitTargetList = new List<Collider>();
         
-        if(GetComponent<Skill>() == null )
+        if(transform.parent != null )
         {
             combat = GetComponentInParent<Combat>();
             targetTag = combat?.TargetTag;

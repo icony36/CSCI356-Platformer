@@ -13,9 +13,11 @@ enum PowerupType
 public class Powerup : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData; //reference to player data
-    [SerializeField] private GameObject buffPrefab;
+    [SerializeField] private GameObject effectPrefab;
 
     [SerializeField] private float value;
+    [Tooltip("In seconds")]
+    [SerializeField] private float duration;
 
     [SerializeField] PowerupType powerupType = new PowerupType();
 
@@ -43,22 +45,18 @@ public class Powerup : MonoBehaviour
             }
             else if(powerupType.Equals(PowerupType.AttackUp))
             {
-                playerData.attackDamage += (int)value;
-
-               // attackUpImage.gameObject.SetActive(true);
+                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
+                effect.GetComponent<StatusEffect>().InitValues(EffectType.AttackUp, value, duration);
             }
             else if (powerupType.Equals(PowerupType.SpeedUp))
             {
-                playerData.baseMoveSpeed += value;
-                playerData.currentMoveSpeed += value;
-
-                //speedUpImage.gameObject.SetActive(true);
+                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
+                effect.GetComponent<StatusEffect>().InitValues(EffectType.SpeedUp, value, duration);
             }
             else if (powerupType.Equals(PowerupType.JumpUp))
             {
-                playerData.maxJumps += (int)value;
-
-                //jumpUpImage.gameObject.SetActive(true);
+                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
+                effect.GetComponent<StatusEffect>().InitValues(EffectType.JumpUp, value, duration);
             }
 
             // play vfx
