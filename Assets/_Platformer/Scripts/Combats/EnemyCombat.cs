@@ -86,6 +86,7 @@ public class EnemyCombat : Combat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
+        // play vfx
     }
 
     // Animation Event
@@ -97,6 +98,6 @@ public class EnemyCombat : Combat
     // Animation Event
     public void AnimEvents_End()
     {
-        bot.SwitchBotState(Bot.BotState.Patrolling);
+        //bot.SwitchBotState(Bot.BotState.Patrolling);
     }
 }

@@ -627,10 +627,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3583132844887684450, guid: 9e6e78f24f273164ea827023d0c36a74, type: 3}
-      propertyPath: attackCooldown
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4169954523762822165, guid: 9e6e78f24f273164ea827023d0c36a74, type: 3}
       propertyPath: m_Name
       value: Slime_01
@@ -1049,6 +1045,10 @@ PrefabInstance:
     - target: {fileID: 2175869368798086903, guid: 06a400f48a48bc14e973007de49240aa, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307570018985288636, guid: 06a400f48a48bc14e973007de49240aa, type: 3}
+      propertyPath: isInvincible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729929472695666033, guid: 06a400f48a48bc14e973007de49240aa, type: 3}
       propertyPath: m_RootOrder

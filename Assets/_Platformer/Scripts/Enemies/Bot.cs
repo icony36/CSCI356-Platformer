@@ -7,10 +7,12 @@ public class Bot : MonoBehaviour
 {
     [Header("Patrolling")]
     [SerializeField] private Transform patrolEndPoint;
-    [SerializeField] private float agroRange;
+    [SerializeField] private float visionRange = 10f;
 
     [Header("Chasing")]
-    [Tooltip("Attack speed of animation")]
+    [Tooltip("Stopping distance for attack")]
+    [SerializeField] private float attackRange = 1.6f;
+    [Tooltip("Speed of attack animation")]
     [SerializeField] private float attackRate = 1f;
     [Tooltip("In seconds")]
     [SerializeField] private float attackCooldown;
@@ -137,9 +139,9 @@ public class Bot : MonoBehaviour
     {
         if (target == null) { return; }
 
-        if (Vector3.Distance(target.position, transform.position) < agroRange)
+        if (Vector3.Distance(target.position, transform.position) < visionRange)
         {
-            if (Vector3.Distance(target.position, transform.position) < 1.6f)
+            if (Vector3.Distance(target.position, transform.position) < attackRange)
             {
                 PlayAnimStop();
 
@@ -156,7 +158,8 @@ public class Bot : MonoBehaviour
         }
         else
         {
-            currentState = BotState.Patrolling;
+            // switch back to patrolling after 1 second
+            StartCoroutine(DelaySwitchToPatrolling(1));
         }
     }
 
@@ -170,7 +173,7 @@ public class Bot : MonoBehaviour
         // rotate to target
         transform.rotation = Quaternion.LookRotation(direction);
 
-        // constraint movement between waypoint
+        // constraint movement between starting position and ending position
         float maxX = Mathf.Max(startingPosition.x, endingPosition.x);
         float minX = Mathf.Min(startingPosition.x, endingPosition.x);
         if (transform.position.x <= maxX && transform.position.x >= minX)
@@ -191,18 +194,35 @@ public class Bot : MonoBehaviour
         animator.SetFloat(ANIM_SPEED, 1, 0.1f, Time.deltaTime);
     }
 
+    private IEnumerator DelaySwitchToPatrolling(float delaySeconds)
+    {
+        yield return new WaitForSeconds(delaySeconds);
+
+        currentState = BotState.Patrolling;
+    }
+
     private bool CanSeeTarget()
     {
-        RaycastHit hit;
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 halfExtents = transform.localScale / 2;
+        Vector3 direction = transform.forward;
+        Quaternion orientation = transform.rotation;
+        float maxDistance = visionRange;
 
-        if (Physics.BoxCast(transform.position, transform.lossyScale / 2, transform.forward, out hit, transform.rotation, agroRange))
+        RaycastHit hitInfo;
+
+        DebugTools.DrawBoxCastBox(origin, halfExtents, direction, orientation, maxDistance, Color.blue);
+
+        if (Physics.BoxCast(origin, halfExtents,direction, out hitInfo, orientation, maxDistance))
         {
-            if (hit.transform.CompareTag("Player"))
+            if (hitInfo.transform.CompareTag("Player"))
             {
+                Debug.Log("Seen player");
                 return true;
             }
         }
 
+        Debug.Log("No seen player");
         return false;
     }
 

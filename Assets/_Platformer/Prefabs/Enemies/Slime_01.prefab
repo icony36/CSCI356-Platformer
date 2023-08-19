@@ -191,9 +191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolEndPoint: {fileID: 3138867740019280754}
-  agroRange: 10
+  visionRange: 10
+  attackRange: 1.6
   attackRate: 1
-  attackCooldown: 0
+  attackCooldown: 0.5
   speed: 10
 --- !u!114 &1031537340107917523
 MonoBehaviour:

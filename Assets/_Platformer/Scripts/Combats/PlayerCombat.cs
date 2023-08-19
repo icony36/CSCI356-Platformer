@@ -139,6 +139,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
+        // play vfx
     }
 
     // Animation Event
