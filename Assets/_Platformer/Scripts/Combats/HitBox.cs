@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class HitBox : MonoBehaviour
 {
-    [Tooltip("This will be overridden by target tag in combat component")]
+    [Tooltip("This will be overridden by target tag in combat component.")]
     [SerializeField] private string targetTag;
     
     private Collider hitBoxCollider;

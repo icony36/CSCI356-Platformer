@@ -35,7 +35,7 @@ Transform:
   - {fileID: 3249639456548991574}
   - {fileID: 2467464428928446142}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &7402399488150419823
 BoxCollider:
@@ -222,9 +222,9 @@ GameObject:
   - component: {fileID: 2467464428928446142}
   - component: {fileID: 4542529509239320560}
   m_Layer: 0
-  m_Name: ExitPoint
+  m_Name: LadderExitPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -397,9 +397,9 @@ GameObject:
   - component: {fileID: 150999348489052524}
   - component: {fileID: 7770999068838106517}
   m_Layer: 0
-  m_Name: LadderExit
+  m_Name: LadderExitTrigger
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -451,4 +451,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258770b4f7ba9ef48987a65426a2e68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitPoint: {fileID: 2467464428928446142}
+  exitPosition: {fileID: 2467464428928446142}

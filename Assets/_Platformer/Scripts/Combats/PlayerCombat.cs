@@ -15,13 +15,14 @@ public class PlayerCombat : Combat
     //[Tooltip("Only shown for testing purpose")]
     //[SerializeField] private float currentAttackSpeed;
     [SerializeField] private float attackInterval = 5f;
+
     [field: Header("Skill")]
     [SerializeField] private float skillCooldown = 5f;
     [SerializeField] private bool skillUsed = false;
-    [field: Header("Skill")]
     [SerializeField] private GameObject skillPrefab;
-    [field: Header("Floating Damage")]
-    [field: SerializeField] public GameObject DamageText { get; private set; }
+
+    [Header("Floating Damage Text")]
+    [SerializeField] private GameObject DamageTextPrefab;
 
     // References
     private Player player;
@@ -67,13 +68,12 @@ public class PlayerCombat : Combat
     {
         if (!CanAttack) { return; }
 
-        // for player
         if (currentAttackIndex >= 3)
         {
             currentAttackIndex = 0;
         }
-        player?.SwitchPlayerState(Player.PlayerState.Attacking);
-        player?.PlayAnimAttack(currentAttackIndex, playerData.baseAttackSpeed, playerData.currentAttackSpeed);
+        player.SwitchPlayerState(Player.PlayerState.Attacking);
+        player.PlayAnimAttack(currentAttackIndex, playerData.baseAttackSpeed, playerData.currentAttackSpeed);
         currentAttackIndex++;
     }
 
@@ -81,9 +81,8 @@ public class PlayerCombat : Combat
     {
         if (!CanSkill || skillUsed) { return; }
 
-        // for player
-        player?.SwitchPlayerState(Player.PlayerState.Casting);
-        player?.PlayAnimSkill();
+        player.SwitchPlayerState(Player.PlayerState.Casting);
+        player.PlayAnimSkill();
 
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;
@@ -121,10 +120,10 @@ public class PlayerCombat : Combat
 
         playerData.currentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
 
-        player?.PlayAnimHurt();
+        player.PlayAnimHurt();
 
         // instantiate floating damage
-        DamageIndicator indicator = Instantiate(DamageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        DamageIndicator indicator = Instantiate(DamageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
         indicator.SetDamageText(damageToInflict);
 
         // play sfx
@@ -151,6 +150,6 @@ public class PlayerCombat : Combat
     // Animation Event
     public void AnimEvents_End()
     {
-        player?.SwitchPlayerState(Player.PlayerState.Normal);
+        player.SwitchPlayerState(Player.PlayerState.Normal);
     }
 }

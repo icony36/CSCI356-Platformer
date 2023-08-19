@@ -14,8 +14,12 @@ public class EnemyCombat : Combat
     [field: Header("Normal Attack")]
     [field: SerializeField] public int AttackDamage { get; private set; } = 10;
 
-    [field: Header("Floating Damage")]
-    [field: SerializeField] public GameObject DamageText { get; private set; }
+    [Header("Shooting")]
+    [SerializeField] private Transform shootingPoint;
+    [SerializeField] private GameObject damageOrbPrefab;
+
+    [field: Header("Floating Damage Text")]
+    [field: SerializeField] private GameObject damageTextPrefab;
 
     // References
     private Bot bot;
@@ -71,7 +75,7 @@ public class EnemyCombat : Combat
         bot.PlayAnimHurt();
 
         // instantiate floating damage
-        DamageIndicator indicator = Instantiate(DamageText, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        DamageIndicator indicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
         indicator.SetDamageText(damageToInflict);
 
         // play sfx
@@ -99,5 +103,14 @@ public class EnemyCombat : Combat
     public void AnimEvents_End()
     {
         //bot.SwitchBotState(Bot.BotState.Patrolling);
+    }
+
+    // Animation Event
+    public void AnimEvents_Shoot()
+    {
+        Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
+
+        // play sfx
+        // play vfx
     }
 }

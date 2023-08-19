@@ -420,9 +420,11 @@ MonoBehaviour:
   CanAttack: 1
   CanSkill: 1
   <TagColor>k__BackingField: {r: 0, g: 255, b: 0, a: 1}
-  attackGapTime: 5
+  attackInterval: 5
+  skillCooldown: 5
+  skillUsed: 0
   skillPrefab: {fileID: 1981596396351805727, guid: 3d2e564a89fc72e4d9f6440555cfdc74, type: 3}
-  <DamageText>k__BackingField: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
+  DamageTextPrefab: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
 --- !u!1 &4308647071847887426
 GameObject:
   m_ObjectHideFlags: 0

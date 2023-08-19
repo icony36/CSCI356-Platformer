@@ -10,11 +10,11 @@ public class Bot : MonoBehaviour
     [SerializeField] private float visionRange = 10f;
 
     [Header("Chasing")]
-    [Tooltip("Stopping distance for attack")]
+    [Tooltip("Stopping distance for attack.")]
     [SerializeField] private float attackRange = 1.6f;
-    [Tooltip("Speed of attack animation")]
+    [Tooltip("Speed of attack animation.")]
     [SerializeField] private float attackRate = 1f;
-    [Tooltip("In seconds")]
+    [Tooltip("In seconds.")]
     [SerializeField] private float attackCooldown;
 
     [Header("Movement")]
@@ -217,12 +217,10 @@ public class Bot : MonoBehaviour
         {
             if (hitInfo.transform.CompareTag("Player"))
             {
-                Debug.Log("Seen player");
                 return true;
             }
         }
 
-        Debug.Log("No seen player");
         return false;
     }
 
