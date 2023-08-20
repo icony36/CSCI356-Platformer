@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         // move
-        player.Movement.MovePlayer(moveValue.x, jumpAction.triggered, dashAction.triggered);
+        player.Movement.MovePlayer(moveValue.x, moveAction.triggered, jumpAction.triggered, dashAction.triggered);
         // climb
         player.Movement.Climb(moveValue.y, jumpAction.triggered);
     }

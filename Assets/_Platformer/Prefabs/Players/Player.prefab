@@ -272,7 +272,7 @@ Transform:
   - {fileID: 1551388869097233083}
   - {fileID: 3907500962446965306}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &4456769115175940226
 Animator:
@@ -399,15 +399,15 @@ MonoBehaviour:
   isDashing: 0
   dashSpeed: 10
   dashTime: 0.2
+  slideDirection: {x: 0, y: 0, z: 0}
   isSliding: 0
   onIceSurface: 0
-  slideStartAccel: 2
-  slideTime: 0.5
+  slideStartAccel: 3
   climbSpeed: 3
   CanMove: 1
   CanClimb: 1
-  IsNearLadder: 0
   facingRight: 0
+  isNearLadder: 0
 --- !u!114 &2307570018985288636
 MonoBehaviour:
   m_ObjectHideFlags: 0
