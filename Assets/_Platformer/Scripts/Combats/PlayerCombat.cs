@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UIElements;
 
@@ -15,6 +16,11 @@ public class PlayerCombat : Combat
     //[Tooltip("Only shown for testing purpose")]
     //[SerializeField] private float currentAttackSpeed;
     [SerializeField] private float attackInterval = 5f;
+
+    [field: Header("Ranged Attack")]
+    [SerializeField] private GameObject directionIndicator;
+    [SerializeField] private bool aimingMode = false;
+    [SerializeField] private Vector3 aimDirection = Vector3.zero;
 
     [field: Header("Skill")]
     [SerializeField] private float skillCooldown = 5f;
@@ -49,6 +55,11 @@ public class PlayerCombat : Combat
         {
             currentAttackTimer = 0f;
             currentAttackIndex = 0;
+        }
+
+        if (aimingMode)
+        {
+            
         }
     }
 

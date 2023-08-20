@@ -5,18 +5,19 @@ using UnityEngine;
 
 public class AStarPathfinding : MonoBehaviour
 {
-    public NodeGrid2D nodeGrid; //reference to node grid 
+    [SerializeField] private float adjacentRange;
+    public NodeGraph nodeGraph; //reference to node graph 
     public bool drawPath; //draws node path for debugging
 
-    private List<Node2D> nodesToDraw = new List<Node2D>();
+    private List<Node> nodesToDraw = new List<Node>();
 
-    public List<Node2D> CalculatePath(Vector3 startPos, Vector3 endPos)
+    public List<Node> CalculatePath(Vector3 startPos, Vector3 endPos)
     {
-        Node2D startNode = nodeGrid.GetNodeFromWorldPoint(startPos);
-        Node2D endNode = nodeGrid.GetNodeFromWorldPoint(endPos);
+        Node startNode = nodeGraph.GetNearestNode(startPos);
+        Node endNode = nodeGraph.GetNearestNode(endPos);
 
-        List<Node2D> openList = new List<Node2D>();
-        HashSet<Node2D> closedList = new HashSet<Node2D>();
+        List<Node> openList = new List<Node>();
+        HashSet<Node> closedList = new HashSet<Node>();
 
         openList.Add(startNode);
         System.Diagnostics.Stopwatch st = new System.Diagnostics.Stopwatch();
@@ -24,7 +25,7 @@ public class AStarPathfinding : MonoBehaviour
 
         while (openList.Count > 0)
         {
-            Node2D currentNode = openList[openList.Count - 1];
+            Node currentNode = openList[openList.Count - 1];
 
             openList.RemoveAt(openList.Count - 1);
             closedList.Add(currentNode);
@@ -36,9 +37,9 @@ public class AStarPathfinding : MonoBehaviour
                 return RetracePath(startNode, endNode);              
             }
 
-            List<Node2D> adjacentNodes = new List<Node2D>();
+            List<Node> adjacentNodes = new List<Node>();
 
-            foreach (Node2D adjacentNode in nodeGrid.GetAdjacentNodes(currentNode))
+            foreach (Node adjacentNode in nodeGraph.GetAdjacentNodes(currentNode))
             {
                 if (!adjacentNode.isWalkable || closedList.Contains(adjacentNode))
                 {
@@ -59,17 +60,17 @@ public class AStarPathfinding : MonoBehaviour
             openList = MergeLists(openList, adjacentNodes);
         }
 
-        return new List<Node2D>();
+        return new List<Node>();
     }
-    public int GetManDist(Node2D start, Node2D end)
+    public int GetManDist(Node start, Node end)
     {
         //calculate heuristic using Manhattan distance 
-        return Mathf.Abs(start.gridPos.x - end.gridPos.x) + Mathf.Abs(start.gridPos.y - end.gridPos.y);
+        return (int)(Mathf.Abs(start.worldPos.x - end.worldPos.x) + Mathf.Abs(start.worldPos.y - end.worldPos.y));
     }
 
-    public List<Node2D> MergeLists(List<Node2D> openList, List<Node2D> adjacentNodes)
+    public List<Node> MergeLists(List<Node> openList, List<Node> adjacentNodes)
     {
-        List<Node2D> result = new List<Node2D>();
+        List<Node> result = new List<Node>();
 
         int i = 0, j = 0;
 
@@ -103,10 +104,10 @@ public class AStarPathfinding : MonoBehaviour
         return result;
     }
 
-    public List<Node2D> RetracePath(Node2D start, Node2D end)
+    public List<Node> RetracePath(Node start, Node end)
     {
-        List<Node2D> path = new List<Node2D>();
-        Node2D current = end;
+        List<Node> path = new List<Node>();
+        Node current = end;
 
         //retrace path by iterating through node parents
         while (current != start)
@@ -120,7 +121,7 @@ public class AStarPathfinding : MonoBehaviour
 
         if (drawPath)
         {
-            nodesToDraw = new List<Node2D>(path);
+            nodesToDraw = new List<Node>(path);
         }
 
         return path;
@@ -134,9 +135,9 @@ public class AStarPathfinding : MonoBehaviour
             Gizmos.color = Color.yellow;
             if (nodesToDraw.Count > 0)
             {
-                foreach (Node2D n in nodesToDraw)
+                foreach (Node n in nodesToDraw)
                 {
-                    Gizmos.DrawWireCube(n.worldPos, new Vector3(1, 1, 1) * nodeGrid.nodeSize);
+                    //Gizmos.DrawWireCube(n.worldPos, new Vector3(1, 1, 1) * nodeGrid.nodeSize);
                 }
             }
         }
