@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BuffIndicator : MonoBehaviour
 {
-    [SerializeField] private GameObject AttackUpImage;
-    [SerializeField] private GameObject JumpUpImage;
-    [SerializeField] private GameObject SpeedUpImage;
+    [SerializeField] private GameObject attackUpImage;
+    [SerializeField] private GameObject jumpUpImage;
+    [SerializeField] private GameObject speedUpImage;
 
     public bool isAttack;
     public bool isJump;
@@ -18,30 +18,30 @@ public class BuffIndicator : MonoBehaviour
         isJump = false;
         isSpeed = false;
 
-        AttackUpImage.SetActive(isAttack);
-        JumpUpImage.SetActive(isJump);
-        SpeedUpImage.SetActive(isSpeed);
+        attackUpImage.SetActive(isAttack);
+        jumpUpImage.SetActive(isJump);
+        speedUpImage.SetActive(isSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        AttackUpImage.SetActive(isAttack);
-        JumpUpImage.SetActive(isJump);
-        SpeedUpImage.SetActive(isSpeed);
+        attackUpImage.SetActive(isAttack);
+        jumpUpImage.SetActive(isJump);
+        speedUpImage.SetActive(isSpeed);
     }
 
-    public void setIsAttack(bool value)
+    public void SetIsAttack(bool value)
     {
         isAttack = value;
     }
 
-    public void setIsJump(bool value)
+    public void SetIsJump(bool value)
     {
         isJump = value;
     }
 
-    public void setIsSpeed(bool value)
+    public void SetIsSpeed(bool value)
     {
         isSpeed = value;
     }

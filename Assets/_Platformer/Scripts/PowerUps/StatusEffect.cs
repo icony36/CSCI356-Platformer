@@ -49,17 +49,17 @@ public class StatusEffect : MonoBehaviour
             if (effectType.Equals(EffectType.AttackUp))
             {
                 playerData.attackDamage = initData.attackDamage;
-                buffIndicator.setIsAttack(false);
+                buffIndicator.SetIsAttack(false);
             }
             else if (effectType.Equals(EffectType.SpeedUp))
             {
                 playerData.currentMoveSpeed = initData.baseMoveSpeed;
-                buffIndicator.setIsSpeed(false);
+                buffIndicator.SetIsSpeed(false);
             }
             else if (effectType.Equals(EffectType.JumpUp))
             {
                 playerData.maxJumps = initData.maxJumps;
-                buffIndicator.setIsJump(false);
+                buffIndicator.SetIsJump(false);
             }
 
             Destroy(gameObject);
