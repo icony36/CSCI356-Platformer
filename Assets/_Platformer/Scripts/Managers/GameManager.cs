@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GAME FINISHED");
         Player.DisableAllActions();
+        Player.PlayAnimVictory();
         gameMenuManager.ShowGameWinMenu();
     }
 

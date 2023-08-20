@@ -66,7 +66,7 @@ public class Bot : MonoBehaviour
     {             
         if(CheckIsTargetDead())
         {
-            PlayAnimStop();
+            PlayAnimIdle();
             
             return;
         }
@@ -150,7 +150,7 @@ public class Bot : MonoBehaviour
         {
             if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
             {
-                PlayAnimStop();
+                PlayAnimIdle();
 
                 if(Time.time - lastAttackTime >= attackCooldown)
                 {
@@ -259,7 +259,7 @@ public class Bot : MonoBehaviour
         animator.SetFloat(ANIM_ATTACK_SPEED, attackRate);
     }
 
-    public void PlayAnimStop()
+    public void PlayAnimIdle()
     {
         animator.SetFloat(ANIM_SPEED, 0f);
     }

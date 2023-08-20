@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public const string ANIM_ON_CLIMB = "IsOnClimb";
     public const string ANIM_CLIMB_SPEED = "ClimbSpeed";
     public const string ANIM_RESPAWN = "Respawn";
+    public const string ANIM_VICTORY = "Victory";
 
     public enum PlayerState
     {
@@ -199,6 +200,11 @@ public class Player : MonoBehaviour
     public void PlayAnimClimb(float climbSpeed)
     {
         Animator.SetFloat(ANIM_CLIMB_SPEED, climbSpeed);
+    }
+
+    public void PlayAnimVictory()
+    {
+        Animator.SetTrigger(ANIM_VICTORY);
     }
 }
 
