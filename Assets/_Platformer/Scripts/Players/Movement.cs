@@ -35,7 +35,6 @@ public class Movement : MonoBehaviour
     // Public Variables
     public bool CanMove = true;
     public bool CanClimb = true;
-    public bool IsNearLadder = false;
     public bool facingRight;
 
     // Jump
@@ -43,7 +42,9 @@ public class Movement : MonoBehaviour
     private bool isJumping = false;
 
     // Climb
-    private bool isClimbing = false;
+    public bool isNearLadder = false;
+    private bool isClimbing = false;    
+    private Transform ladderTransform;
 
     // References
     private Player player;
@@ -52,7 +53,6 @@ public class Movement : MonoBehaviour
     private TrailRenderer motionTrail;
 
     private float startingColliderRadius;
-    private Vector3 climbEndPosition;
 
     private void Start()
     {
@@ -227,14 +227,18 @@ public class Movement : MonoBehaviour
             CancelClimb();
         }
 
-        if (IsNearLadder)
+        if (isNearLadder)
         {
             if (!isClimbing && climbValue > 0)
             {
                 isClimbing = true;
                 player.PlayAnimOnClimb(true);
                 characterController.radius = 0.2f;
-                characterController.Move(transform.forward);
+
+                characterController.enabled = false;
+                transform.position = ladderTransform.position;
+                transform.rotation = ladderTransform.rotation;
+                characterController.enabled = true;
             }
             else if (isClimbing)
             {                               
@@ -251,13 +255,20 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void SetIsNearLadder(Transform ladderTransform)
+    {
+        isNearLadder = true;
+        this.ladderTransform = ladderTransform;
+    }
+
     public void ExitClimb(Vector3 exitPosition)
     {
-        climbEndPosition = exitPosition;
+        ladderTransform = null;
+
         if (isClimbing)
         {
             characterController.enabled = false;
-            transform.position = climbEndPosition;
+            transform.position = exitPosition;
             characterController.enabled = true;
 
             CancelClimb();
@@ -266,7 +277,7 @@ public class Movement : MonoBehaviour
 
     private void CancelClimb()
     {
-        IsNearLadder = false;
+        isNearLadder = false;
         isClimbing = false;
         player.PlayAnimOnClimb(false);
         characterController.radius = startingColliderRadius;
