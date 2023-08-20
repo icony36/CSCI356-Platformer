@@ -17,21 +17,26 @@ public class StatusEffect : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [SerializeField] private PlayerData initData;
 
+    private BuffIndicator buffIndicator;
+
     private float elapsedTime = 0.0f;
 
     private void Start()
     {
+        GameObject uiCanvasObject = GameObject.FindGameObjectWithTag("UICanvas");
+        buffIndicator = uiCanvasObject.GetComponent<BuffIndicator>();
+
         if (effectType.Equals(EffectType.AttackUp))
         {
-            playerData.attackDamage += (int)value;
+            playerData.attackDamage += (int)value; 
         }
         else if (effectType.Equals(EffectType.SpeedUp))
         {
-            playerData.currentMoveSpeed += value;
+            playerData.currentMoveSpeed += value;   
         }
         else if (effectType.Equals(EffectType.JumpUp))
         {
-            playerData.maxJumps += (int)value;
+            playerData.maxJumps += (int)value;   
         }
     }
 
@@ -44,14 +49,17 @@ public class StatusEffect : MonoBehaviour
             if (effectType.Equals(EffectType.AttackUp))
             {
                 playerData.attackDamage = initData.attackDamage;
+                buffIndicator.setIsAttack(false);
             }
             else if (effectType.Equals(EffectType.SpeedUp))
             {
                 playerData.currentMoveSpeed = initData.baseMoveSpeed;
+                buffIndicator.setIsSpeed(false);
             }
             else if (effectType.Equals(EffectType.JumpUp))
             {
                 playerData.maxJumps = initData.maxJumps;
+                buffIndicator.setIsJump(false);
             }
 
             Destroy(gameObject);

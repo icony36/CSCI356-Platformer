@@ -20,6 +20,8 @@ public class Powerup : MonoBehaviour
     [SerializeField] private float duration;
 
     [SerializeField] PowerupType powerupType = new PowerupType();
+    [SerializeField] BuffIndicator buffIndicator;
+
 
     //[SerializeField] private GameObject jumpUpImage;
     //[SerializeField] private GameObject attackUpImage;
@@ -47,16 +49,22 @@ public class Powerup : MonoBehaviour
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.AttackUp, value, duration);
+
+                buffIndicator.setIsAttack(true);
             }
             else if (powerupType.Equals(PowerupType.SpeedUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.SpeedUp, value, duration);
+
+                buffIndicator.setIsSpeed(true);
             }
             else if (powerupType.Equals(PowerupType.JumpUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.JumpUp, value, duration);
+
+                buffIndicator.setIsJump(true);
             }
 
             // play vfx

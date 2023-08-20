@@ -241,6 +241,7 @@ MonoBehaviour:
   value: 5
   duration: 15
   powerupType: 1
+  buffIndicator: {fileID: 139679832286808482, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
 --- !u!114 &7531303346395986151
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -201,6 +201,7 @@ MonoBehaviour:
   value: 3
   duration: 15
   powerupType: 2
+  buffIndicator: {fileID: 139679832286808482, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
 --- !u!114 &7463663499288497093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12177aec48c8db49bc77aadc51f7c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  magnitude: 0.5
 --- !u!1 &6622272685721175715
 GameObject:
   m_ObjectHideFlags: 0
