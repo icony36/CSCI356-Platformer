@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public const string ANIM_SKILL = "Skill";
     public const string ANIM_ON_CLIMB = "IsOnClimb";
     public const string ANIM_CLIMB_SPEED = "ClimbSpeed";
+    public const string ANIM_RESPAWN = "Respawn";
 
     public enum PlayerState
     {
@@ -35,20 +36,29 @@ public class Player : MonoBehaviour
         Casting,
         Dead
     }
+    
+    private GameObject lastCheckPoint;
 
-    protected void Awake()
+    private void Awake()
     {
         Animator = GetComponent<Animator>();
         PlayerCombat = GetComponent<PlayerCombat>();
         PlayerController = GetComponent<PlayerController>();
         Movement = GetComponent<Movement>();
 
+        InitState();
+    }
+
+    private void InitState()
+    {
+        SwitchPlayerState(PlayerState.Normal);
+        
         //ideally this initialization should be done in GameManager
         playerData.maxHealth = initData.maxHealth;
         playerData.attackDamage = initData.attackDamage;
         playerData.baseAttackSpeed = initData.baseAttackSpeed;
         playerData.baseMoveSpeed = initData.baseMoveSpeed;
-        playerData.maxJumps= initData.maxJumps;
+        playerData.maxJumps = initData.maxJumps;
     }
 
     public void SwitchPlayerState(PlayerState newState)
@@ -67,6 +77,7 @@ public class Player : MonoBehaviour
                 break;
             case PlayerState.Dead:
                 Animator.ResetTrigger(ANIM_DEAD);
+                EnableAllActions();
                 break;
             default:
                 break;
@@ -93,6 +104,21 @@ public class Player : MonoBehaviour
             default:
                 break;
         }        
+    }
+
+    public void MoveToLastCheckPoint()
+    {
+        Movement.EnableCharacterController(false);
+        transform.position = lastCheckPoint.transform.position;
+        transform.rotation = lastCheckPoint.transform.rotation;
+        Movement.EnableCharacterController(true);
+
+        Debug.Log("Move to last check point.");
+    }
+
+    public void SetLastCheckPoint(GameObject gameObject)
+    {
+        lastCheckPoint = gameObject;
     }
 
     private void EnableAllActions()

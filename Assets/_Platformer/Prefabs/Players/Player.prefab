@@ -366,6 +366,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 979bf486bbdd4ff488d791416b2d84d1, type: 2}
   initData: {fileID: 11400000, guid: 5b9d451060c606f419bfb6c9ddea1f41, type: 2}
   effectHolder: {fileID: 1551388869097233083}
+  respawnTime: 3
 --- !u!114 &8905210557396807550
 MonoBehaviour:
   m_ObjectHideFlags: 0

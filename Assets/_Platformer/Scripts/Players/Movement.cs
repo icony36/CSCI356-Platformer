@@ -25,8 +25,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private bool onIceSurface = false;
     [SerializeField] private float slideStartAccel = 8f;
     [SerializeField] private float slideTime = 2f;
-    [Tooltip("In seconds")]
-    [SerializeField] private float fallingDeathThreshold = 3.0f;
+    //[Tooltip("In seconds")]
+    //[SerializeField] private float fallingDeathThreshold = 3.0f;
 
     [Header("Climb")]
     [SerializeField] private float climbSpeed = 3f;
@@ -40,15 +40,15 @@ public class Movement : MonoBehaviour
     // Jump
     private float yVelocity = 0f;
     private bool isJumping = false;
-    private bool isFalling = false;
-    private float isFallingTimer = 0f;
+    //private bool isFalling = false;
+    //private float isFallingTimer = 0f;
 
     // Climb
     private bool isClimbing = false;
 
     // References
     private Player player;
-    private PlayerData playerData;
+    private PlayerData playerData; 
     private CharacterController characterController;
     private TrailRenderer motionTrail;
 
@@ -71,19 +71,19 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (isFalling && !isClimbing)
-        {
-            isFallingTimer += Time.deltaTime;
+        //if (isFalling && !isClimbing)
+        //{
+        //    isFallingTimer += Time.deltaTime;
 
-            if (isFallingTimer >= fallingDeathThreshold && player.CurrentState != Player.PlayerState.Dead)
-            {
-                player.PlayerCombat.InstantKill();
-            }
-        }
-        else
-        {
-            isFallingTimer = 0f;
-        }            
+        //    if (isFallingTimer >= fallingDeathThreshold && player.CurrentState != Player.PlayerState.Dead)
+        //    {
+        //        player.PlayerCombat.InstantKill();
+        //    }
+        //}
+        //else
+        //{
+        //    isFallingTimer = 0f;
+        //}            
     }
 
     public void MovePlayer(float moveValue, bool shouldJump, bool shouldDash)
@@ -128,7 +128,7 @@ public class Movement : MonoBehaviour
 
             jumpCounter = 0;
             isJumping = false;
-            isFalling = false;
+            //isFalling = false;
             player.PlayerCombat.CanSkill = true;
             motionTrail.emitting = false;
 
@@ -145,7 +145,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                isFalling = true;
+                //isFalling = true;
                 player.PlayerCombat.CanSkill = false;
                 motionTrail.emitting = true;
 
@@ -191,13 +191,16 @@ public class Movement : MonoBehaviour
 
         // pass the movement to the character controller
         if (!isSliding)
+        {
             characterController.Move(moveVec * Time.deltaTime);
+        }
     }
 
     //public void SetMoveSpeed(float speed)
     //{
     //    playerData.currentMoveSpeed = Mathf.Clamp(speed, 0f, speed);
     //}
+
     private void Jump()
     {
         yVelocity = jumpSpeed;
@@ -319,6 +322,11 @@ public class Movement : MonoBehaviour
             onIceSurface = false;
             isSliding = false;
         }
+    }
+
+    public void EnableCharacterController(bool shouldEnable)
+    {
+        characterController.enabled = shouldEnable;
     }
 }
 
