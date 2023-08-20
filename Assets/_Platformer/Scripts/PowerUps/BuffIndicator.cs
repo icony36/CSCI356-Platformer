@@ -8,9 +8,9 @@ public class BuffIndicator : MonoBehaviour
     [SerializeField] private GameObject jumpUpImage;
     [SerializeField] private GameObject speedUpImage;
 
-    public bool isAttack;
-    public bool isJump;
-    public bool isSpeed;
+    private bool isAttack;
+    private bool isJump;
+    private bool isSpeed;
 
     void Start()
     {
