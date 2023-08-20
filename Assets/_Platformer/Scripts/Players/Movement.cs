@@ -23,10 +23,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private float dashTime = 0.3f;
 
     [Header("Slide")]
+    [SerializeField] private Vector3 slideDirection = Vector3.zero;
     [SerializeField] private bool isSliding = false;
     [SerializeField] private bool onIceSurface = false;
-    [SerializeField] private float slideStartAccel = 8f;
-    [SerializeField] private float slideTime = 2f;
+    [SerializeField] private float slideStartAccel = 3f;
 
     [Header("Climb")]
     [SerializeField] private float climbSpeed = 3f;
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
         startingColliderRadius = characterController.radius;
     }
 
-    public void MovePlayer(float moveValue, bool shouldJump, bool shouldDash)
+    public void MovePlayer(float moveValue, bool shouldMove, bool shouldJump, bool shouldDash)
     {
         if (isClimbing) { return; }
 
@@ -121,23 +121,16 @@ public class Movement : MonoBehaviour
         }
         else // falling
         {
-            if(isSliding)
+            //isFalling = true;
+            player.PlayerCombat.CanSkill = false;
+            motionTrail.emitting = true;
+
+            player.PlayAnimLand(false);
+
+            if ((isJumping && yVelocity < 0) || yVelocity < -2)
             {
-                player.PlayAnimLand(true);
+                player.PlayAnimFall(true);
             }
-            else
-            {
-                //isFalling = true;
-                player.PlayerCombat.CanSkill = false;
-                motionTrail.emitting = true;
-
-                player.PlayAnimLand(false);
-
-                if ((isJumping && yVelocity < 0) || yVelocity < -2)
-                {
-                    player.PlayAnimFall(true);
-                }
-            }     
         }
 
         // jump
@@ -166,13 +159,26 @@ public class Movement : MonoBehaviour
         // apply gravity
         moveVec.y = yVelocity;
 
-        if (onIceSurface && !isSliding && moveVec.x != 0)
+        if (characterController.isGrounded && onIceSurface && !isSliding && shouldMove)
         {
             StartCoroutine(Slide());
         }
+        else if (onIceSurface && isSliding && shouldMove)
+        {
+            if (moveVec != slideDirection)
+            {
+                StopCoroutine(Slide());
+                slideDirection.x = 0;
+                isSliding = false;
+            }
+        }
 
         // pass the movement to the character controller
-        if (!isSliding)
+        if (!onIceSurface)
+        {
+            characterController.Move(moveVec * Time.deltaTime);
+        }
+        else if (onIceSurface && !characterController.isGrounded)
         {
             characterController.Move(moveVec * Time.deltaTime);
         }
@@ -285,15 +291,13 @@ public class Movement : MonoBehaviour
 
     IEnumerator Slide()
     {
-        Vector3 movement = moveVec;
-        Debug.Log(movement);
+        slideDirection = moveVec;
+
         isSliding = true;
 
-        float startTime = Time.time;
-
-        while (Time.time < startTime + slideTime)
+        while (isSliding)
         {
-            characterController.Move(movement * Mathf.Lerp(slideStartAccel, 0f, -0.5f) * Time.deltaTime);
+            characterController.Move(slideDirection * Mathf.Lerp(slideStartAccel, 0f, -0.5f) * Time.deltaTime);
             yield return null;
         }
 
@@ -305,6 +309,11 @@ public class Movement : MonoBehaviour
         if(other.gameObject.CompareTag("IceSurface"))
         {
             onIceSurface = true;
+
+            if(moveVec.x != 0)
+            {
+                StartCoroutine(Slide());
+            }
         }
     }
 
