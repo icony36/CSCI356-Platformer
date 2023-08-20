@@ -16,21 +16,22 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 5f;
     [SerializeField] private float terminalVelocity = -20.0f;
     [SerializeField] private float gravity = -9.81f;
+
     [Header("Dash")]
     [SerializeField] private bool isDashing = false;
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashTime = 0.3f;
+
     [Header("Slide")]
     [SerializeField] private bool isSliding = false;
     [SerializeField] private bool onIceSurface = false;
     [SerializeField] private float slideStartAccel = 8f;
     [SerializeField] private float slideTime = 2f;
-    //[Tooltip("In seconds")]
-    //[SerializeField] private float fallingDeathThreshold = 3.0f;
 
     [Header("Climb")]
     [SerializeField] private float climbSpeed = 3f;
 
+    [Header("States")]
     // Public Variables
     public bool CanMove = true;
     public bool CanClimb = true;
@@ -40,8 +41,6 @@ public class Movement : MonoBehaviour
     // Jump
     private float yVelocity = 0f;
     private bool isJumping = false;
-    //private bool isFalling = false;
-    //private float isFallingTimer = 0f;
 
     // Climb
     private bool isClimbing = false;
@@ -67,23 +66,6 @@ public class Movement : MonoBehaviour
         playerData.currentAttackSpeed = playerData.baseAttackSpeed;
         playerData.currentMoveSpeed = playerData.baseMoveSpeed;
         startingColliderRadius = characterController.radius;
-    }
-
-    private void Update()
-    {
-        //if (isFalling && !isClimbing)
-        //{
-        //    isFallingTimer += Time.deltaTime;
-
-        //    if (isFallingTimer >= fallingDeathThreshold && player.CurrentState != Player.PlayerState.Dead)
-        //    {
-        //        player.PlayerCombat.InstantKill();
-        //    }
-        //}
-        //else
-        //{
-        //    isFallingTimer = 0f;
-        //}            
     }
 
     public void MovePlayer(float moveValue, bool shouldJump, bool shouldDash)

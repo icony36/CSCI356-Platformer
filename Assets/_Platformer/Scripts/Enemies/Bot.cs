@@ -22,7 +22,7 @@ public class Bot : MonoBehaviour
 
     // References  
     private Animator animator;
-    private Transform target;
+    private GameObject target;
     private Combat combat;
 
     // Animation Params
@@ -54,7 +54,7 @@ public class Bot : MonoBehaviour
         
         targetTag = combat?.TargetTag;
 
-        target = GameObject.FindWithTag(targetTag).transform;
+        target = GameObject.FindWithTag(targetTag);
 
         startingPosition = transform.position;
         endingPosition = patrolEndPoint.position;
@@ -63,7 +63,14 @@ public class Bot : MonoBehaviour
     }
 
     private void Update()
-    {
+    {             
+        if(CheckIsTargetDead())
+        {
+            PlayAnimStop();
+            
+            return;
+        }
+        
         switch (currentState)
         {
             case BotState.Patrolling:
@@ -139,9 +146,9 @@ public class Bot : MonoBehaviour
     {
         if (target == null) { return; }
 
-        if (Vector3.Distance(target.position, transform.position) < visionRange)
+        if (Vector3.Distance(target.transform.position, transform.position) < visionRange)
         {
-            if (Vector3.Distance(target.position, transform.position) < attackRange)
+            if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
             {
                 PlayAnimStop();
 
@@ -154,7 +161,7 @@ public class Bot : MonoBehaviour
             }
             else
             {
-                MoveToTarget(target.position);
+                MoveToTarget(target.transform.position);
             }
         }
         else
@@ -195,6 +202,15 @@ public class Bot : MonoBehaviour
         animator.SetFloat(ANIM_SPEED, 1, 0.1f, Time.deltaTime);
     }
 
+    public void RotateToTarget()
+    {
+        if (currentState != BotState.Dead)
+        {
+            transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z), Vector3.up);
+        }
+    }
+
+
     private IEnumerator DelaySwitchToPatrolling(float delaySeconds)
     {
         yield return new WaitForSeconds(delaySeconds);
@@ -225,12 +241,15 @@ public class Bot : MonoBehaviour
         return false;
     }
 
-    public void RotateToTarget()
+    private bool CheckIsTargetDead()
     {
-        if (currentState != BotState.Dead)
+        Player player = target.GetComponent<Player>();
+        if (player.CurrentState == Player.PlayerState.Dead)
         {
-            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z), Vector3.up);
+            return true;
         }
+
+        return false;
     }
 
 

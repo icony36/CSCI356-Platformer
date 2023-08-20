@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public PlayerController PlayerController { get; private set; }
     public Movement Movement { get; private set; }
 
+    public GameObject LastCheckPoint { get; private set; }
+
     public PlayerData playerData; 
     public PlayerData initData;
     public Transform effectHolder;
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
         Dead
     }
     
-    private GameObject lastCheckPoint;
+    
 
     private void Awake()
     {
@@ -109,8 +111,8 @@ public class Player : MonoBehaviour
     public void MoveToLastCheckPoint()
     {
         Movement.EnableCharacterController(false);
-        transform.position = lastCheckPoint.transform.position;
-        transform.rotation = lastCheckPoint.transform.rotation;
+        transform.position = LastCheckPoint.transform.position;
+        transform.rotation = LastCheckPoint.transform.rotation;
         Movement.EnableCharacterController(true);
 
         Debug.Log("Move to last check point.");
@@ -118,10 +120,10 @@ public class Player : MonoBehaviour
 
     public void SetLastCheckPoint(GameObject gameObject)
     {
-        lastCheckPoint = gameObject;
+        LastCheckPoint = gameObject;
     }
 
-    private void EnableAllActions()
+    public void EnableAllActions()
     {
         Movement.CanMove = true;
         Movement.CanClimb = true;
@@ -129,7 +131,7 @@ public class Player : MonoBehaviour
         PlayerCombat.CanSkill = true;
     }
 
-    private void DisableAllActions()
+    public void DisableAllActions()
     {
         Movement.CanMove = false;
         Movement.CanClimb = false;

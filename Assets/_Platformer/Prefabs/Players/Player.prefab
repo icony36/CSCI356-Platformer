@@ -272,7 +272,7 @@ Transform:
   - {fileID: 1551388869097233083}
   - {fileID: 3907500962446965306}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &4456769115175940226
 Animator:
@@ -366,7 +366,6 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 979bf486bbdd4ff488d791416b2d84d1, type: 2}
   initData: {fileID: 11400000, guid: 5b9d451060c606f419bfb6c9ddea1f41, type: 2}
   effectHolder: {fileID: 1551388869097233083}
-  respawnTime: 3
 --- !u!114 &8905210557396807550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +403,6 @@ MonoBehaviour:
   onIceSurface: 0
   slideStartAccel: 2
   slideTime: 0.5
-  fallingDeathThreshold: 3
   climbSpeed: 3
   CanMove: 1
   CanClimb: 1

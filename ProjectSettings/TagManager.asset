@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - UICanvas
   - IceSurface
+  - PowerUp
+  - GameManager
   layers:
   - Default
   - TransparentFX
