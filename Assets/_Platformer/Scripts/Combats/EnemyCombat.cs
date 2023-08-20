@@ -33,11 +33,6 @@ public class EnemyCombat : Combat
         CurrentHealth = MaxHealth;
     }
 
-    private void Update()
-    {
-
-    }
-
     public override void InstantKill()
     {
         CurrentHealth = 0;

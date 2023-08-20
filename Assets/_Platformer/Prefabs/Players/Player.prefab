@@ -406,8 +406,8 @@ MonoBehaviour:
   climbSpeed: 3
   CanMove: 1
   CanClimb: 1
-  IsNearLadder: 0
   facingRight: 0
+  isNearLadder: 0
 --- !u!114 &2307570018985288636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverheadCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2556927542971633514, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2666045165370765212, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -591,11 +595,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2981875853732054059, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2981875853732054059, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806219976576837296, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4011327085595404846, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: parent
