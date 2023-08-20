@@ -35,9 +35,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.12500003, y: 0.12499988}
-  m_SizeDelta: {x: 0.5, y: 0.5}
-  m_Pivot: {x: 0.75, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8569568186696394841
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 728f452130ff1024b89d7d43d278f73d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba95fa9839e82804dbb41b846fbc6bda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 5116064440819419988}
   - component: {fileID: 1098266833260571695}
   - component: {fileID: 7026945645634688575}
+  - component: {fileID: 8283399025501400117}
   m_Layer: 0
   m_Name: Healthpack
   m_TagString: PowerUp
@@ -110,7 +111,7 @@ Transform:
   m_Children:
   - {fileID: 2571467035707647110}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5480057610026650971
 MeshFilter:
@@ -200,6 +201,20 @@ MonoBehaviour:
   value: 25
   duration: 0
   powerupType: 0
+--- !u!114 &8283399025501400117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397843547297429459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12177aec48c8db49bc77aadc51f7c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  magnitude: 0.5
 --- !u!1 &9076385092273180421
 GameObject:
   m_ObjectHideFlags: 0

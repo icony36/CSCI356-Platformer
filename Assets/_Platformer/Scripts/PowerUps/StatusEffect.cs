@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public enum EffectType
 {
@@ -20,8 +19,7 @@ public class StatusEffect : MonoBehaviour
 
     private float elapsedTime = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (effectType.Equals(EffectType.AttackUp))
         {
@@ -37,8 +35,7 @@ public class StatusEffect : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         elapsedTime += Time.deltaTime;
         

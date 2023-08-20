@@ -16,7 +16,7 @@ public class Powerup : MonoBehaviour
     [SerializeField] private GameObject effectPrefab;
 
     [SerializeField] private float value;
-    [Tooltip("In seconds")]
+    [Tooltip("In seconds.")]
     [SerializeField] private float duration;
 
     [SerializeField] PowerupType powerupType = new PowerupType();
@@ -29,7 +29,7 @@ public class Powerup : MonoBehaviour
     {
         //attackUpImage.gameObject.SetActive(false);
         //speedUpImage.gameObject.SetActive(false);
-        //jumpUpImage.gameObject.SetActive(false);
+        //jumpUpImage.gameObject.SetActive(false);  
     }
 
     private void OnTriggerEnter(Collider other)
