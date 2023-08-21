@@ -20,18 +20,12 @@ public class Powerup : MonoBehaviour
     [SerializeField] private float duration;
 
     [SerializeField] PowerupType powerupType = new PowerupType();
-    [SerializeField] BuffIndicator buffIndicator;
 
-
-    //[SerializeField] private GameObject jumpUpImage;
-    //[SerializeField] private GameObject attackUpImage;
-    //[SerializeField] private GameObject speedUpImage;
+    private BuffIndicator buffIndicator;
 
     private void Start()
     {
-        //attackUpImage.gameObject.SetActive(false);
-        //speedUpImage.gameObject.SetActive(false);
-        //jumpUpImage.gameObject.SetActive(false);  
+        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas").GetComponent<BuffIndicator>();
     }
 
     private void OnTriggerEnter(Collider other)

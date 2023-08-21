@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameMenuManager gameMenuManager;
+    [SerializeField] GameMenu gameMenu;
 
     public Player Player { get; private set; }
 
@@ -40,14 +40,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameMenuManager.TogglePauseMenu();
+            gameMenu.TogglePauseMenu();
         }
     }
 
     private void GameIsOver()
     {
         Debug.Log("GAME OVER");
-        gameMenuManager.ShowGameOverMenu();
+        gameMenu.ShowGameOverMenu();
     }
 
     public void GameIsFinished()
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("GAME FINISHED");
         Player.DisableAllActions();
         Player.PlayAnimVictory();
-        gameMenuManager.ShowGameWinMenu();
+        gameMenu.ShowGameWinMenu();
     }
 
     public void ReturnToMainMenu()

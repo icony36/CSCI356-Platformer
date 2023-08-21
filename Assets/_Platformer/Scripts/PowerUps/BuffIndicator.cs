@@ -8,41 +8,25 @@ public class BuffIndicator : MonoBehaviour
     [SerializeField] private GameObject jumpUpImage;
     [SerializeField] private GameObject speedUpImage;
 
-    private bool isAttack;
-    private bool isJump;
-    private bool isSpeed;
-
-    void Start()
+    private void Start()
     {
-        isAttack = false;
-        isJump = false;
-        isSpeed = false;
-
-        attackUpImage.SetActive(isAttack);
-        jumpUpImage.SetActive(isJump);
-        speedUpImage.SetActive(isSpeed);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        attackUpImage.SetActive(isAttack);
-        jumpUpImage.SetActive(isJump);
-        speedUpImage.SetActive(isSpeed);
+        attackUpImage.SetActive(false);
+        jumpUpImage.SetActive(false);
+        speedUpImage.SetActive(false);
     }
 
     public void SetIsAttack(bool value)
     {
-        isAttack = value;
+        attackUpImage.SetActive(value);
     }
 
     public void SetIsJump(bool value)
     {
-        isJump = value;
+        jumpUpImage.SetActive(value);
     }
 
     public void SetIsSpeed(bool value)
     {
-        isSpeed = value;
+        speedUpImage.SetActive(value);
     }
 }

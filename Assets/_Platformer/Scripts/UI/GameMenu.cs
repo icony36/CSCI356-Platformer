@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameMenuManager : MonoBehaviour
+public class GameMenu : MonoBehaviour
 {
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject GameOverMenu;

@@ -23,8 +23,7 @@ public class StatusEffect : MonoBehaviour
 
     private void Start()
     {
-        GameObject uiCanvasObject = GameObject.FindGameObjectWithTag("UICanvas");
-        buffIndicator = uiCanvasObject.GetComponent<BuffIndicator>();
+        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas").GetComponent<BuffIndicator>();
 
         if (effectType.Equals(EffectType.AttackUp))
         {
