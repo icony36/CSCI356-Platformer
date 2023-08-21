@@ -27,38 +27,55 @@ public class StatusEffect : MonoBehaviour
 
         if (effectType.Equals(EffectType.AttackUp))
         {
-            playerData.attackDamage += (int)value; 
+            playerData.attackDamage += (int)value;
+            buffIndicator?.SetAttackUpRotationFill(1f);
         }
         else if (effectType.Equals(EffectType.SpeedUp))
         {
-            playerData.currentMoveSpeed += value;   
+            playerData.currentMoveSpeed += value;
+            buffIndicator?.SetSpeedUpRotationFill(1f);
         }
         else if (effectType.Equals(EffectType.JumpUp))
         {
-            playerData.maxJumps += (int)value;   
+            playerData.maxJumps += (int)value;
+            buffIndicator?.SetJumpUpRotationFill(1f);
         }
     }
 
     private void Update()
     {
         elapsedTime += Time.deltaTime;
-        
-        if(elapsedTime >= duration) 
+
+        if(elapsedTime < duration)
+        {
+            if (effectType.Equals(EffectType.AttackUp))
+            {
+                buffIndicator?.SetAttackUpRotationFill(1 - (elapsedTime / duration));
+            }
+            else if (effectType.Equals(EffectType.SpeedUp))
+            {
+                buffIndicator?.SetSpeedUpRotationFill(1 - (elapsedTime / duration));
+            }
+            else if (effectType.Equals(EffectType.JumpUp))
+            {
+                buffIndicator?.SetJumpUpRotationFill(1 - (elapsedTime / duration));
+            }
+        }
+        else
         {
             if (effectType.Equals(EffectType.AttackUp))
             {
                 playerData.attackDamage = initData.attackDamage;
-                buffIndicator?.SetIsAttack(false);
             }
             else if (effectType.Equals(EffectType.SpeedUp))
             {
                 playerData.currentMoveSpeed = initData.baseMoveSpeed;
-                buffIndicator?.SetIsSpeed(false);
+
             }
             else if (effectType.Equals(EffectType.JumpUp))
             {
                 playerData.maxJumps = initData.maxJumps;
-                buffIndicator?.SetIsJump(false);
+
             }
 
             Destroy(gameObject);

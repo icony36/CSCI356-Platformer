@@ -1205,29 +1205,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3142759160128527599, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 55
+    - target: {fileID: 1593195112934471221, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3142759160128527599, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 3142759160128527599, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -11.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 4120008621252047469, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 331bbc8915ef7364a9dd2b15f3b7e441, type: 3}
-    - target: {fileID: 5878278099313285048, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878278099313285048, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+    - target: {fileID: 1593195112934471221, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
+      propertyPath: m_FillMethod
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6088613260285368579, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
       propertyPath: m_Pivot.x
@@ -1312,14 +1296,6 @@ PrefabInstance:
     - target: {fileID: 6088613260285368579, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6254301065957030714, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6254301065957030714, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7220835754046562836, guid: 56f92cdd39b8bdd47bd888d6dd52f7fa, type: 3}
       propertyPath: m_Name

@@ -21,13 +21,6 @@ public class Powerup : MonoBehaviour
 
     [SerializeField] PowerupType powerupType = new PowerupType();
 
-    private BuffIndicator buffIndicator;
-
-    private void Start()
-    {
-        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -43,22 +36,16 @@ public class Powerup : MonoBehaviour
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.AttackUp, value, duration);
-
-                buffIndicator?.SetIsAttack(true);
             }
             else if (powerupType.Equals(PowerupType.SpeedUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.SpeedUp, value, duration);
-
-                buffIndicator?.SetIsSpeed(true);
             }
             else if (powerupType.Equals(PowerupType.JumpUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.JumpUp, value, duration);
-
-                buffIndicator?.SetIsJump(true);
             }
 
             // play vfx
