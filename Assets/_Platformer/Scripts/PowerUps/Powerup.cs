@@ -25,7 +25,7 @@ public class Powerup : MonoBehaviour
 
     private void Start()
     {
-        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas").GetComponent<BuffIndicator>();
+        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,21 +44,21 @@ public class Powerup : MonoBehaviour
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.AttackUp, value, duration);
 
-                buffIndicator.SetIsAttack(true);
+                buffIndicator?.SetIsAttack(true);
             }
             else if (powerupType.Equals(PowerupType.SpeedUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.SpeedUp, value, duration);
 
-                buffIndicator.SetIsSpeed(true);
+                buffIndicator?.SetIsSpeed(true);
             }
             else if (powerupType.Equals(PowerupType.JumpUp))
             {
                 GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
                 effect.GetComponent<StatusEffect>().InitValues(EffectType.JumpUp, value, duration);
 
-                buffIndicator.SetIsJump(true);
+                buffIndicator?.SetIsJump(true);
             }
 
             // play vfx

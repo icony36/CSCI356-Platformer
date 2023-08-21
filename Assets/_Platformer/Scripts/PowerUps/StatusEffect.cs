@@ -23,7 +23,7 @@ public class StatusEffect : MonoBehaviour
 
     private void Start()
     {
-        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas").GetComponent<BuffIndicator>();
+        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
 
         if (effectType.Equals(EffectType.AttackUp))
         {
@@ -48,17 +48,17 @@ public class StatusEffect : MonoBehaviour
             if (effectType.Equals(EffectType.AttackUp))
             {
                 playerData.attackDamage = initData.attackDamage;
-                buffIndicator.SetIsAttack(false);
+                buffIndicator?.SetIsAttack(false);
             }
             else if (effectType.Equals(EffectType.SpeedUp))
             {
                 playerData.currentMoveSpeed = initData.baseMoveSpeed;
-                buffIndicator.SetIsSpeed(false);
+                buffIndicator?.SetIsSpeed(false);
             }
             else if (effectType.Equals(EffectType.JumpUp))
             {
                 playerData.maxJumps = initData.maxJumps;
-                buffIndicator.SetIsJump(false);
+                buffIndicator?.SetIsJump(false);
             }
 
             Destroy(gameObject);

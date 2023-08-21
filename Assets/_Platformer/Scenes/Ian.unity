@@ -387,10 +387,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpUp
       objectReference: {fileID: 0}
-    - target: {fileID: 9000086233310615932, guid: e9b4ac9ad06c1524fa786daf96532ad7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3927,6 +3923,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5047748257248789498, guid: 25e1e9a5ac782eb47b17d73c0245895a, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 516196139}
     - target: {fileID: 5047748257248789498, guid: 25e1e9a5ac782eb47b17d73c0245895a, type: 3}
       propertyPath: gameMenuManager
       value: 
