@@ -8,7 +8,7 @@ public class NodeGraph : MonoBehaviour
 {
     //=========================================================//
     //[SerializeField] List<Node> nodes;
-    [SerializeField] private bool showGrid = false;
+    //[SerializeField] private bool showGrid = false;
     //=========================================================//
     //private int gridX, gridY; //length and width of grid relative to size of grid nodes      
     //private Vector3 gridStartPos; //origin point of the grid, calculated based on the grid size

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore.Text;
@@ -15,12 +16,12 @@ public class PlayerCombat : Combat
     //[SerializeField] private float baseAttackSpeed = 1f;
     //[Tooltip("Only shown for testing purpose")]
     //[SerializeField] private float currentAttackSpeed;
-    [SerializeField] private float attackInterval = 5f;
 
     [field: Header("Ranged Attack")]
     [SerializeField] private GameObject directionIndicator;
+    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private bool aimingMode = false;
-    [SerializeField] private Vector3 aimDirection = Vector3.zero;
+    [SerializeField] private float attackInterval = 1f;
 
     [field: Header("Skill")]
     [SerializeField] private float skillCooldown = 5f;
@@ -38,7 +39,7 @@ public class PlayerCombat : Combat
     // Local Variables
     private int currentAttackIndex = 0;
     private float currentAttackTimer = 0f;
-
+    private bool canFire = true;
 
     private void Start()
     {
@@ -52,16 +53,24 @@ public class PlayerCombat : Combat
 
     private void Update()
     {
-        currentAttackTimer += Time.deltaTime;
+        if(!canFire)
+            currentAttackTimer += Time.deltaTime;
+
         if (currentAttackTimer >= attackInterval)
         {
             currentAttackTimer = 0f;
-            currentAttackIndex = 0;
+            canFire = true;
         }
 
         if (aimingMode)
         {
-            
+            float rot = 0;
+            rot -= Mouse.current.delta.y.ReadValue() * Time.deltaTime * 25.0f;
+
+            if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
+            {
+                directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
+            }      
         }
     }
 
@@ -81,13 +90,26 @@ public class PlayerCombat : Combat
     {
         if (!CanAttack) { return; }
 
-        if (currentAttackIndex >= 3)
+        if(!aimingMode)
         {
-            currentAttackIndex = 0;
+            if (currentAttackIndex >= 3)
+            {
+                currentAttackIndex = 0;
+            }
+            player.SwitchPlayerState(Player.PlayerState.Attacking);
+            player.PlayAnimAttack(currentAttackIndex, playerData.baseAttackSpeed, playerData.currentAttackSpeed);
+            currentAttackIndex++;
         }
-        player.SwitchPlayerState(Player.PlayerState.Attacking);
-        player.PlayAnimAttack(currentAttackIndex, playerData.baseAttackSpeed, playerData.currentAttackSpeed);
-        currentAttackIndex++;
+        else
+        {
+            if(!canFire) { return; };
+
+            GameObject projectile = Instantiate(projectilePrefab);
+            projectile.transform.position = directionIndicator.transform.GetChild(0).position;
+            projectile.transform.eulerAngles = new Vector3(directionIndicator.transform.eulerAngles.x, transform.eulerAngles.y, 0);
+
+            canFire = false;
+        }
     }
 
     public override void UseSkill()
@@ -126,6 +148,12 @@ public class PlayerCombat : Combat
         buffIndicator.SetCoolDownRotationFill(1f);
         buffIndicator.SetCoolDownOpacity(1f);
     }
+
+    public void ToggleAttackMode()
+    {
+        aimingMode = !aimingMode;
+        directionIndicator.SetActive(aimingMode);
+    }    
 
     public override void CheckIsDead()
     {

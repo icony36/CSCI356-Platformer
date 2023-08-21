@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private InputAction dashAction;
     private InputAction attackAction;
     private InputAction skillAction;
+    private InputAction rangeToggle;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         dashAction = playerInput.actions["Dash"];
         attackAction = playerInput.actions["Attack"];
         skillAction = playerInput.actions["Skill"];
+        rangeToggle = playerInput.actions["Toggle"];
     }
 
     private void Update()
@@ -71,6 +73,11 @@ public class PlayerController : MonoBehaviour
         if (attackAction.triggered)
         {
             player.PlayerCombat.Attack();
+        }
+
+        if(rangeToggle.triggered)
+        {
+            player.PlayerCombat.ToggleAttackMode();
         }
     }
 

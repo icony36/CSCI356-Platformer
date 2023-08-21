@@ -14,4 +14,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Platformer/Scenes/Regina.unity
     guid: 916b4502af40a7c4bbf616e3c5f28cac
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 1bbcaa20f936f6e4b851f25b3f57c474, type: 2}
