@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959535422876092365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52,7 +52,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.8}
+  m_Size: {x: 0.5, y: 0.5, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6222164141139454474
 MonoBehaviour:
@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 5333560178411755799}
   - component: {fileID: 3583132844887684450}
   - component: {fileID: 1031537340107917523}
+  - component: {fileID: 3261288626421548289}
   m_Layer: 0
   m_Name: Slime_01
   m_TagString: Enemy
@@ -105,7 +106,7 @@ Transform:
   - {fileID: 3138867740019280754}
   - {fileID: 3999949922275997324}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &3700869778392376273
 Animator:
@@ -220,6 +221,19 @@ MonoBehaviour:
   shootingPoint: {fileID: 0}
   damageOrbPrefab: {fileID: 0}
   damageTextPrefab: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
+--- !u!114 &3261288626421548289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169954523762822165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e7ea1ab78670a4889857ca87eb1e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillEffect: {fileID: 0}
 --- !u!1 &7744429991069173854
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 1, a: 1}
   radius: 0.5
+  drawForwardLine: 0
 --- !u!1001 &1404310205907261712
 PrefabInstance:
   m_ObjectHideFlags: 0

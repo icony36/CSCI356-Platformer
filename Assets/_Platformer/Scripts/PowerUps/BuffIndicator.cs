@@ -32,9 +32,9 @@ public class BuffIndicator : MonoBehaviour
         jumpUpImage.fillAmount = jumpUpFill;
         speedUpImage.fillAmount = speedUpFill;
 
-        Color imageColor = skillCoolDownImage.color;
-        imageColor.a =  coolDownOpacity;
-        skillCoolDownImage.color = imageColor;
+        //Color imageColor = skillCoolDownImage.color;
+        //imageColor.a =  coolDownOpacity;
+        //skillCoolDownImage.color = imageColor;
     }
 
     /*public void SetIsAttack(bool value)

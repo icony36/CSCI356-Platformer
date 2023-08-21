@@ -162,6 +162,33 @@ public class PlayerCombat : Combat
     }
 
     // Animation Event
+    public void AnimEvents_Hit1()
+    {
+        AttackHitbox.EnableHitBox(playerData.attackDamage);
+
+        // play sfx
+        // play vfx
+    }
+
+    // Animation Event
+    public void AnimEvents_Hit2()
+    {
+        AttackHitbox.EnableHitBox(playerData.attackDamage);
+
+        // play sfx
+        // play vfx
+    }
+
+    // Animation Event
+    public void AnimEvents_Hit3()
+    {
+        AttackHitbox.EnableHitBox(playerData.attackDamage);
+
+        // play sfx
+        // play vfx
+    }
+
+    // Animation Event
     public void AnimEvents_HitEnd()
     {
         AttackHitbox.DisableHitBox();

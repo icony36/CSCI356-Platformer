@@ -85,7 +85,9 @@ public class EnemyCombat : Combat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
+
         // play vfx
+        bot.EnemyVFXManager.PlaySkillEffect();
     }
 
     // Animation Event

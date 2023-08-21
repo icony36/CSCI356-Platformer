@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Bot : MonoBehaviour
 {
+    public EnemyVFXManager EnemyVFXManager { get; private set; }
+
     [Header("Patrolling")]
     [SerializeField] private Transform patrolEndPoint;
     [SerializeField] private float visionRange = 10f;
@@ -51,7 +53,8 @@ public class Bot : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         combat = GetComponent<Combat>();
-        
+        EnemyVFXManager = GetComponent<EnemyVFXManager>();
+
         targetTag = combat?.TargetTag;
 
         target = GameObject.FindWithTag(targetTag);

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 1, a: 1}
   radius: 0.5
+  drawForwardLine: 0
 --- !u!1 &3238163030952017148
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +114,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
+--- !u!1 &5068912275121901742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2168979996310807948}
+  m_Layer: 0
+  m_Name: VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2168979996310807948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068912275121901742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1030819614917102417}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6076129422403684310
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,6 +159,7 @@ GameObject:
   - component: {fileID: 59034907899244393}
   - component: {fileID: 896760937664756707}
   - component: {fileID: 8464238627727136180}
+  - component: {fileID: 2545420341282187256}
   m_Layer: 0
   m_Name: Slime_02
   m_TagString: Enemy
@@ -150,8 +183,9 @@ Transform:
   - {fileID: 4756925023859098171}
   - {fileID: 5511464519055651759}
   - {fileID: 6082010580640397041}
+  - {fileID: 2168979996310807948}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &2911118710810162397
 Animator:
@@ -266,6 +300,19 @@ MonoBehaviour:
   shootingPoint: {fileID: 0}
   damageOrbPrefab: {fileID: 0}
   damageTextPrefab: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
+--- !u!114 &2545420341282187256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076129422403684310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57e7ea1ab78670a4889857ca87eb1e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillEffect: {fileID: 9024824260651242956, guid: 30b3ae1525ddfc14cbc0bc0561b111aa, type: 3}
 --- !u!1001 &4544982368995826885
 PrefabInstance:
   m_ObjectHideFlags: 0
