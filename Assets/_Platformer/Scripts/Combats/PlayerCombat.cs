@@ -33,6 +33,7 @@ public class PlayerCombat : Combat
     // References
     private Player player;
     private PlayerData playerData;
+    private BuffIndicator buffIndicator;
 
     // Local Variables
     private int currentAttackIndex = 0;
@@ -42,6 +43,7 @@ public class PlayerCombat : Combat
     private void Start()
     {
         player = GetComponent<Player>();
+        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
 
         playerData = player.playerData;
         playerData.currentHealth = playerData.maxHealth;
@@ -100,6 +102,7 @@ public class PlayerCombat : Combat
         skill.transform.rotation = transform.rotation;
 
         skillUsed = true;
+        
 
         StartCoroutine(SkillCooldown());
     }
@@ -107,15 +110,21 @@ public class PlayerCombat : Combat
     IEnumerator SkillCooldown()
     {
         float startTime = 0f;
+        buffIndicator.SetCoolDownRotationFill(0f);
+        buffIndicator.SetCoolDownOpacity(0.5f);
 
         while (startTime < skillCooldown)
         {
             startTime += Time.deltaTime;
 
+            buffIndicator.SetCoolDownRotationFill(startTime/skillCooldown);
+
             yield return null;
         }
 
         skillUsed = false;
+        buffIndicator.SetCoolDownRotationFill(1f);
+        buffIndicator.SetCoolDownOpacity(1f);
     }
 
     public override void CheckIsDead()
