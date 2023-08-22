@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
 
     public PlayerData playerData; 
     public PlayerData initData;
-    public Transform effectHolder;
 
     // Animation Params
     public const string ANIM_ATTACK = "Attack";
@@ -40,8 +39,6 @@ public class Player : MonoBehaviour
         Dead
     }
     
-    
-
     private void Awake()
     {
         Animator = GetComponent<Animator>();

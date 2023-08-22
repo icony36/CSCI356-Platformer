@@ -1,25 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] GameMenu gameMenu;
 
     public Player Player { get; private set; }
 
-    private GameObject[] enemies;
-    private GameObject[] powerUps;
+    public PlayerData playerData;
+    public PlayerData initData;
+    public Dictionary<int, bool> enemyState = new Dictionary<int, bool>();
+    public Dictionary<int, bool> powerUpState = new Dictionary<int, bool>();
+
+    [SerializeField] private GameObject enemiesHolder;
+    [SerializeField] private GameObject powerupHolder;
+
     private bool isGameOver;
 
-
-    private void Awake()
+    private void Start()
     {
         Player = GameObject.FindWithTag("Player").GetComponent<Player>();
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        powerUps = GameObject.FindGameObjectsWithTag("PowerUp");
+        Init();
     }
 
     private void Update()
@@ -70,15 +75,44 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void AssignEnemyID() //used in editor
+    {
+
+    }
+
+    public void AssignPowerupID() //used in editor
+    {
+        int i = 0;
+
+        foreach (Transform child in powerupHolder.transform)
+        {
+            child.gameObject.GetComponent<Powerup>().ID = i;
+            powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, false);
+            EditorUtility.SetDirty(child.gameObject.GetComponent<Powerup>());
+            i++;
+        }
+    }
+
+    public void Init() //called on new game start
+    {
+        foreach (Transform child in powerupHolder.transform)
+        {
+            if(child.gameObject.GetComponent<Powerup>())
+                powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, false);
+        }   
+    }
+
     public void SaveGame()
     {
-        //PlayerPrefs.SetFloat("chekPointPosX", player.LastCheckPoint.transform.position.x);
-        //PlayerPrefs.SetFloat("chekPointPosY", player.LastCheckPoint.transform.position.y);
-        //PlayerPrefs.SetFloat("chekPointPosZ", player.LastCheckPoint.transform.position.z);
+        SaveData savedData = new SaveData
+        {
+            currentHealth = playerData.currentHealth,
+            
+        };
 
-        //PlayerPrefs.SetFloat("chekPointRotX", player.LastCheckPoint.transform.rotation.x);
-        //PlayerPrefs.SetFloat("chekPointRotY", player.LastCheckPoint.transform.rotation.y);
-        //PlayerPrefs.SetFloat("chekPointRotZ", player.LastCheckPoint.transform.rotation.z);
+        string filePath = Application.persistentDataPath + "/savedata.sav";
+
+        DataSerializer.SaveJson(savedData, filePath);
 
         Debug.Log("Game saved");
     }

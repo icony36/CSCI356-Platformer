@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Bot : MonoBehaviour
 {
+    public int ID;
     public EnemyVFXManager EnemyVFXManager { get; private set; }
 
     [Header("Patrolling")]
