@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum PowerupType
+public enum PowerupType
 {
     HealthUp,
     AttackUp,
@@ -13,7 +13,6 @@ enum PowerupType
 public class Powerup : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData; //reference to player data
-    [SerializeField] private GameObject effectPrefab;
 
     [SerializeField] private float value;
     [Tooltip("In seconds.")]
@@ -32,20 +31,9 @@ public class Powerup : MonoBehaviour
                 else
                     playerData.currentHealth += (int)value;
             }
-            else if(powerupType.Equals(PowerupType.AttackUp))
+            else
             {
-                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
-                effect.GetComponent<StatusEffect>().InitValues(EffectType.AttackUp, value, duration);
-            }
-            else if (powerupType.Equals(PowerupType.SpeedUp))
-            {
-                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
-                effect.GetComponent<StatusEffect>().InitValues(EffectType.SpeedUp, value, duration);
-            }
-            else if (powerupType.Equals(PowerupType.JumpUp))
-            {
-                GameObject effect = Instantiate(effectPrefab, other.gameObject.GetComponent<Player>().effectHolder);
-                effect.GetComponent<StatusEffect>().InitValues(EffectType.JumpUp, value, duration);
+                other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);
             }
 
             // play vfx
