@@ -175,6 +175,7 @@ public class PlayerCombat : Combat
         indicator.SetDamageText(damageToInflict);
 
         // play sfx
+        AudioManager.instance.PlaySFX(3);
         // play vfx
 
         CheckIsDead();
@@ -186,6 +187,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
+        AudioManager.instance.PlaySFX(1);
         // play vfx
     }
 
@@ -195,6 +197,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
+        AudioManager.instance.PlaySFX(2);
         // play vfx
     }
 
@@ -204,6 +207,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
+        AudioManager.instance.PlaySFX(1);
         // play vfx
     }
 
@@ -213,6 +217,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
+        AudioManager.instance.PlaySFX(2);
         // play vfx
     }
 
