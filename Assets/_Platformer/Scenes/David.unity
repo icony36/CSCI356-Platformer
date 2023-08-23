@@ -468,7 +468,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792221796}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: SFXOnVolumeChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &486955379
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +650,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1058,6 +1070,11 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &625387534 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4321599940132224383, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634213239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2628,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2855,7 +2872,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3644,7 +3661,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1792221796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: OnVolumeChanged
+        m_MethodName: MusicOnVolumeChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3823,7 +3840,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3865,6 +3882,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761549610}
   m_CullTransparentMesh: 1
+--- !u!82 &1772179699 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7307007105937598775, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1772851318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,7 +4152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1791194553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4182,13 +4204,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1498701567}
+  - {fileID: 1662026531}
+  - {fileID: 486955380}
+  - {fileID: 1603232989}
   - {fileID: 581627772}
   - {fileID: 1669495398}
   - {fileID: 420328542}
   - {fileID: 911547563}
-  - {fileID: 1662026531}
-  - {fileID: 486955380}
-  - {fileID: 1603232989}
   m_Father: {fileID: 1792221795}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4219,6 +4241,18 @@ MonoBehaviour:
   settingMenuUI: {fileID: 1791194552}
   musicSlider: {fileID: 1669495399}
   music: {fileID: 785925204}
+  sfxSlider: {fileID: 420328543}
+  sfx:
+  - {fileID: 625387534}
+  - {fileID: 1970059435}
+  - {fileID: 2098544707}
+  - {fileID: 1772179699}
+  - {fileID: 1861258954}
+  - {fileID: 1861258953}
+  - {fileID: 1861258952}
+  - {fileID: 1861258951}
+  - {fileID: 1861258956}
+  - {fileID: 1861258955}
 --- !u!114 &1792221797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4375,6 +4409,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+--- !u!82 &1861258951 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8503210633506001125, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1861258952 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7744153059402516516, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1861258953 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3397283658472983480, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1861258954 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5668418237723442747, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1861258955 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3001175360267245281, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1861258956 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4968319943967264565, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1935548853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,6 +4574,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935548853}
   m_CullTransparentMesh: 1
+--- !u!82 &1970059435 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2462263949414658021, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1974217969
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,6 +4922,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070364378}
   m_CullTransparentMesh: 1
+--- !u!82 &2098544707 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7660140181380955829, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 1861258950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104746653
 GameObject:
   m_ObjectHideFlags: 0
