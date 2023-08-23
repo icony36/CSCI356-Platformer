@@ -9,6 +9,7 @@ TagManager:
   - IceSurface
   - PowerUp
   - GameManager
+  - AudioManager
   layers:
   - Default
   - TransparentFX

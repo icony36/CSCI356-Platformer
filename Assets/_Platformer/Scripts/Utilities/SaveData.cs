@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveData : MonoBehaviour
+public class SaveData 
 {
-    //player variables
+    //player health
     public int currentHealth;
 
-    public Dictionary<int, bool> enemyStatus;
-
-    public Dictionary<int, bool> powerupStatus;
+    //player transform positon
+    public float posX;
+    public float posY;
+    public float posZ;  
+    
+    //entity state
+    public Dictionary<int, bool> enemySaveState;
+    public Dictionary<int, bool> powerupSaveState;
 }

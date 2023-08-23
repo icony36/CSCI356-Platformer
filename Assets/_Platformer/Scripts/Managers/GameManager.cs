@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GameManager : GenericSingleton<GameManager>
+public class GameManager : MonoBehaviour
 {
     [SerializeField] GameMenu gameMenu;
 
@@ -75,9 +75,34 @@ public class GameManager : GenericSingleton<GameManager>
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void Init() //need this to only be called on new game start
+    {
+        if(powerupHolder != null)
+            foreach (Transform child in powerupHolder.transform)
+            {
+                if (child.gameObject.GetComponent<Powerup>())
+                    powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, true);
+            }
+
+        if(enemiesHolder != null)
+            foreach (Transform child in enemiesHolder.transform)
+            {
+                if (child.gameObject.GetComponent<Bot>())
+                    enemyState.Add(child.gameObject.GetComponent<Bot>().ID, true);
+            }
+    }
+
     public void AssignEnemyID() //used in editor
     {
+        int i = 0;
 
+        foreach (Transform child in enemiesHolder.transform)
+        {
+            child.gameObject.GetComponent<Bot>().ID = i;
+            enemyState.Add(child.gameObject.GetComponent<Bot>().ID, false);
+            EditorUtility.SetDirty(child.gameObject.GetComponent<Bot>());
+            i++;
+        }
     }
 
     public void AssignPowerupID() //used in editor
@@ -93,32 +118,57 @@ public class GameManager : GenericSingleton<GameManager>
         }
     }
 
-    public void Init() //called on new game start
-    {
-        foreach (Transform child in powerupHolder.transform)
-        {
-            if(child.gameObject.GetComponent<Powerup>())
-                powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, false);
-        }   
-    }
-
-    public void SaveGame()
+    public void SaveData()
     {
         SaveData savedData = new SaveData
         {
             currentHealth = playerData.currentHealth,
-            
+            posX = Player.transform.position.x,
+            posY = Player.transform.position.y,
+            posZ = Player.transform.position.z,
+            enemySaveState = enemyState,
+            powerupSaveState = powerUpState
         };
 
-        string filePath = Application.persistentDataPath + "/savedata.sav";
+        string filePath = Application.streamingAssetsPath + "/savedata.sav";
 
         DataSerializer.SaveJson(savedData, filePath);
 
-        Debug.Log("Game saved");
+        Debug.Log("Data saved");
     }
 
-    public void LoadGame()
+    public void LoadData()
     {
+        SaveData savedData = new SaveData();
 
+        string filePath = Application.streamingAssetsPath + "/savedata.sav";
+
+        savedData = DataSerializer.LoadJson(filePath);
+
+        UpdateGameState(savedData);
+
+        Debug.Log("Data loaded");
+    }
+
+    private void UpdateGameState(SaveData saveData)
+    {
+        playerData.currentHealth = saveData.currentHealth;
+
+        Player.transform.position = new Vector3(saveData.posX, saveData.posY, saveData.posZ);
+
+        enemyState = saveData.enemySaveState;
+        powerUpState = saveData.powerupSaveState;
+
+        if (powerupHolder != null)
+            foreach (Transform child in powerupHolder.transform)
+            {
+                child.gameObject.SetActive(powerUpState[child.gameObject.GetComponent<Powerup>().ID]);
+            }
+
+        if (enemiesHolder != null)
+            foreach (Transform child in enemiesHolder.transform)
+            {
+                child.gameObject.SetActive(enemyState[child.gameObject.GetComponent<Bot>().ID]);
+            }
     }
 }

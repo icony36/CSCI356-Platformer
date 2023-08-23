@@ -53,7 +53,6 @@ public class Player : MonoBehaviour
     {
         SwitchPlayerState(PlayerState.Normal);
         
-        //ideally this initialization should be done in GameManager
         playerData.maxHealth = initData.maxHealth;
         playerData.attackDamage = initData.attackDamage;
         playerData.baseAttackSpeed = initData.baseAttackSpeed;

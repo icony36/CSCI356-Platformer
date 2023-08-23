@@ -35,6 +35,7 @@ public class PlayerCombat : Combat
     private Player player;
     private PlayerData playerData;
     private BuffIndicator buffIndicator;
+    private AudioManager audioManager;
 
     // Local Variables
     private int currentAttackIndex = 0;
@@ -45,6 +46,7 @@ public class PlayerCombat : Combat
     {
         player = GetComponent<Player>();
         buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
 
         playerData = player.playerData;
         playerData.currentHealth = playerData.maxHealth;
@@ -119,6 +121,9 @@ public class PlayerCombat : Combat
         player.SwitchPlayerState(Player.PlayerState.Casting);
         player.PlayAnimSkill();
 
+        // play sfx
+        audioManager?.PlaySFX(7);
+
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;
         skill.transform.rotation = transform.rotation;
@@ -175,7 +180,7 @@ public class PlayerCombat : Combat
         indicator.SetDamageText(damageToInflict);
 
         // play sfx
-        AudioManager.instance.PlaySFX(3);
+        audioManager?.PlaySFX(3);
         // play vfx
 
         CheckIsDead();
@@ -187,7 +192,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.instance.PlaySFX(1);
+        audioManager?.PlaySFX(1);
         // play vfx
     }
 
