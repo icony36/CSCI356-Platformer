@@ -23,12 +23,14 @@ public class EnemyCombat : Combat
 
     // References
     private Bot bot;
+    private AudioManager audioManager;
 
     // Local Variables
 
     private void Start()
     {
         bot = GetComponent<Bot>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
 
         CurrentHealth = MaxHealth;
     }
@@ -58,6 +60,9 @@ public class EnemyCombat : Combat
         if (CurrentHealth <= 0)
         {
             bot.SwitchBotState(Bot.BotState.Dead);
+
+            // play sfx
+            audioManager?.PlaySFX(9);
         }
     }
 
@@ -85,7 +90,7 @@ public class EnemyCombat : Combat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
-
+        audioManager.PlaySFX(8);
         // play vfx
         bot.EnemyVFXManager.PlaySkillEffect();
     }
@@ -106,7 +111,6 @@ public class EnemyCombat : Combat
     public void AnimEvents_Shoot()
     {
         Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
-
         // play sfx
         // play vfx
     }
