@@ -23,7 +23,7 @@ public class CheckPoint : MonoBehaviour
         {
             player.SetLastCheckPoint(gameObject);
 
-            gameManager.SaveGame();
+            gameManager.SaveData();
 
             //sphereCollider.enabled = false;
         }

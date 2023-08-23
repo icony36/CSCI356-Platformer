@@ -15,7 +15,6 @@ public enum PowerupType
 public class Powerup : MonoBehaviour
 {
     public int ID;
-    public bool pickedUp = false;
 
     [SerializeField] private PlayerData playerData; //reference to player data
 
@@ -26,10 +25,12 @@ public class Powerup : MonoBehaviour
     [SerializeField] PowerupType powerupType = new PowerupType();
 
     private AudioManager audioManager;
+    private GameManager gameManager;
 
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager")?.GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,8 +57,8 @@ public class Powerup : MonoBehaviour
 
             // play vfx
             // play sfx
-            GameManager.Instance.powerUpState[ID] = true;
-            Destroy(gameObject);
+            gameManager.powerUpState[ID] = false;
+            gameObject.SetActive(false);
         }
     }
 }

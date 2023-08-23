@@ -24,6 +24,7 @@ public class EnemyCombat : Combat
     // References
     private Bot bot;
     private AudioManager audioManager;
+    private GameManager gameManager;
 
     // Local Variables
 
@@ -31,6 +32,7 @@ public class EnemyCombat : Combat
     {
         bot = GetComponent<Bot>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager")?.GetComponent<GameManager>();
 
         CurrentHealth = MaxHealth;
     }
@@ -60,7 +62,7 @@ public class EnemyCombat : Combat
         if (CurrentHealth <= 0)
         {
             bot.SwitchBotState(Bot.BotState.Dead);
-
+            gameManager.enemyState[bot.ID] = false;
             // play sfx
             audioManager?.PlaySFX(9);
         }
