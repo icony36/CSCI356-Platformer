@@ -121,6 +121,9 @@ public class PlayerCombat : Combat
         player.SwitchPlayerState(Player.PlayerState.Casting);
         player.PlayAnimSkill();
 
+        // play sfx
+        audioManager?.PlaySFX(7);
+
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;
         skill.transform.rotation = transform.rotation;

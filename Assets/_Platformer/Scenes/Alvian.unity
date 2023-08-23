@@ -346,6 +346,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3397283658472983480, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ce0e4297d2fde6b4e80f3d1fd42639c1, type: 3}
+    - target: {fileID: 5140197272800325082, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+      propertyPath: soundEffect.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140197272800325082, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+      propertyPath: soundEffect.Array.data[7]
+      value: 
+      objectReference: {fileID: 591158058}
     - target: {fileID: 6060754517301157330, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -395,6 +407,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+--- !u!82 &591158058 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3397283658472983480, guid: e17f1b446ad52b849ae1b4a2758d9fcf, type: 3}
+  m_PrefabInstance: {fileID: 591158057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &640039653
 PrefabInstance:
   m_ObjectHideFlags: 0

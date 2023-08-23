@@ -25,6 +25,13 @@ public class Powerup : MonoBehaviour
 
     [SerializeField] PowerupType powerupType = new PowerupType();
 
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -35,10 +42,16 @@ public class Powerup : MonoBehaviour
                     playerData.currentHealth = playerData.maxHealth;
                 else
                     playerData.currentHealth += (int)value;
+
+                // play sfx
+                audioManager?.PlaySFX(6);
             }
             else
             {
-                other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);   
+                other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);
+
+                // play sfx
+                audioManager?.PlaySFX(5);
             }
 
             // play vfx
