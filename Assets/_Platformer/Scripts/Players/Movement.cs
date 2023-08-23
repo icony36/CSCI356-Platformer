@@ -195,8 +195,8 @@ public class Movement : MonoBehaviour
 
         player.PlayAnimJump(true);
         // play sfx
-        // play sfx
         AudioManager.instance.PlaySFX(0);
+        // play vfx
 
         isJumping = true;
 
