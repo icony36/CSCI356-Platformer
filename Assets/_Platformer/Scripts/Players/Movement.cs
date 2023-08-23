@@ -51,11 +51,13 @@ public class Movement : MonoBehaviour
     private PlayerData playerData; 
     private CharacterController characterController;
     private TrailRenderer motionTrail;
+    private AudioManager audioManager;
 
     private float startingColliderRadius;
 
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
         player = GetComponent<Player>();
         characterController = GetComponent<CharacterController>();
         motionTrail = GetComponentInChildren<TrailRenderer>();
@@ -196,7 +198,8 @@ public class Movement : MonoBehaviour
         player.PlayAnimJump(true);
         // play sfx
         // play sfx
-        AudioManager.instance.PlaySFX(0);
+        //AudioManager.instance.PlaySFX(0);
+        audioManager?.PlaySFX(0);
 
         isJumping = true;
 
@@ -205,6 +208,9 @@ public class Movement : MonoBehaviour
 
     IEnumerator Dash(Vector3 movement)
     {
+        // play sfx
+        audioManager?.PlaySFX(4);
+
         motionTrail.emitting = true;
 
         isDashing = true;

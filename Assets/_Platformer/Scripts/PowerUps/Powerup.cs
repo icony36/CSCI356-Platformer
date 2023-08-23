@@ -33,7 +33,7 @@ public class Powerup : MonoBehaviour
             }
             else
             {
-                other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);
+                other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);   
             }
 
             // play vfx
