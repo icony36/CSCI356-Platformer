@@ -202,7 +202,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.instance.PlaySFX(2);
+        AudioManager.Instance.PlaySFX(2);
         // play vfx
     }
 
@@ -212,7 +212,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.instance.PlaySFX(1);
+        AudioManager.Instance.PlaySFX(1);
         // play vfx
     }
 
@@ -222,7 +222,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.instance.PlaySFX(2);
+        AudioManager.Instance.PlaySFX(2);
         // play vfx
     }
 

@@ -92,7 +92,8 @@ public class EnemyCombat : Combat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
-        audioManager.PlaySFX(8);
+        audioManager?.PlaySFX(8);
+
         // play vfx
         bot.EnemyVFXManager.PlaySkillEffect();
     }
@@ -114,6 +115,9 @@ public class EnemyCombat : Combat
     {
         Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
         // play sfx
+        audioManager?.PlaySFX(8);
+
         // play vfx
+        bot.EnemyVFXManager.PlaySkillEffect();
     }
 }

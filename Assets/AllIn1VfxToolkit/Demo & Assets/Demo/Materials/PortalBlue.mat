@@ -29,7 +29,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _ColorRampLuminosity
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -249,10 +249,10 @@ Material:
     - _DepthGlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _FadeBurnColor: {r: 1, g: 1, b: 0, a: 1}
     - _FrontFaceTint: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 0.9424863, b: 1, a: 1}
+    - _GlowColor: {r: 0.05098039, g: 1, b: 0.87200797, a: 1}
     - _LightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Shape2Color: {r: 0.20968345, g: 0.18062477, b: 0.9339623, a: 1}
+    - _Shape2Color: {r: 0.3333333, g: 0.7490196, b: 0.6467794, a: 1}
     - _Shape3Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShapeColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -262,7 +262,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.13710395991802216,"g":0.27468398213386538,"b":0.7452830076217651,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":0.9400835037231445,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: _ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.0,"g":0.471097469329834,"b":0.5490196347236633,"a":1.0},"time":0.0},{"color":{"r":0.20392155647277833,"g":0.6563608050346375,"b":0.7647058963775635,"a":1.0},"time":0.21765469014644624},{"color":{"r":0.0,"g":0.424073725938797,"b":0.501960813999176,"a":1.0},"time":0.4764782190322876},{"color":{"r":0.027450986206531526,"g":0.7252335548400879,"b":0.8352941274642944,"a":1.0},"time":0.7147020697593689},{"color":{"r":0.0,"g":0.46459558606147768,"b":0.5490196347236633,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -298,7 +298,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: 2346beff2249bfff224bc0ff214ec1ff2151c2ff2054c3ff2056c4ff1f59c5ff1f5cc6ff1e5ec7ff1d61c8ff1d64c9ff1c66caff1c69cbff1b6cccff1b6eceff1a71cfff1a74d0ff1977d1ff1879d2ff187cd3ff177fd4ff1781d5ff1684d6ff1687d7ff1589d8ff158cd9ff148fdaff1391dbff1394dcff1297ddff129adeff119cdfff119fe0ff10a2e1ff10a4e2ff0fa7e3ff0eaae4ff0eace5ff0dafe6ff0db2e7ff0cb4e8ff0cb7e9ff0bbaeaff0bbdebff0abfecff09c2edff09c5efff08c7f0ff08caf1ff07cdf2ff07cff3ff06d2f4ff06d5f5ff05d7f6ff04daf7ff04ddf8ff03e0f9ff03e2faff02e5fbff02e8fcff01eafdff01edfeff00f0ffff
+  _typelessdata: 00788cff047c90ff087f94ff0b8298ff0f869cff1389a0ff178da4ff1b90a8ff1e94acff2297b0ff269bb4ff2a9eb8ff2ea1bcff31a5c0ff33a6c2ff30a3beff2d9fbaff2a9bb5ff2698b1ff2394adff2091a9ff1d8da5ff1a89a1ff16869dff138299ff107e95ff0d7b91ff0a778cff067388ff037084ff006c80ff007186ff01768bff017b91ff028197ff02869cff038ba2ff0390a8ff0495adff049ab3ff059fb9ff05a4beff06a9c4ff06afcaff07b4cfff07b9d5ff07b5d1ff06b2cdff06aec9ff05aac5ff05a7c1ff05a3bdff049fb9ff049bb5ff0498b1ff0394acff0390a8ff028da4ff0289a0ff02859cff018298ff017e94ff007a90ff00768cff
   m_StreamData:
     serializedVersion: 2
     offset: 0

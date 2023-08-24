@@ -98,7 +98,7 @@ MonoBehaviour:
   targetTag: Enemy
   attackDamage: 10
   speed: 10
-  hitVFX: {fileID: 660604078598729725, guid: a0deec4ddb1966147a11772c5df7cda6, type: 3}
+  hitVFX: {fileID: 660604078598729725, guid: b635cb10f3a177247b1e7f65c6982e7d, type: 3}
 --- !u!1001 &7550340996988521445
 PrefabInstance:
   m_ObjectHideFlags: 0

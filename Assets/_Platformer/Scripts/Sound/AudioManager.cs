@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager Instance;
 
-    public AudioSource[] soundEffect;
+    [SerializeField] private AudioSource[] soundEffect;
 
     private void Awake()
     {
-        instance = this; 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instance = this; 
     }
 
     public void PlaySFX(int sfxNumber)

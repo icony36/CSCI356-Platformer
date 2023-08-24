@@ -5,12 +5,18 @@ using UnityEngine;
 public class EnemyVFXManager : MonoBehaviour
 {
     [SerializeField] private ParticleSystem skillEffect;
+    [SerializeField] private ParticleSystem skillEffectPrefab;
 
     public void PlaySkillEffect()
     {
-        if(skillEffect != null)
+        if (skillEffectPrefab != null)
         {
-            Instantiate(skillEffect, transform.position, Quaternion.identity);
+            Instantiate(skillEffectPrefab, transform.position + new Vector3(0f, 0.01f, 0f), Quaternion.identity);
+        }
+
+        if (skillEffect != null)
+        {
+            skillEffect.Play();
         }
     }
 }
