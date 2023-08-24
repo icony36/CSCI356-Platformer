@@ -30,7 +30,7 @@ public class DamageOrb : MonoBehaviour
 
             if (targetCombat != null)
             {
-                targetCombat.InflictDamage(attackDamage);
+                targetCombat.InflictDamage(attackDamage, transform.position);
             }        
         }
 

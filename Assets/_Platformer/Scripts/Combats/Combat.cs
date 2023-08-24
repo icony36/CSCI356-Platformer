@@ -19,5 +19,5 @@ public abstract class Combat : MonoBehaviour, IDamageable
     public abstract void UseSkill();
     public abstract void CheckIsDead();
     public abstract void InstantKill();
-    public abstract void InflictDamage(float damageToInflict);
+    public abstract void InflictDamage(float damageToInflict, Vector3 damageSource);
 }

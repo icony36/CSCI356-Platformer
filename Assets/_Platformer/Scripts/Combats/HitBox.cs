@@ -40,7 +40,7 @@ public class HitBox : MonoBehaviour
 
                //Debug.Log(combat.gameObject.name + " is attacking: " +  targetCombat.gameObject.name);
 
-                targetCombat.InflictDamage(damageToInflict);
+                targetCombat.InflictDamage(damageToInflict, transform.position);
             }
 
             hitTargetList.Add(other);

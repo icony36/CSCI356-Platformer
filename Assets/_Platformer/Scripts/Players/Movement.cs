@@ -54,6 +54,7 @@ public class Movement : MonoBehaviour
     private AudioManager audioManager;
 
     private float startingColliderRadius;
+    private Vector3 knockBackImpact;
 
     private void Start()
     {
@@ -75,9 +76,14 @@ public class Movement : MonoBehaviour
         if (isClimbing) { return; }
 
         if (moveValue > 0)
+        {
             facingRight = true;
+
+        }
         else if(moveValue < 0)
+        { 
             facingRight = false;
+        }
 
         moveVec = new Vector3(0, 0, 0);
 
@@ -174,6 +180,16 @@ public class Movement : MonoBehaviour
                 isSliding = false;
             }
         }
+
+        // knock back
+        if (knockBackImpact.magnitude > 0.2f)
+        {
+            knockBackImpact *= Time.deltaTime * 50f;
+            knockBackImpact.y = 0;
+
+            moveVec = knockBackImpact;          
+        }
+        knockBackImpact = Vector3.Lerp(knockBackImpact, Vector3.zero, Time.deltaTime * 5);
 
         // pass the movement to the character controller
         if (!onIceSurface)
@@ -336,6 +352,15 @@ public class Movement : MonoBehaviour
     public void EnableCharacterController(bool shouldEnable)
     {
         characterController.enabled = shouldEnable;
+    }
+
+    public void AddKnockBack(Vector3 damageSource, float force)
+    {
+        Vector3 impactDirection = transform.position - damageSource;
+        impactDirection.Normalize();
+        impactDirection.y = 0;
+
+        knockBackImpact = impactDirection * force;
     }
 }
 

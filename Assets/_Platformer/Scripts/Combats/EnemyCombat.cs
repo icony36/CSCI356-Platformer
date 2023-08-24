@@ -68,7 +68,7 @@ public class EnemyCombat : Combat
         }
     }
 
-    public override void InflictDamage(float damageToInflict)
+    public override void InflictDamage(float damageToInflict, Vector3 damageSource)
     {
         if (isInvincible) { return; }
 

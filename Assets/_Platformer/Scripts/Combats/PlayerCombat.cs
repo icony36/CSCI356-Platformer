@@ -11,11 +11,8 @@ public class PlayerCombat : Combat
 {
     [field: SerializeField] public Color TagColor { get; private set; } = new Color(0, 255, 0);
 
-    [field: Header("Normal Attack")]
-    //[field: SerializeField] public int AttackDamage { get; private set; } = 10;
-    //[SerializeField] private float baseAttackSpeed = 1f;
-    //[Tooltip("Only shown for testing purpose")]
-    //[SerializeField] private float currentAttackSpeed;
+    [Header("Knock Back")]
+    [SerializeField] private float knockBackImpact = 10f;
 
     [field: Header("Ranged Attack")]
     [SerializeField] private GameObject directionIndicator;
@@ -164,16 +161,18 @@ public class PlayerCombat : Combat
     {
         if (playerData.currentHealth <= 0)
         {
-            player?.SwitchPlayerState(Player.PlayerState.Dead);
+            player.SwitchPlayerState(Player.PlayerState.Dead);
         }
     }
-    public override void InflictDamage(float damageToInflict)
+    public override void InflictDamage(float damageToInflict, Vector3 damageSource)
     {
         if (isInvincible) { return; }
 
         playerData.currentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
 
         player.PlayAnimHurt();
+
+        player.Movement.AddKnockBack(damageSource, knockBackImpact);
 
         // instantiate floating damage
         DamageIndicator indicator = Instantiate(DamageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
@@ -202,7 +201,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.Instance.PlaySFX(2);
+        audioManager?.PlaySFX(2);
         // play vfx
     }
 
@@ -212,7 +211,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.Instance.PlaySFX(1);
+        audioManager?.PlaySFX(1);
         // play vfx
     }
 
@@ -222,7 +221,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        AudioManager.Instance.PlaySFX(2);
+        audioManager?.PlaySFX(2);
         // play vfx
     }
 

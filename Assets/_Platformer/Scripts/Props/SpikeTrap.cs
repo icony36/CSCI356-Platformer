@@ -38,7 +38,7 @@ public class SpikeTrap : MonoBehaviour {
                 // play sfx
                 // play vfx
 
-                targetCombat.InflictDamage(trapDamage);
+                targetCombat.InflictDamage(trapDamage, transform.position);
             }
         }
     }
