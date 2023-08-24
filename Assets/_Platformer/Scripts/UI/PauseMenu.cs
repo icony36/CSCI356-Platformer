@@ -17,13 +17,26 @@ public class PauseMenu : MonoBehaviour
     public AudioSource[] sfx;
 
 
+    private const string MusicVolumeKey = "MusicVolume";
+    private const string SFXVolumeKey = "SFXVolume";
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        musicSlider.value = music.volume;
-        sfxSlider.value = sfx[0].volume;
-        
+
+        // Load saved volume settings or use default values
+        float savedMusicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
+        float savedSFXVolume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f);
+
+        music.volume = savedMusicVolume;
+        musicSlider.value = savedMusicVolume;
+
+        foreach (AudioSource sfxSource in sfx)
+        {
+            sfxSource.volume = savedSFXVolume;
+        }
+        sfxSlider.value = savedSFXVolume;
+
     }
 
     // Update is called once per frame
@@ -64,6 +77,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Setting()
     {
+        pauseMenuUI.SetActive(false);
         settingMenuUI.SetActive(true);
     }
 
@@ -83,14 +97,20 @@ public class PauseMenu : MonoBehaviour
     public void MusicOnVolumeChanged()
     {
         music.volume = musicSlider.value;
+        // Save the updated music volume setting
+        PlayerPrefs.SetFloat(MusicVolumeKey, musicSlider.value);
+        PlayerPrefs.Save();
     }
 
     public void SFXOnVolumeChanged()
     {
-        foreach (AudioSource sfx in sfx)
+        foreach (AudioSource sfxSource in sfx)
         {
-            sfx.volume = sfxSlider.value;
+            sfxSource.volume = sfxSlider.value;
         }
+        // Save the updated SFX volume setting
+        PlayerPrefs.SetFloat(SFXVolumeKey, sfxSlider.value);
+        PlayerPrefs.Save();
     }
 
 }
