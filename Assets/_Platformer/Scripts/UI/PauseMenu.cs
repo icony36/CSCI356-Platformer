@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         resolutionDropdown.ClearOptions();
         resolutionDropdown.AddOptions(resolutionOptions);
 
+        InitializeResolutionDropdown();
     }
 
     // Update is called once per frame
@@ -153,7 +154,7 @@ public class PauseMenu : MonoBehaviour
         if (resolutionIndex >= 0 && resolutionIndex < Screen.resolutions.Length)
         {
             Resolution resolution = Screen.resolutions[resolutionIndex];
-            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+            SetResolution(resolutionIndex); // Call the SetResolution function to apply the change
         }
     }
 
