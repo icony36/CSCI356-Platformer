@@ -285,7 +285,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                         m_RebindOverlay?.SetActive(false);
                         m_RebindStopEvent?.Invoke(this, operation);
 
-                        if (CheckDuplpicateBindings(action, bindingIndex, allCompositeParts))
+                        if (CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
                         {
                             action.RemoveBindingOverride(bindingIndex);
                             CleanUp();
@@ -332,7 +332,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindOperation.Start();
         }
 
-        private bool CheckDuplpicateBindings(InputAction action, int bindingIndex, bool allCompositeParts = false)
+        private bool CheckDuplicateBindings(InputAction action, int bindingIndex, bool allCompositeParts = false)
         {
             InputBinding newBinding = action.bindings[bindingIndex];
 
