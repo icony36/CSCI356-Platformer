@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public AudioSource music;
     public Slider sfxSlider;
     public AudioSource[] sfx;
+    public Dropdown resolutionDropdown;
 
 
     private const string MusicVolumeKey = "MusicVolume";
@@ -36,6 +37,18 @@ public class PauseMenu : MonoBehaviour
             sfxSource.volume = savedSFXVolume;
         }
         sfxSlider.value = savedSFXVolume;
+
+        int currentResolutionIndex = GetCurrentResolutionIndex();
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+
+        List<string> resolutionOptions = new List<string>();
+        foreach (Resolution resolution in Screen.resolutions)
+        {
+            resolutionOptions.Add($"{resolution.width} x {resolution.height}");
+        }
+        resolutionDropdown.ClearOptions();
+        resolutionDropdown.AddOptions(resolutionOptions);
 
     }
 
@@ -113,4 +126,48 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    private void InitializeResolutionDropdown()
+    {
+        resolutionDropdown.ClearOptions();
+
+        List<string> resolutionOptions = new List<string>();
+
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+            Resolution resolution = Screen.resolutions[i];
+            string option = $"{resolution.width} x {resolution.height}";
+            resolutionOptions.Add(option);
+        }
+
+        resolutionDropdown.AddOptions(resolutionOptions);
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = Screen.resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void OnResolutionChanged(int resolutionIndex)
+    {
+        if (resolutionIndex >= 0 && resolutionIndex < Screen.resolutions.Length)
+        {
+            Resolution resolution = Screen.resolutions[resolutionIndex];
+            Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        }
+    }
+
+    private int GetCurrentResolutionIndex()
+    {
+        Resolution currentResolution = Screen.currentResolution;
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+            if (Screen.resolutions[i].width == currentResolution.width &&
+                Screen.resolutions[i].height == currentResolution.height)
+            {
+                return i;
+            }
+        }
+        return 0; // Default to the first resolution if current resolution is not found
+    }
 }
