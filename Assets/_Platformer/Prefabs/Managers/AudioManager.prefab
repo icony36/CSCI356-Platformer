@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3241324442606444058
 Transform:
   m_ObjectHideFlags: 0
@@ -434,6 +434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6060754517301157330}
+  - component: {fileID: 6440492318943881632}
   - component: {fileID: 5140197272800325082}
   m_Layer: 0
   m_Name: AudioManager
@@ -457,8 +458,104 @@ Transform:
   - {fileID: 7026179346631211640}
   - {fileID: 3241324442606444058}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6440492318943881632
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470900427151882903}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &5140197272800325082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,17 +568,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c57e0cef324294fb9276882c7cd7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffect:
-  - {fileID: 7307007105937598775}
-  - {fileID: 4321599940132224383}
-  - {fileID: 2462263949414658021}
-  - {fileID: 7660140181380955829}
-  - {fileID: 4968319943967264565}
-  - {fileID: 3001175360267245281}
-  - {fileID: 5668418237723442747}
-  - {fileID: 3397283658472983480}
-  - {fileID: 8503210633506001125}
-  - {fileID: 7744153059402516516}
+  jumpSFX: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  attack1SFX: {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
+  attack2SFX: {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
+  hitSFX: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  dashSFX: {fileID: 8300000, guid: 887f164841002464f864e6163eaee41f, type: 3}
+  buffSFX: {fileID: 8300000, guid: 3d2092ec6d9ed8042addd27d23c01195, type: 3}
+  healthBuffSFX: {fileID: 8300000, guid: 99afc565556bdef488875eefcf74a6e6, type: 3}
+  earthSkillSFX: {fileID: 8300000, guid: ce0e4297d2fde6b4e80f3d1fd42639c1, type: 3}
+  enemyDamageOrbSFX: {fileID: 8300000, guid: 261bcbd4892f3d046b7c935adb236619, type: 3}
+  enemyDeathSFX: {fileID: 8300000, guid: b3b5c27ee32c2114685511108f22676d, type: 3}
 --- !u!1 &2579350323583558277
 GameObject:
   m_ObjectHideFlags: 0

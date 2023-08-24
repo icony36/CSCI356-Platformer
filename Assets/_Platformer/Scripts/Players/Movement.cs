@@ -212,10 +212,9 @@ public class Movement : MonoBehaviour
         yVelocity = jumpSpeed;
 
         player.PlayAnimJump(true);
+
         // play sfx
-        // play sfx
-        //AudioManager.instance.PlaySFX(0);
-        audioManager?.PlaySFX(0);
+        audioManager?.PlaySFX("Jump");
 
         isJumping = true;
 
@@ -225,7 +224,7 @@ public class Movement : MonoBehaviour
     IEnumerator Dash(Vector3 movement)
     {
         // play sfx
-        audioManager?.PlaySFX(4);
+        audioManager?.PlaySFX("Dash");
 
         motionTrail.emitting = true;
 

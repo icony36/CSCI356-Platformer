@@ -45,18 +45,16 @@ public class Powerup : MonoBehaviour
                     playerData.currentHealth += (int)value;
 
                 // play sfx
-                audioManager?.PlaySFX(6);
+                audioManager?.PlaySFX("HealthBuff");
             }
             else
             {
                 other.gameObject.GetComponent<StatusEffect>().ApplyEffect(powerupType, value, duration);
 
                 // play sfx
-                audioManager?.PlaySFX(5);
+                audioManager?.PlaySFX("Buff");
             }
 
-            // play vfx
-            // play sfx
             gameManager.powerUpState[ID] = false;
             gameObject.SetActive(false);
         }

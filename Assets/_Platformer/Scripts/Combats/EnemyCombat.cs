@@ -63,8 +63,9 @@ public class EnemyCombat : Combat
         {
             bot.SwitchBotState(Bot.BotState.Dead);
             gameManager.enemyState[bot.ID] = false;
+            
             // play sfx
-            audioManager?.PlaySFX(9);
+            audioManager?.PlaySFX("EnemyDeath");
         }
     }
 
@@ -92,7 +93,7 @@ public class EnemyCombat : Combat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
-        audioManager?.PlaySFX(8);
+        audioManager?.PlaySFX("EnemyDamageOrb");
 
         // play vfx
         bot.EnemyVFXManager.PlaySkillEffect();
@@ -115,7 +116,7 @@ public class EnemyCombat : Combat
     {
         Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
         // play sfx
-        audioManager?.PlaySFX(8);
+        audioManager?.PlaySFX("EnemyDamageOrb");
 
         // play vfx
         bot.EnemyVFXManager.PlaySkillEffect();

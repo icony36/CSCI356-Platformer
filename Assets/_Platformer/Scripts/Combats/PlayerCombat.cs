@@ -119,7 +119,7 @@ public class PlayerCombat : Combat
         player.PlayAnimSkill();
 
         // play sfx
-        audioManager?.PlaySFX(7);
+        audioManager?.PlaySFX("EarthSkill");
 
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;
@@ -179,7 +179,7 @@ public class PlayerCombat : Combat
         indicator.SetDamageText(damageToInflict);
 
         // play sfx
-        audioManager?.PlaySFX(3);
+        audioManager?.PlaySFX("Hit");
         // play vfx
 
         CheckIsDead();
@@ -191,7 +191,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        audioManager?.PlaySFX(1);
+        audioManager?.PlaySFX("Attack1");
         // play vfx
     }
 
@@ -201,7 +201,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        audioManager?.PlaySFX(2);
+        audioManager?.PlaySFX("Attack2");
         // play vfx
     }
 
@@ -211,7 +211,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        audioManager?.PlaySFX(1);
+        audioManager?.PlaySFX("Attack1");
         // play vfx
     }
 
@@ -221,7 +221,7 @@ public class PlayerCombat : Combat
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        audioManager?.PlaySFX(2);
+        audioManager?.PlaySFX("Attack2");
         // play vfx
     }
 
