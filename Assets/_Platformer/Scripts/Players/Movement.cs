@@ -142,7 +142,7 @@ public class Movement : MonoBehaviour
         }
 
         // jump
-        if (CanMove && jumpCounter < playerData.maxJumps && shouldJump)
+        if (CanMove && !onIceSurface && jumpCounter < playerData.maxJumps && shouldJump)
         {
             Jump();
         }
