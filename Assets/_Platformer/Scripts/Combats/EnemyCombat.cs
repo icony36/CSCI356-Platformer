@@ -51,11 +51,6 @@ public class EnemyCombat : Combat
         bot.PlayAnimAttack();
     }
 
-    public override void UseSkill()
-    {
-        if (!CanSkill) { return; }
-    }
-
     public override void CheckIsDead()
     {
         if (CurrentHealth <= 0)
