@@ -111,8 +111,6 @@ public class PlayerCombat : Combat
         }
     }
 
-   
-
     public void UseSkill()
     {
         if (!CanSkill || skillUsed) { return; }
