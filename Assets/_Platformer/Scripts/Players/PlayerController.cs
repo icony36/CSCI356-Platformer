@@ -55,11 +55,13 @@ public class PlayerController : MonoBehaviour
         {
             if (player.CurrentState != Player.PlayerState.Normal && player.CurrentState != Player.PlayerState.Dead)
             {
-                player.SwitchPlayerState(Player.PlayerState.Normal);
+                if (player.Movement.CanMove)
+                    player.SwitchPlayerState(Player.PlayerState.Normal);
             }
         }
 
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
+
         // move
         player.Movement.MovePlayer(moveValue.x, moveAction.triggered, jumpAction.triggered, dashAction.triggered);
         // climb

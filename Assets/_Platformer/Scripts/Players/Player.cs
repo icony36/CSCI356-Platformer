@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
 
         CurrentState = newState;
-
+  
         // entering new state 
         switch (newState)
         {
