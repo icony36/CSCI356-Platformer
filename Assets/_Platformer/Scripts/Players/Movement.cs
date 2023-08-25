@@ -142,9 +142,17 @@ public class Movement : MonoBehaviour
         }
 
         // jump
-        if (CanMove && !onIceSurface && jumpCounter < playerData.maxJumps && shouldJump)
+        if (CanMove && jumpCounter < playerData.maxJumps && shouldJump)
         {
+            if (onIceSurface && isSliding)
+            {
+                StopCoroutine(Slide());
+                slideDirection.x = 0;
+                isSliding = false;
+                onIceSurface = false;
+            }
             Jump();
+            
         }
 
         // dash
@@ -175,9 +183,7 @@ public class Movement : MonoBehaviour
         {
             if (moveVec != slideDirection)
             {
-                StopCoroutine(Slide());
-                slideDirection.x = 0;
-                isSliding = false;
+                slideDirection.x = moveVec.x;
             }
         }
 
@@ -196,7 +202,7 @@ public class Movement : MonoBehaviour
         {
             characterController.Move(moveVec * Time.deltaTime);
         }
-        else if (onIceSurface && !characterController.isGrounded)
+        else if (onIceSurface && !isSliding)
         {
             characterController.Move(moveVec * Time.deltaTime);
         }
