@@ -8,19 +8,12 @@ public class Skill : MonoBehaviour
     [SerializeField] private PlayerData playerData;
     [SerializeField] private float skillMult;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartCoroutine(ActivateSkill());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    IEnumerator ActivateSkill()
+    private IEnumerator ActivateSkill()
     {
         SkillHitbox.EnableHitBox(Mathf.Round(playerData.attackDamage * skillMult));
 
