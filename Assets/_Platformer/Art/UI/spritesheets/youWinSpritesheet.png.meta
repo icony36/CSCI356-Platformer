@@ -1,0 +1,2133 @@
+fileFormatVersion: 2
+guid: 6faa6ec795aa92c4fb7ff75325c230a3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: youWinSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcc2be81ceaee64f84aee27c26ceb40
+      internalID: -637824659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4387308c951b4ae4c9b8592b4cbc50aa
+      internalID: -698665915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117611877dcad6d4397c15eb1eb9a57b
+      internalID: 773257020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53388e4183c23f4e8ae187390ebd043
+      internalID: 2095176417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ba73e872f0cb5438094ff887889fe1
+      internalID: -1999832166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b224a54b8e3d94f4ea346b7f5e905031
+      internalID: -1243141292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6c05fd1d779164d8262570c7404421
+      internalID: 1641068144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ca91d4c592b5b4fa2737eaeddf1013
+      internalID: -470760870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b16255cfdf566a478aeef161db60dd7
+      internalID: 1825313676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf803df1a84bb34bb7d408ec5f6c6b7
+      internalID: 1377363075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd3c4bb5bc7e884e944a00b359180c5
+      internalID: 1484236171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 9800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c90f6597dd33c64a8fb066807f278ea
+      internalID: -838062328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f43e2140dca66142b02aec961bd1c8f
+      internalID: -1133952068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc11c7754bf30547b2e460d24f0262a
+      internalID: 4715078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51713b51314ef1e459421adfb85bfd92
+      internalID: 549341896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166753e52641f1640b20ac1f481ef10f
+      internalID: -1093113773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1986cc8a6c9c69488cc1eaca3734ecb
+      internalID: -1358983372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7032001683335064b9be04d33f653162
+      internalID: -95406049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1cf9f524420f9b4ebd8f292f2fdb68c
+      internalID: 646033406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551779fbfe9f8c041820a561d9c419e2
+      internalID: 603771238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25be259e2e87ec8439a07ae508216cf4
+      internalID: -1348373121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74257bce6bdbbac4986d63c92d909312
+      internalID: -1783029486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f902207ea7b872040bdf333e666a24c0
+      internalID: -418426809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 8400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cdd2e0532957e45831ed6da5fde1d5
+      internalID: -1699985102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a818fd026bd086140abcd4f315ed1b49
+      internalID: 19440869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee8d0f0c8bbe4b45b8856fdc71126f8
+      internalID: -844341943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ab21f77e97c3a45ae4d2f4ae2246ed
+      internalID: 579143719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17939723e2241c44480a8d5081bf3494
+      internalID: 2012671183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526febf88cd15694fbceab3ae4e221c7
+      internalID: 78927340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280f520c285f5f6438c609260d275c7c
+      internalID: -821946321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6091fb52e9e3aed449d8433197293ba8
+      internalID: 449899341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7aa0ec7e467f7419d82a31cb426d65
+      internalID: -2046268092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f61d5d7a7e4c04195738b4e815f257
+      internalID: -845946930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af304f02db705e4d980524580fcf4d3
+      internalID: 850324064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0873c00a9b31c42983011750a1f7a5
+      internalID: -1139028252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 7000
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8ef4787f293944292881bb7fb2b0a8
+      internalID: 1358084335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2006fceff16736b49b6ee1171a43a707
+      internalID: 589403321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200f6bee00e776145a3b85999f9b1852
+      internalID: 1124565234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac082140b4c38af4b8ec4d53e89a8c92
+      internalID: -1742017816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fb9c8dcebdfc24f979e1b0627f126e
+      internalID: 754915899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f12b420106512b45a03e8dff0a1a5c3
+      internalID: -321461388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35d6bfc8c567124db565b7d0527bd3d
+      internalID: -1251824310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab943e13ff890a049b9cf02c85afb27b
+      internalID: -1824497528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2be56f623fdfa24b846b62dcd5b09a0
+      internalID: 121091478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9e0eb5a7c2ffb46a63bfea73382420
+      internalID: -98474651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af6d97c3a6de7d4287c43420a8e261b
+      internalID: 998313260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99661525534d8f4b9bfb9cb2fc554a5
+      internalID: -1158789065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 5600
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9767c5d0d877d6744b7b6408f849dbcf
+      internalID: -165585405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd76d37abdd80aa449abc65237656c81
+      internalID: -1026619680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72f592a59a38704e87edf98cab9eff2
+      internalID: -1951474416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733f6445e78fe534696dc9ae04a46bdf
+      internalID: 2103609531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a76f8cbca54e642bfacff1276b9989
+      internalID: -64078749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f2630e0a4a8c94981cea06c65057eb
+      internalID: -1554019176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94fc4a0f09a3c84e8caff625c806daf
+      internalID: -27024577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0ff8dc351e3184483f85d07f68de26
+      internalID: 1229246136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b038658189d7a8b4fba182b6064f666d
+      internalID: -1129425180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2624f35dcc1815e45b30837122b6a75e
+      internalID: 367819309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b369eac0a4fc34cb2c14cc45e02275
+      internalID: -1782702679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c354746b197954481077a8b398b190
+      internalID: -310320079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 4200
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff7296073b841246a8f70b437ae0df1
+      internalID: 530649646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa29dd4087e57c4eb83cf84c30d89dc
+      internalID: -472618782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ec5adeac4b7ce41928ac3e19aef8d3
+      internalID: -1690769408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6f65f5e60bbce42947f9149f5f6d85
+      internalID: -1383432601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9091c19e91858e042b8d5bdee3b6d8f3
+      internalID: 606415048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc8727c70c7e53479de9a1b757bc6f1
+      internalID: 155747928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d5b646fcac6ec408731cd8e952cd0b
+      internalID: -275776979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e29b5a0dce0af4c9076152625c6df5
+      internalID: 1055494913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687e19c3261f1a14b9a525712ee089b1
+      internalID: 395754905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efa9e03d17d288499baa15a0d6a8e03
+      internalID: -357864660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd79142deb94b344f962ccdecb29b0ef
+      internalID: -1594359864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c0b494a2d8a3c49ad662a8461a1de8
+      internalID: 872413834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 2800
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa76b97882d02844a9bafe85e022fc85
+      internalID: 2065939551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b0d826a02452e4db813a28ae061632
+      internalID: -510817716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69cf68c04bada9408b59700f4dce2fb
+      internalID: -2072283203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6651db0e6d0db94f82b1de377fea304
+      internalID: 1309243094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1c18c3971b3974d9807d11631394c6
+      internalID: 1640115908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e63196ae001414d95317294723d992
+      internalID: 1865140424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d40e50f2cf2894eba70c9462e251bd
+      internalID: -1623904299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 6000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f338a1e68c707fa499d4665d5adae9b9
+      internalID: -332121269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 7000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13da7d9087f51f043bad140ae04731fa
+      internalID: -955980220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 8000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea70795dc41f9b4a8c4004951c97092
+      internalID: -1926784196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 9000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a0ebabcf121d341879750351925844
+      internalID: 1643788999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 10000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd63df1ffeff744aa5c9cc235520a9e
+      internalID: 458792547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 11000
+        y: 1400
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45047f9c485af594dbdf8038afd918b5
+      internalID: 247012131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076c12827ba9fb242815ef4b96f6170d
+      internalID: -1253582996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee39fad74d0b05049ae0d22df2b20fe8
+      internalID: -606929032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ee5697cea19524a9f256bd666db1c7
+      internalID: -246110814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c2c89bce88b184d8b59a02c245d81b
+      internalID: 591591302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948f186f2d6fc144eb23f8a6cf30c2e8
+      internalID: -1824637251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: youWinSpritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 1000
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c77b7aab2e32b4a83a42b72c6928c4
+      internalID: 988152864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 27962bfd2574b7d4fa146df5352b9a78
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      youWinSpritesheet_0: -637824659
+      youWinSpritesheet_1: -698665915
+      youWinSpritesheet_10: 1484236171
+      youWinSpritesheet_11: -838062328
+      youWinSpritesheet_12: -1133952068
+      youWinSpritesheet_13: 4715078
+      youWinSpritesheet_14: 549341896
+      youWinSpritesheet_15: -1093113773
+      youWinSpritesheet_16: -1358983372
+      youWinSpritesheet_17: -95406049
+      youWinSpritesheet_18: 646033406
+      youWinSpritesheet_19: 603771238
+      youWinSpritesheet_2: 773257020
+      youWinSpritesheet_20: -1348373121
+      youWinSpritesheet_21: -1783029486
+      youWinSpritesheet_22: -418426809
+      youWinSpritesheet_23: -1699985102
+      youWinSpritesheet_24: 19440869
+      youWinSpritesheet_25: -844341943
+      youWinSpritesheet_26: 579143719
+      youWinSpritesheet_27: 2012671183
+      youWinSpritesheet_28: 78927340
+      youWinSpritesheet_29: -821946321
+      youWinSpritesheet_3: 2095176417
+      youWinSpritesheet_30: 449899341
+      youWinSpritesheet_31: -2046268092
+      youWinSpritesheet_32: -845946930
+      youWinSpritesheet_33: 850324064
+      youWinSpritesheet_34: -1139028252
+      youWinSpritesheet_35: 1358084335
+      youWinSpritesheet_36: 589403321
+      youWinSpritesheet_37: 1124565234
+      youWinSpritesheet_38: -1742017816
+      youWinSpritesheet_39: 754915899
+      youWinSpritesheet_4: -1999832166
+      youWinSpritesheet_40: -321461388
+      youWinSpritesheet_41: -1251824310
+      youWinSpritesheet_42: -1824497528
+      youWinSpritesheet_43: 121091478
+      youWinSpritesheet_44: -98474651
+      youWinSpritesheet_45: 998313260
+      youWinSpritesheet_46: -1158789065
+      youWinSpritesheet_47: -165585405
+      youWinSpritesheet_48: -1026619680
+      youWinSpritesheet_49: -1951474416
+      youWinSpritesheet_5: -1243141292
+      youWinSpritesheet_50: 2103609531
+      youWinSpritesheet_51: -64078749
+      youWinSpritesheet_52: -1554019176
+      youWinSpritesheet_53: -27024577
+      youWinSpritesheet_54: 1229246136
+      youWinSpritesheet_55: -1129425180
+      youWinSpritesheet_56: 367819309
+      youWinSpritesheet_57: -1782702679
+      youWinSpritesheet_58: -310320079
+      youWinSpritesheet_59: 530649646
+      youWinSpritesheet_6: 1641068144
+      youWinSpritesheet_60: -472618782
+      youWinSpritesheet_61: -1690769408
+      youWinSpritesheet_62: -1383432601
+      youWinSpritesheet_63: 606415048
+      youWinSpritesheet_64: 155747928
+      youWinSpritesheet_65: -275776979
+      youWinSpritesheet_66: 1055494913
+      youWinSpritesheet_67: 395754905
+      youWinSpritesheet_68: -357864660
+      youWinSpritesheet_69: -1594359864
+      youWinSpritesheet_7: -470760870
+      youWinSpritesheet_70: 872413834
+      youWinSpritesheet_71: 2065939551
+      youWinSpritesheet_72: -510817716
+      youWinSpritesheet_73: -2072283203
+      youWinSpritesheet_74: 1309243094
+      youWinSpritesheet_75: 1640115908
+      youWinSpritesheet_76: 1865140424
+      youWinSpritesheet_77: -1623904299
+      youWinSpritesheet_78: -332121269
+      youWinSpritesheet_79: -955980220
+      youWinSpritesheet_8: 1825313676
+      youWinSpritesheet_80: -1926784196
+      youWinSpritesheet_81: 1643788999
+      youWinSpritesheet_82: 458792547
+      youWinSpritesheet_83: 247012131
+      youWinSpritesheet_84: -1253582996
+      youWinSpritesheet_85: -606929032
+      youWinSpritesheet_86: -246110814
+      youWinSpritesheet_87: 591591302
+      youWinSpritesheet_88: -1824637251
+      youWinSpritesheet_89: 988152864
+      youWinSpritesheet_9: 1377363075
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
