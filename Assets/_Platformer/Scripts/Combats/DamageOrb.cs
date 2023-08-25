@@ -34,11 +34,14 @@ public class DamageOrb : MonoBehaviour
             }        
         }
 
-        if(hitVFX != null)
+        if (other.tag != "PowerUp")
         {
-            Instantiate(hitVFX, transform.position, Quaternion.identity);
-        }
+            if (hitVFX != null)
+            {
+                Instantiate(hitVFX, transform.position, Quaternion.identity);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

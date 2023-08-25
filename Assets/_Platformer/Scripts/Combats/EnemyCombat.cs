@@ -5,30 +5,30 @@ using UnityEngine;
 
 public class EnemyCombat : Combat
 {
-    [field: SerializeField] public Color TagColor { get; private set; } = new Color(255, 0, 0);
+    [field: SerializeField] public Color TagColor { get; protected set; } = new Color(255, 0, 0);
 
     [field: Header("Health")]
-    [field: SerializeField] public int MaxHealth { get; private set; } = 100;
-    [field: SerializeField] public int CurrentHealth { get; private set; }
+    [field: SerializeField] public int MaxHealth { get; protected set; } = 100;
+    [field: SerializeField] public int CurrentHealth { get; protected set; }
 
     [field: Header("Normal Attack")]
-    [field: SerializeField] public int AttackDamage { get; private set; } = 10;
+    [field: SerializeField] public int AttackDamage { get; protected set; } = 10;
 
     [Header("Shooting")]
-    [SerializeField] private Transform shootingPoint;
-    [SerializeField] private GameObject damageOrbPrefab;
+    [SerializeField] protected Transform shootingPoint;
+    [SerializeField] protected GameObject damageOrbPrefab;
 
     [field: Header("Floating Damage Text")]
-    [field: SerializeField] private GameObject damageTextPrefab;
+    [field: SerializeField] protected GameObject damageTextPrefab;
 
     // References
-    private Bot bot;
-    private AudioManager audioManager;
-    private GameManager gameManager;
+    protected Bot bot;
+    protected AudioManager audioManager;
+    protected GameManager gameManager;
 
     // Local Variables
 
-    private void Start()
+    protected virtual void Start()
     {
         bot = GetComponent<Bot>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
@@ -48,7 +48,6 @@ public class EnemyCombat : Combat
     {
         if (!CanAttack) { return; }
 
-        // for bot
         bot.PlayAnimAttack();
     }
 
@@ -88,7 +87,7 @@ public class EnemyCombat : Combat
     }
 
     // Animation Event
-    public void AnimEvents_Hit()
+    public virtual void AnimEvents_Hit()
     {
         AttackHitbox.EnableHitBox(AttackDamage);
 
@@ -100,21 +99,22 @@ public class EnemyCombat : Combat
     }
 
     // Animation Event
-    public void AnimEvents_HitEnd()
+    public virtual void AnimEvents_HitEnd()
     {
         AttackHitbox.DisableHitBox();
     }
 
     // Animation Event
-    public void AnimEvents_End()
+    public virtual void AnimEvents_End()
     {
         //bot.SwitchBotState(Bot.BotState.Patrolling);
     }
 
     // Animation Event
-    public void AnimEvents_Shoot()
+    public virtual void AnimEvents_Shoot()
     {
         Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
+        
         // play sfx
         audioManager?.PlaySFX("EnemyDamageOrb");
 

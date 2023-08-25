@@ -6,27 +6,27 @@ using UnityEngine;
 public class Bot : MonoBehaviour
 {
     public int ID;
-    public EnemyVFXManager EnemyVFXManager { get; private set; }
+    public EnemyVFXManager EnemyVFXManager { get; protected set; }
 
     [Header("Patrolling")]
-    [SerializeField] private Transform patrolEndPoint;
-    [SerializeField] private float visionRange = 10f;
+    [SerializeField] protected float visionRange = 10f;
+    [SerializeField] protected Transform patrolEndPoint;
 
-    [Header("Chasing")]
+    [Header("Attacking")]
     [Tooltip("Stopping distance for attack.")]
-    [SerializeField] private float attackRange = 1.6f;
+    [SerializeField] protected float attackRange = 1.6f;
     [Tooltip("Speed of attack animation.")]
-    [SerializeField] private float attackRate = 1f;
+    [SerializeField] protected float attackRate = 1f;
     [Tooltip("In seconds.")]
-    [SerializeField] private float attackCooldown;
+    [SerializeField] protected float attackCooldown;
 
     [Header("Movement")]
-    [SerializeField] private float speed = 10;
+    [SerializeField] protected float speed = 10;
 
     // References  
-    private Animator animator;
-    private GameObject target;
-    private Combat combat;
+    protected Animator animator;
+    protected GameObject target;
+    protected Combat combat;
 
     // Animation Params
     private const string ANIM_ATTACK = "Attack";
@@ -44,13 +44,13 @@ public class Bot : MonoBehaviour
     }
 
     // Variables
-    private string targetTag;
+    protected string targetTag;
     private BotState currentState;
-    private Vector3 startingPosition;
-    private Vector3 endingPosition;
-    private float lastAttackTime = 0f;
+    protected Vector3 startingPosition;
+    protected Vector3 endingPosition;
+    protected float lastAttackTime = 0f;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
         combat = GetComponent<Combat>();
@@ -109,6 +109,7 @@ public class Bot : MonoBehaviour
 
         currentState = newState;
 
+        // entering new state
         switch (currentState)
         {
             case BotState.Patrolling:
@@ -175,7 +176,7 @@ public class Bot : MonoBehaviour
         }
     }
 
-    private void MoveToTarget(Vector3 targetPosition)
+    protected virtual void MoveToTarget(Vector3 targetPosition)
     {
         // get movement direction
         Vector3 direction = targetPosition - transform.position;
@@ -219,10 +220,10 @@ public class Bot : MonoBehaviour
     {
         yield return new WaitForSeconds(delaySeconds);
 
-        currentState = BotState.Patrolling;
+        SwitchBotState(BotState.Patrolling);
     }
 
-    private bool CanSeeTarget()
+    protected bool CanSeeTarget()
     {
         Vector3 origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Vector3 halfExtents = transform.localScale / 2;
@@ -236,7 +237,7 @@ public class Bot : MonoBehaviour
 
         if (Physics.BoxCast(origin, halfExtents,direction, out hitInfo, orientation, maxDistance))
         {
-            if (hitInfo.transform.CompareTag("Player"))
+            if (hitInfo.transform.CompareTag(targetTag))
             {
                 return true;
             }
@@ -245,30 +246,32 @@ public class Bot : MonoBehaviour
         return false;
     }
 
-    private bool CheckIsTargetDead()
+    protected bool CheckIsTargetDead()
     {
-        Player player = target.GetComponent<Player>();
-        if (player.CurrentState == Player.PlayerState.Dead)
+        if (targetTag == "Player")
         {
-            return true;
+            Player player = target.GetComponent<Player>();
+            if (player.CurrentState == Player.PlayerState.Dead)
+            {
+                return true;
+            }
         }
 
         return false;
     }
 
-
-    public void PlayAnimAttack()
+    public virtual void PlayAnimAttack()
     {
         animator.SetTrigger(ANIM_ATTACK);
         animator.SetFloat(ANIM_ATTACK_SPEED, attackRate);
     }
 
-    public void PlayAnimIdle()
+    public virtual void PlayAnimIdle()
     {
         animator.SetFloat(ANIM_SPEED, 0f);
     }
 
-    public void PlayAnimHurt()
+    public virtual void PlayAnimHurt()
     {
         animator.SetTrigger(ANIM_HURT);
     }
@@ -278,7 +281,4 @@ public class Bot : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-
-
 }
