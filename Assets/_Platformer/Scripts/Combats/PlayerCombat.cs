@@ -122,7 +122,7 @@ public class PlayerCombat : Combat
     private void SpawnSkill()
     {
         // play sfx
-        audioManager?.PlaySFX("EarthSkill");
+        audioManager?.PlaySFX("PlayerSkill");
 
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;

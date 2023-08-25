@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip dashSFX;
     [SerializeField] private AudioClip buffSFX;
     [SerializeField] private AudioClip healthBuffSFX;
-    [SerializeField] private AudioClip earthSkillSFX;
+    [SerializeField] private AudioClip lightningSkillSFX;
     [SerializeField] private AudioClip enemyDamageOrbSFX;
     [SerializeField] private AudioClip enemyDeathSFX;
 
@@ -49,8 +49,8 @@ public class AudioManager : MonoBehaviour
             case "HealthBuff":
                 audioSource.PlayOneShot(healthBuffSFX);
                 break;
-            case "EarthSkill":
-                audioSource.PlayOneShot(earthSkillSFX);
+            case "PlayerSkill":
+                audioSource.PlayOneShot(lightningSkillSFX);
                 break;
             case "EnemyDamageOrb":
                 audioSource.PlayOneShot(enemyDamageOrbSFX, 0.25f);
