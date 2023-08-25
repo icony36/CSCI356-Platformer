@@ -184,7 +184,7 @@ public class Movement : MonoBehaviour
         // knock back
         if (knockBackImpact.magnitude > 0.2f)
         {
-            knockBackImpact *= Time.deltaTime * 50f;
+            knockBackImpact *= Time.deltaTime * 20f;
             knockBackImpact.y = 0;
 
             moveVec = knockBackImpact;          

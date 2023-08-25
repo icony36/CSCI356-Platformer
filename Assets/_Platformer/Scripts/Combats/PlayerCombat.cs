@@ -111,22 +111,27 @@ public class PlayerCombat : Combat
         }
     }
 
-    public override void UseSkill()
+   
+
+    public void UseSkill()
     {
         if (!CanSkill || skillUsed) { return; }
 
         player.SwitchPlayerState(Player.PlayerState.Casting);
         player.PlayAnimSkill();
+    }
 
+    private void SpawnSkill()
+    {
         // play sfx
         audioManager?.PlaySFX("EarthSkill");
 
         GameObject skill = Instantiate(skillPrefab);
         skill.transform.position = transform.position;
-        skill.transform.rotation = transform.rotation;
+        skill.transform.rotation = Quaternion.LookRotation(new Vector3(transform.forward.x, 0f, 0f));
+        
 
         skillUsed = true;
-        
 
         StartCoroutine(SkillCooldown());
     }
@@ -229,6 +234,12 @@ public class PlayerCombat : Combat
     public void AnimEvents_HitEnd()
     {
         AttackHitbox.DisableHitBox();
+    }
+
+    // Animation Event
+    public void AnimEvents_Cast()
+    {
+        SpawnSkill();
     }
 
     // Animation Event
