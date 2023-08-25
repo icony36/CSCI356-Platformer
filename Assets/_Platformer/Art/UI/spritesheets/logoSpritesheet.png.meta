@@ -1,0 +1,1473 @@
+fileFormatVersion: 2
+guid: ee1e3e5e3c9031743b07af7007169925
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: logoSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 4107
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b2d3e9c205005448297002499218cc
+      internalID: -320315892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 4107
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcf584105de3e04e8b0a2a4187d6b7a
+      internalID: -1872351694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 3599
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0fd5db6a6786144e8aeb68820e76234
+      internalID: -791899342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 3599
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db47ab36c5dc73f499a77db2d0a5d67a
+      internalID: 348657333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 3599
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa787b45a098c19458819686325a8872
+      internalID: -74078710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 3599
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d862a47b4980f469542b7b752d92d8
+      internalID: -672303673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3091
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0280fa613f377d54b8da52ecd92f96d9
+      internalID: 1887867537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 3091
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885f91f836035b44a92bba54632a1dae
+      internalID: -50843993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 3091
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d5a6d9c026d424680c0ec9ccbca999
+      internalID: 1756569950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 3091
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab5f79c182aacc418bc428b90fb7241
+      internalID: -457122041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 3091
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c56f7412b0c8bf4d86cc8b664d30c70
+      internalID: -821261343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 3091
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88598ea031ce526408736682a232838b
+      internalID: -1948207079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 4107
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca363afda86f40244a4530971d5d0eb0
+      internalID: -955945085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 3091
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a233a3940ec5d46b2f0595edad350e
+      internalID: -1695593388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2583
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d7c7750ca4dd744b54472a3c255997
+      internalID: 1822168280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 2583
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e59247d4613039459f33f9d317986f0
+      internalID: -404288617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 2583
+        width: 616
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345f3913c9f3ec04b9712dc01d54c707
+      internalID: 770017285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 2583
+        width: 616
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f53cce625882274da726b39f57ce723
+      internalID: -1878169932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 2583
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be39b32377b39ce4ca96fb41b47fcfaf
+      internalID: -689062193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 2583
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830bc6ee941da944d824a043ae8d6197
+      internalID: 357263866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 2583
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c83ab110df53f4abdc28dc464526ce
+      internalID: 2105004101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2075
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c5fa7672eeefc46af37073a3790e19
+      internalID: -511652478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 2075
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68509c3df90f074ca7c441209254519
+      internalID: 1878815805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 4107
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6950ebb1fe75c498499704ec5eb0ff
+      internalID: -973889057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 2075
+        width: 616
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdb81103f0f8c240b8a9f37e6969b06
+      internalID: 254235709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 2075
+        width: 616
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23356fd539d378a4da638e7a2a3fb3b9
+      internalID: -2098837014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 2075
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9a1ef8b5776c94792f9aade0a50ea5
+      internalID: 2108033751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 2075
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaaad609101e7e4c8236f7730e55d3d
+      internalID: 2112891770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 2075
+        width: 615
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23622b29102ee245b09a39142e32c40
+      internalID: -843877205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1567
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e6c1dd650e25b54e97330a0dc9a4c28
+      internalID: 807180228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1567
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358e3aa23b31bd046b83da14d7af9407
+      internalID: 495991015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 1567
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a8ddb5f12ef2c41b12858a1f5a867f
+      internalID: -2003755062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 1567
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cc1a27545ee9e4386355b224ace303
+      internalID: -1439955831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 1567
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866cb0bc896725448ad5a4d229f6f849
+      internalID: 273762122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 4107
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3323f941d7cb74ea8bece09a1a9d9e
+      internalID: -407721739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1567
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f96aebafcc7fe43827d13a09e8cb06
+      internalID: 1784160481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 1567
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f470b395464b64c47b672e0596defee7
+      internalID: 1667094389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1059
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6eecd32e3eaeeb45b87f2ac4451ac9a
+      internalID: -1338877748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1059
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e15b45a18be9c2458cc8efe62710d84
+      internalID: -1566707934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 1059
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ce445d96827fa4198e8de0d53d36ed
+      internalID: 1994958096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 1059
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8aaa78aac634c47a1823250f33f232
+      internalID: 347048825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 1059
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7301cf3130c494da984b283f786d72
+      internalID: 1648747038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1059
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3b43b8098c697448e60ba0df50409a
+      internalID: 1870371683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 1059
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84d70b9956b063439cbcebb1cea4f41
+      internalID: -350314447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 551
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8015dcd0810ab41b9bbd1423c2f1d2
+      internalID: 1902018874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 4107
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cda5a8e09409a5468127d5e2b1ba639
+      internalID: -828030504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 551
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2679cbfa0f07382409d969a00780960c
+      internalID: -2002073702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 551
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5366ad66d312f46a4875eeaafbf09f
+      internalID: -1267519510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 551
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045481d84c931ff46b784c583d3be95b
+      internalID: 253898441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 2842
+        y: 551
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbd20daa510cba449d6889deb9ff7b6
+      internalID: -1034183871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 551
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e219eb074459684baafcc05bacafeb3
+      internalID: 1320620321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 551
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0a96abf1b1f254ab7968cdbe3a2d5e
+      internalID: 1079348279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 43
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158533f65325dae4cb34992a755c5306
+      internalID: -669902349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 43
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1729b0bba19649e44adafe2a5a65619f
+      internalID: -1508085642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 43
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b81d6ec26fe6d439effd8796d5e86e
+      internalID: -612607363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 43
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589016e242b4b2e46b8b9a135c800f8c
+      internalID: 116336494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 4107
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f51608554825944a19d133123f4659
+      internalID: -19494413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3599
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8b02a1e5f10b64eb069ee0a4d4f829
+      internalID: -1276428775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 3599
+        width: 615
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4115374f29ca94bb5f6c0d970763e4
+      internalID: 1670066848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logoSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 3599
+        width: 616
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94dd690d6639b384c852c89f4c487166
+      internalID: 2101288891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 33b1c14c9fb746d48b106af9fc918e55
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      logoSpritesheet_0: -320315892
+      logoSpritesheet_1: -1872351694
+      logoSpritesheet_10: -791899342
+      logoSpritesheet_11: 348657333
+      logoSpritesheet_12: -74078710
+      logoSpritesheet_13: -672303673
+      logoSpritesheet_14: 1887867537
+      logoSpritesheet_15: -50843993
+      logoSpritesheet_16: 1756569950
+      logoSpritesheet_17: -457122041
+      logoSpritesheet_18: -821261343
+      logoSpritesheet_19: -1948207079
+      logoSpritesheet_2: -955945085
+      logoSpritesheet_20: -1695593388
+      logoSpritesheet_21: 1822168280
+      logoSpritesheet_22: -404288617
+      logoSpritesheet_23: 770017285
+      logoSpritesheet_24: -1878169932
+      logoSpritesheet_25: -689062193
+      logoSpritesheet_26: 357263866
+      logoSpritesheet_27: 2105004101
+      logoSpritesheet_28: -511652478
+      logoSpritesheet_29: 1878815805
+      logoSpritesheet_3: -973889057
+      logoSpritesheet_30: 254235709
+      logoSpritesheet_31: -2098837014
+      logoSpritesheet_32: 2108033751
+      logoSpritesheet_33: 2112891770
+      logoSpritesheet_34: -843877205
+      logoSpritesheet_35: 807180228
+      logoSpritesheet_36: 495991015
+      logoSpritesheet_37: -2003755062
+      logoSpritesheet_38: -1439955831
+      logoSpritesheet_39: 273762122
+      logoSpritesheet_4: -407721739
+      logoSpritesheet_40: 1784160481
+      logoSpritesheet_41: 1667094389
+      logoSpritesheet_42: -1338877748
+      logoSpritesheet_43: -1566707934
+      logoSpritesheet_44: 1994958096
+      logoSpritesheet_45: 347048825
+      logoSpritesheet_46: 1648747038
+      logoSpritesheet_47: 1870371683
+      logoSpritesheet_48: -350314447
+      logoSpritesheet_49: 1902018874
+      logoSpritesheet_5: -828030504
+      logoSpritesheet_50: -2002073702
+      logoSpritesheet_51: -1267519510
+      logoSpritesheet_52: 253898441
+      logoSpritesheet_53: -1034183871
+      logoSpritesheet_54: 1320620321
+      logoSpritesheet_55: 1079348279
+      logoSpritesheet_56: -669902349
+      logoSpritesheet_57: -1508085642
+      logoSpritesheet_58: -612607363
+      logoSpritesheet_59: 116336494
+      logoSpritesheet_6: -19494413
+      logoSpritesheet_7: -1276428775
+      logoSpritesheet_8: 1670066848
+      logoSpritesheet_9: 2101288891
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

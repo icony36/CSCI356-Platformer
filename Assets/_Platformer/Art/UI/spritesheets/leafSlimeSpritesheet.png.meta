@@ -1,0 +1,1275 @@
+fileFormatVersion: 2
+guid: bb1cc678e680ec04aa4f9ffcb7aca54c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2104
+        width: 220
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc9916d1b38080459f62c430cdd6494
+      internalID: -2009241515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 2104
+        width: 220
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47cd505d3096e724185c4df8746dc065
+      internalID: -1150395595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 2104
+        width: 219
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc57483604e91743989a1e531172f05
+      internalID: -1375180326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 2104
+        width: 217
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e9727c2bf3b9f40b39ef055617d672
+      internalID: 532798496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 2104
+        width: 214
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff9c9aad83deb844952fc021b8fd52b
+      internalID: -1307930625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 2104
+        width: 211
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e4be76a8499fc42ac764edfd0eb64b
+      internalID: -702570834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 2105
+        width: 205
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3763e75d08043e43be62b6a79ae0ef2
+      internalID: -492734031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 2105
+        width: 198
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c910dd37f993174aaab95b7d75feb23
+      internalID: -421323888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1754
+        width: 195
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28d93a637e8bf64fba719df076d9453
+      internalID: -1848746873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1756
+        width: 190
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782805e3b812b5d4f8c8d212ae93d5fc
+      internalID: 47325689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1756
+        width: 189
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b120d2df316ad45b645a727af0aaa0
+      internalID: 1739370779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1756
+        width: 190
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d94fa161a892444b4e356bbcb8a41d
+      internalID: 1482460290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1757
+        width: 191
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cb88765ff3a0b479df9ab0c5865044
+      internalID: -1849870295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 1757
+        width: 190
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff439191cc4f4349b5c6b9ff3a2dc1c
+      internalID: 788907049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1757
+        width: 192
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b10572aa176cf478d365d94e40b020
+      internalID: 411618902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 1757
+        width: 197
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700327fe5854f7b4e8ed1eff1103ad27
+      internalID: -318410311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1406
+        width: 202
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b802b39bf1e461e438d9b788539cd3ee
+      internalID: -1459026686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1406
+        width: 208
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3a93b9c9d3ef14b99c8b48944fc9b4
+      internalID: 190359583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1406
+        width: 212
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0289cc1ec310247a36bea266441f3d
+      internalID: -2067939181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1406
+        width: 215
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2374bb15e1090d541b0ec1a48af66f07
+      internalID: 1245160601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1406
+        width: 218
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72929c4e65faf14409dd8db0bc5ae230
+      internalID: -373871154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 1406
+        width: 220
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6964506ee37e1944d88c0f46cc5d3474
+      internalID: 1266798725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 1405
+        width: 220
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea2b5ba09760844e93323ff50ec3814
+      internalID: -1055804907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 1405
+        width: 220
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831f45dc8210ed2469cdd2db4b7a190c
+      internalID: -928564006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1055
+        width: 220
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f31737ac9781cb4e8fe7ea82dd267d4
+      internalID: -761022147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1055
+        width: 219
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37b81a4f61ba1f448ee8c72a0012a80
+      internalID: -207211848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1053
+        width: 218
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e99d16f07d6964b8ffd00f8204e6bc
+      internalID: -2010725486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1053
+        width: 212
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f449f1af4bf6eb4faf7c65fd1924bed
+      internalID: 298734006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 1053
+        width: 210
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2421505948bcc98439d849a564a3ba79
+      internalID: -1277819369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 1053
+        width: 203
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df355d435238ca64fbd212175e10b7dc
+      internalID: -902896590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 1053
+        width: 200
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03551cb4dd49bbf4ab6db6594fbe0bdc
+      internalID: -462957021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 1053
+        width: 195
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ba0b6b74dfee64ebae98d06be562b5
+      internalID: 395334895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 704
+        width: 193
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a669353931c244840b625fc347f9b4c5
+      internalID: 328728285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 704
+        width: 190
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d302db23c557fbf4bac37bb52aeecb67
+      internalID: 1766974336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 704
+        width: 189
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7d869464f4c55459d165bfa0a9e76b
+      internalID: 2088343784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 704
+        width: 190
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da80123e285708446a726dec94826940
+      internalID: -1610601828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 705
+        width: 191
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a941e17b23d8943a25a50efbaa5002
+      internalID: -1991944621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 705
+        width: 190
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2598bb1c6c5ce0e4c872b3c1718f8b60
+      internalID: 296349351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 706
+        width: 189
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a941adb6a5d2f4b96accd69aeaea42
+      internalID: -266389781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 706
+        width: 193
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09580f6b80f6d4f43b468ce8fac12c53
+      internalID: 1255424352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 357
+        width: 197
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e1f8de1a9397f49ac4df1bcae229bf
+      internalID: -243550627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 357
+        width: 202
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fffd194c37594540b5d574b21337c56
+      internalID: -1238253779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 357
+        width: 208
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4baaef988ea85d24fbea4f77f2ae7c6f
+      internalID: -221293784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 357
+        width: 212
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb169004c42856b48895e30cf09bc844
+      internalID: 482576551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 357
+        width: 214
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a27111c268678548856827c7b68f637
+      internalID: 2526932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 357
+        width: 218
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58383b18c18d0c74794147d0ceabf704
+      internalID: -727462854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 357
+        width: 220
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0395b97d0e415c74d86e1a2ac446f428
+      internalID: 153217781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 356
+        width: 220
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586435bcd9e62444e8f14437fbb71204
+      internalID: 891535493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 5
+        width: 220
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e981d9f44a8254f8123370ae0e0584
+      internalID: 519306455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 4
+        width: 220
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b001481c890383642b9612346dd8be7d
+      internalID: -1418195309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafSlimeSpritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 4
+        width: 220
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9541314b53bd145b63e729cd383b4a
+      internalID: -1696722106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 71e8bcb7441ec6d4182b36fac91304c0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      leafSlimeSpritesheet_0: -2009241515
+      leafSlimeSpritesheet_1: -1150395595
+      leafSlimeSpritesheet_10: 1739370779
+      leafSlimeSpritesheet_11: 1482460290
+      leafSlimeSpritesheet_12: -1849870295
+      leafSlimeSpritesheet_13: 788907049
+      leafSlimeSpritesheet_14: 411618902
+      leafSlimeSpritesheet_15: -318410311
+      leafSlimeSpritesheet_16: -1459026686
+      leafSlimeSpritesheet_17: 190359583
+      leafSlimeSpritesheet_18: -2067939181
+      leafSlimeSpritesheet_19: 1245160601
+      leafSlimeSpritesheet_2: -1375180326
+      leafSlimeSpritesheet_20: -373871154
+      leafSlimeSpritesheet_21: 1266798725
+      leafSlimeSpritesheet_22: -1055804907
+      leafSlimeSpritesheet_23: -928564006
+      leafSlimeSpritesheet_24: -761022147
+      leafSlimeSpritesheet_25: -207211848
+      leafSlimeSpritesheet_26: -2010725486
+      leafSlimeSpritesheet_27: 298734006
+      leafSlimeSpritesheet_28: -1277819369
+      leafSlimeSpritesheet_29: -902896590
+      leafSlimeSpritesheet_3: 532798496
+      leafSlimeSpritesheet_30: -462957021
+      leafSlimeSpritesheet_31: 395334895
+      leafSlimeSpritesheet_32: 328728285
+      leafSlimeSpritesheet_33: 1766974336
+      leafSlimeSpritesheet_34: 2088343784
+      leafSlimeSpritesheet_35: -1610601828
+      leafSlimeSpritesheet_36: -1991944621
+      leafSlimeSpritesheet_37: 296349351
+      leafSlimeSpritesheet_38: -266389781
+      leafSlimeSpritesheet_39: 1255424352
+      leafSlimeSpritesheet_4: -1307930625
+      leafSlimeSpritesheet_40: -243550627
+      leafSlimeSpritesheet_41: -1238253779
+      leafSlimeSpritesheet_42: -221293784
+      leafSlimeSpritesheet_43: 482576551
+      leafSlimeSpritesheet_44: 2526932
+      leafSlimeSpritesheet_45: -727462854
+      leafSlimeSpritesheet_46: 153217781
+      leafSlimeSpritesheet_47: 891535493
+      leafSlimeSpritesheet_48: 519306455
+      leafSlimeSpritesheet_49: -1418195309
+      leafSlimeSpritesheet_5: -702570834
+      leafSlimeSpritesheet_50: -1696722106
+      leafSlimeSpritesheet_6: -492734031
+      leafSlimeSpritesheet_7: -421323888
+      leafSlimeSpritesheet_8: -1848746873
+      leafSlimeSpritesheet_9: 47325689
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
