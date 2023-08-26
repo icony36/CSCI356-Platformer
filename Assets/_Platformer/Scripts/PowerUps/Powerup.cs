@@ -37,10 +37,14 @@ public class Powerup : MonoBehaviour
         {
             if(powerupType.Equals(PowerupType.HealthUp))
             {
-                if(playerData.currentHealth + value > playerData.maxHealth) 
+                if(playerData.currentHealth + value > playerData.maxHealth)
+                {
                     playerData.currentHealth = playerData.maxHealth;
+                }
                 else
+                {
                     playerData.currentHealth += (int)value;
+                }
 
                 // play sfx
                 audioManager?.PlaySFX("HealthBuff");

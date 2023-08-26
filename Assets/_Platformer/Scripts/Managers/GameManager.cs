@@ -72,8 +72,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //gameMenu.TogglePauseMenu();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         LoadData();
+
     }
 
     public void Init() //need this to only be called on new game start

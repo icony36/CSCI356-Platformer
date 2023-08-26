@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 2319478348476838204}
   - component: {fileID: 1071663544311059423}
   - component: {fileID: 7997374130642014100}
+  - component: {fileID: 8007656478698027943}
   m_Layer: 0
   m_Name: HeartImage
   m_TagString: Untagged
@@ -1197,6 +1198,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8007656478698027943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3160347817531080320}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86ba0d44d05a2a41aa8b9e0ef20d01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1343411178, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 222313843, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1077212677, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 100692670, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 620319061, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 614246395, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -980877415, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -2114526803, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -918073327, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -74723420, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1133701711, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1683571936, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -659920156, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1018535537, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1831777372, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 2107755367, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1915925408, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 516987780, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1923481440, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -984126953, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1997159278, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1022342235, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 152145305, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -530352248, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -166252708, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 41314905, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1382056396, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1193697992, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1648645521, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -903689253, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1550483142, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1030447442, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -698719027, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 536175115, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1790187338, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1512690745, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1388886845, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1456496488, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 1350318035, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: 223105560, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  - {fileID: -1749258017, guid: 9415580e292b24e4baa7b2ba82e2672a, type: 3}
+  spritePerFrame: 10
+  loop: 1
+  destroyOnEnd: 0
 --- !u!1 &3612802770831500136
 GameObject:
   m_ObjectHideFlags: 0
