@@ -35,9 +35,6 @@ public class HitBox : MonoBehaviour
             Combat targetCombat = other.GetComponent<Combat>();
             if (targetCombat != null)
             {
-                // play sfx
-                // play vfx
-
                //Debug.Log(combat.gameObject.name + " is attacking: " +  targetCombat.gameObject.name);
 
                 targetCombat.InflictDamage(damageToInflict, transform.position);

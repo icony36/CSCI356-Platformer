@@ -150,7 +150,7 @@ Transform:
   - {fileID: 8562558346888298555}
   - {fileID: 8446508438574244984}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &6045047229028850350
 Animator:
@@ -236,9 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  patrolEndPoint: {fileID: 4311702182853197937}
+  shouldPatrol: 0
   visionRange: 10
-  attackRange: 5
+  patrolEndPoint: {fileID: 4311702182853197937}
+  attackRange: 10
   attackRate: 0.75
   attackCooldown: 1.5
   speed: 10

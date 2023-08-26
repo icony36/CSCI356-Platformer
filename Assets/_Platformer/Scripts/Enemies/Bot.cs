@@ -9,6 +9,7 @@ public class Bot : MonoBehaviour
     public EnemyVFXManager EnemyVFXManager { get; protected set; }
 
     [Header("Patrolling")]
+    [SerializeField] protected bool shouldPatrol = true;
     [SerializeField] protected float visionRange = 10f;
     [SerializeField] protected Transform patrolEndPoint;
 
@@ -48,6 +49,7 @@ public class Bot : MonoBehaviour
     private BotState currentState;
     protected Vector3 startingPosition;
     protected Vector3 endingPosition;
+    protected Quaternion startingRotation;
     protected float lastAttackTime = 0f;
 
     protected virtual void Awake()
@@ -62,6 +64,7 @@ public class Bot : MonoBehaviour
 
         startingPosition = transform.position;
         endingPosition = patrolEndPoint.position;
+        startingRotation = transform.rotation;
 
         currentState = BotState.Patrolling;
     }
@@ -113,6 +116,10 @@ public class Bot : MonoBehaviour
         switch (currentState)
         {
             case BotState.Patrolling:
+                if (!shouldPatrol)
+                {
+                    transform.rotation = startingRotation;
+                }
                 break;
             case BotState.Chasing:
                 break;
@@ -126,24 +133,24 @@ public class Bot : MonoBehaviour
 
     private void Patrolling()
     {
-        if (target == null) { return; }
+        if (target == null) { return; }        
 
         // chase target if target is within sight and agro range
-        if (CanSeeTarget())
+        if(CanSeeTarget())
         {
             currentState = BotState.Chasing;
         }
         else
-        {
+        {            
             if (Vector3.Distance(endingPosition, transform.position) < 0.5f)
             {
                 // swap ending and starting position
                 Vector3 temp = endingPosition;
                 endingPosition = startingPosition;
                 startingPosition = temp;
-            }
+            }         
 
-            MoveToTarget(endingPosition);
+            MoveToTarget(endingPosition);   
         }
     }
 
@@ -178,6 +185,13 @@ public class Bot : MonoBehaviour
 
     protected virtual void MoveToTarget(Vector3 targetPosition)
     {
+        if (!shouldPatrol)
+        {
+            animator.SetFloat(ANIM_SPEED, 0);
+            
+            return;
+        }
+        
         // get movement direction
         Vector3 direction = targetPosition - transform.position;
         direction.y = 0;
@@ -225,22 +239,30 @@ public class Bot : MonoBehaviour
 
     protected bool CanSeeTarget()
     {
-        Vector3 origin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
         Vector3 halfExtents = transform.localScale / 2;
         Vector3 direction = transform.forward;
         Quaternion orientation = transform.rotation;
         float maxDistance = visionRange;
 
-        RaycastHit hitInfo;
-
         DebugTools.DrawBoxCastBox(origin, halfExtents, direction, orientation, maxDistance, Color.blue);
 
-        if (Physics.BoxCast(origin, halfExtents,direction, out hitInfo, orientation, maxDistance))
-        {
-            if (hitInfo.transform.CompareTag(targetTag))
-            {
-                return true;
-            }
+        //RaycastHit hitInfo;
+
+        //if (Physics.BoxCast(origin, halfExtents, direction, out hitInfo, orientation, maxDistance))
+        //{
+        //    if (hitInfo.transform.CompareTag(targetTag))
+        //    {
+        //        return true;
+        //    }
+        //}
+
+        float dot = Vector3.Dot(transform.forward, (target.transform.position - transform.position).normalized);
+
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+        if (dot > 0.99f && distance <= visionRange) 
+        { 
+            return true; 
         }
 
         return false;

@@ -20,10 +20,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject powerupHolder;
 
     private bool isGameOver;
+    private PlayerInput playerInput;
 
     private void Start()
     {
         Player = GameObject.FindWithTag("Player").GetComponent<Player>();
+
+        playerInput = Player.GetComponent<PlayerInput>();            
+
         Init();
     }
 

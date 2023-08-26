@@ -19,8 +19,7 @@ public class SettingsMenu : MonoBehaviour
     // Resolution
     private List<Resolution> resolutionList;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         settingMenuUI.SetActive(false);
 

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  attackDamage: 1
+  attackDamage: 15
   speed: 5
   hitVFX: {fileID: 1996815043310994497, guid: 21f92b0b65b74d84aa0795fe9f39037f, type: 3}
 --- !u!1001 &1597334885585960664
