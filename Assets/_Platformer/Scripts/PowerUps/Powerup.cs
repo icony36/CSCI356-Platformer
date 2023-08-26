@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public enum PowerupType

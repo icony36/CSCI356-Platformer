@@ -1,7 +1,5 @@
  using System.Collections;
 using System.Collections.Generic;
-using System.Transactions;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,13 +13,13 @@ public class OverheadCanvas : MonoBehaviour
     [SerializeField] private Image healthFill;
 
     [Header("Settings")]
-    [SerializeField] private float currentValue;
-    [SerializeField] private float maxValue;
     [SerializeField] private float healthBarDropSpeed = 50f;
 
     private EnemyCombat enemyCombat;
     private Player player;
     private Color healthbarColor;
+    private int currentValue;
+    private int maxValue;
 
     private void Start()
     {
