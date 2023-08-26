@@ -207,11 +207,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //public void SetMoveSpeed(float speed)
-    //{
-    //    playerData.currentMoveSpeed = Mathf.Clamp(speed, 0f, speed);
-    //}
-
     private void Jump()
     {
         yVelocity = jumpSpeed;

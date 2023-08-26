@@ -72,7 +72,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        LoadData();
     }
 
     public void Init() //need this to only be called on new game start
@@ -143,7 +144,7 @@ public class GameManager : MonoBehaviour
 
         DataSerializer.SaveJson(savedData, filePath);
 
-        Debug.Log("Data saved");
+        Debug.Log("Game saved.");
     }
 
     public void LoadData()
@@ -156,7 +157,7 @@ public class GameManager : MonoBehaviour
 
         UpdateGameState(savedData);
 
-        Debug.Log("Data loaded");
+        Debug.Log("Game loaded.");
     }
 
     private void UpdateGameState(SaveData saveData)

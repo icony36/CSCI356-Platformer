@@ -16,12 +16,14 @@ public class SettingsMenu : MonoBehaviour
     private const string BGM_VOLUME = "BGMVolume";
     private const string SFX_VOLUME = "SFXVolume";
 
-        // Resolution
+    // Resolution
     private List<Resolution> resolutionList;
 
     // Start is called before the first frame update
     void Start()
     {
+        settingMenuUI.SetActive(false);
+
         // Load saved volume settings or use default values
         float savedMusicVolume = PlayerPrefs.GetFloat(BGM_VOLUME, 0.5f);
         float savedSFXVolume = PlayerPrefs.GetFloat(SFX_VOLUME, 0.5f);
