@@ -36,16 +36,17 @@ public class StatusEffect : MonoBehaviour
         float elapsedTime = 0f;
 
         playerData.attackDamage += (int)value;
-        buffIndicator?.SetAttackUpRotationFill(1f);
+        buffIndicator?.SetAttackUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
             elapsedTime += Time.deltaTime;
-            buffIndicator?.SetAttackUpRotationFill(1 - (elapsedTime / duration));
+            buffIndicator?.SetAttackUpRotationFill(elapsedTime / duration);
 
             yield return null;
         }
 
+        buffIndicator?.SetAttackUpRotationFill(1f);
         playerData.attackDamage = initData.attackDamage;
     }
 
@@ -54,16 +55,17 @@ public class StatusEffect : MonoBehaviour
         float elapsedTime = 0f;
 
         playerData.currentMoveSpeed += value;
-        buffIndicator?.SetSpeedUpRotationFill(1f);
+        buffIndicator?.SetSpeedUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
             elapsedTime += Time.deltaTime;
-            buffIndicator?.SetSpeedUpRotationFill(1 - (elapsedTime / duration));
+            buffIndicator?.SetSpeedUpRotationFill(elapsedTime / duration);
 
             yield return null;
         }
 
+        buffIndicator?.SetSpeedUpRotationFill(1f);
         playerData.currentMoveSpeed = initData.baseMoveSpeed;
     }
 
@@ -72,16 +74,17 @@ public class StatusEffect : MonoBehaviour
         float elapsedTime = 0f;
 
         playerData.maxJumps += (int)value;
-        buffIndicator?.SetJumpUpRotationFill(1f);
+        buffIndicator?.SetJumpUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
             elapsedTime += Time.deltaTime;
-            buffIndicator?.SetJumpUpRotationFill(1 - (elapsedTime / duration));
+            buffIndicator?.SetJumpUpRotationFill(elapsedTime / duration);
 
             yield return null;
         }
 
+        buffIndicator?.SetJumpUpRotationFill(1f);
         playerData.maxJumps = initData.maxJumps;
     }
 }

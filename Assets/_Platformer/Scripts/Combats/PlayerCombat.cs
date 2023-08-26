@@ -137,21 +137,19 @@ public class PlayerCombat : Combat
     IEnumerator SkillCooldown()
     {
         float startTime = 0f;
-        buffIndicator.SetCoolDownRotationFill(0f);
-        buffIndicator.SetCoolDownOpacity(0.5f);
+        buffIndicator.SetCDRotationFill(1f);
 
         while (startTime < skillCooldown)
         {
             startTime += Time.deltaTime;
 
-            buffIndicator.SetCoolDownRotationFill(startTime/skillCooldown);
+            buffIndicator.SetCDRotationFill((skillCooldown - startTime) / skillCooldown);
 
             yield return null;
         }
 
         skillUsed = false;
-        buffIndicator.SetCoolDownRotationFill(1f);
-        buffIndicator.SetCoolDownOpacity(1f);
+        buffIndicator.SetCDRotationFill(0f);
     }
 
     public void ToggleAttackMode()
