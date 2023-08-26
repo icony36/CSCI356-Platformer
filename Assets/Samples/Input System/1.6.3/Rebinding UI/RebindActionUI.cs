@@ -267,9 +267,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
-                .WithControlsExcluding("<Pointer/position>")
-                .WithCancelingThrough("<Keyboard/escape>")
+                .WithControlsExcluding("<Pointer>/position>")
                 .WithControlsExcluding("<Keyboard>/escape")
+                .WithCancelingThrough("<Keyboard>/escape>")
                 .OnCancel(
                     operation =>
                     {
@@ -343,24 +343,43 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 {
                     continue;
                 }
+
                 if (binding.effectivePath == newBinding.effectivePath)
                 {
+                    string keyName = action.GetBindingDisplayString(bindingIndex);
+
                     Debug.Log("Duplicate Binding Found: " + newBinding.effectivePath);
-                    return true;
-                }
-                //Check for duplicate composite bindings
-                if (allCompositeParts)
-                {
-                    for(int i = 1; i < bindingIndex; ++i)
+                   
+                    if (m_RebindMessageText != null)
                     {
-                        if (action.bindings[i].effectivePath == newBinding.effectivePath)
+                        m_RebindMessageText.text = $"{keyName} has been used, choose another key.";
+                    }                  
+
+                    return true;
+                }              
+            }
+
+            // Check for duplicate composite bindings
+            if (allCompositeParts)
+            {
+                for (int i = 1; i < bindingIndex; i++)
+                {
+                    if (action.bindings[i].effectivePath == newBinding.effectivePath)
+                    {
+                        string keyName = action.GetBindingDisplayString(bindingIndex);
+
+                        Debug.Log("Duplicate Binding Found for Composite Bindings: " + newBinding.effectivePath);
+
+                        if (m_RebindMessageText != null)
                         {
-                            Debug.Log("Duplicate Binding Found:" + newBinding.effectivePath);
-                            return true;
+                            m_RebindMessageText.text = $"{keyName} has been used, choose another key.";
                         }
+
+                        return true;
                     }
                 }
             }
+
             return false;
         }
 
@@ -439,6 +458,10 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         [Tooltip("Optional text label that will be updated with prompt for user input.")]
         [SerializeField]
         private Text m_RebindText;
+
+        [Tooltip("Optional text label that will be updated with rebinding message.")]
+        [SerializeField]
+        private Text m_RebindMessageText;
 
         [Tooltip("Event that is triggered when the way the binding is display should be updated. This allows displaying "
             + "bindings in custom ways, e.g. using images instead of text.")]

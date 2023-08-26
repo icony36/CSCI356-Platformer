@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             child.gameObject.GetComponent<Bot>().ID = i;
             enemyState.Add(child.gameObject.GetComponent<Bot>().ID, false);
-            EditorUtility.SetDirty(child.gameObject.GetComponent<Bot>());
+            //EditorUtility.SetDirty(child.gameObject.GetComponent<Bot>());
             i++;
         }
     }
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             child.gameObject.GetComponent<Powerup>().ID = i;
             powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, false);
-            EditorUtility.SetDirty(child.gameObject.GetComponent<Powerup>());
+            //EditorUtility.SetDirty(child.gameObject.GetComponent<Powerup>());
             i++;
         }
     }
