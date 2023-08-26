@@ -10,6 +10,9 @@ public class StatusEffect : MonoBehaviour
     [SerializeField] private PlayerData initData;
 
     private BuffIndicator buffIndicator;
+    private IEnumerator attackEffect;
+    private IEnumerator speedEffect;
+    private IEnumerator jumpEffect;
 
     private void Start()
     {
@@ -24,41 +27,58 @@ public class StatusEffect : MonoBehaviour
     public void ApplyEffect(PowerupType type, float value, float duration)
     {
         if (type == PowerupType.AttackUp)
-            StartCoroutine(AttackEffect(value, duration));
+        {
+            if(attackEffect != null)
+                StopCoroutine(attackEffect);
+
+            attackEffect = AttackEffect(value, duration);
+            StartCoroutine(attackEffect);
+        }  
         else if (type == PowerupType.SpeedUp)
-            StartCoroutine(SpeedEffect(value, duration));
+        {
+            if (speedEffect != null)
+                StopCoroutine(speedEffect);
+
+            speedEffect = SpeedEffect(value, duration);
+            StartCoroutine(speedEffect);
+        }
         else if (type == PowerupType.JumpUp)
-            StartCoroutine(JumpEffect(value, duration));
+        {
+            if (jumpEffect != null)
+                StopCoroutine(jumpEffect);
+
+            jumpEffect = JumpEffect(value, duration);
+            StartCoroutine(jumpEffect);
+        }
     }
 
     public IEnumerator AttackEffect(float value, float duration)
     {
         float elapsedTime = 0f;
-
-        playerData.attackDamage += (int)value;
+              
         buffIndicator?.SetAttackUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
+            playerData.attackDamage = initData.attackDamage + (int)value;
             elapsedTime += Time.deltaTime;
             buffIndicator?.SetAttackUpRotationFill(elapsedTime / duration);
-
+            
             yield return null;
         }
 
         buffIndicator?.SetAttackUpRotationFill(1f);
-        playerData.attackDamage = initData.attackDamage;
     }
 
     public IEnumerator SpeedEffect(float value, float duration)
     {
         float elapsedTime = 0f;
 
-        playerData.currentMoveSpeed += value;
         buffIndicator?.SetSpeedUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
+            playerData.currentMoveSpeed = initData.baseMoveSpeed + (int)value;
             elapsedTime += Time.deltaTime;
             buffIndicator?.SetSpeedUpRotationFill(elapsedTime / duration);
 
@@ -66,18 +86,17 @@ public class StatusEffect : MonoBehaviour
         }
 
         buffIndicator?.SetSpeedUpRotationFill(1f);
-        playerData.currentMoveSpeed = initData.baseMoveSpeed;
     }
 
     public IEnumerator JumpEffect(float value, float duration)
     {
         float elapsedTime = 0f;
 
-        playerData.maxJumps += (int)value;
         buffIndicator?.SetJumpUpRotationFill(0f);
 
         while (elapsedTime <= duration)
         {
+            playerData.maxJumps = initData.maxJumps + (int)value;
             elapsedTime += Time.deltaTime;
             buffIndicator?.SetJumpUpRotationFill(elapsedTime / duration);
 
@@ -85,6 +104,5 @@ public class StatusEffect : MonoBehaviour
         }
 
         buffIndicator?.SetJumpUpRotationFill(1f);
-        playerData.maxJumps = initData.maxJumps;
     }
 }
