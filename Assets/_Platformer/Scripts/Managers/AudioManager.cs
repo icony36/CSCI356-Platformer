@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : GenericSingleton<AudioManager>
 {
-    public static AudioManager Instance;
     private AudioSource audioSource;
 
     [SerializeField] private AudioClip jumpSFX;
@@ -17,10 +17,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip lightningSkillSFX;
     [SerializeField] private AudioClip enemyDamageOrbSFX;
     [SerializeField] private AudioClip enemyDeathSFX;
+    [SerializeField] private AudioClip hurtSFX;
 
     private void Awake()
     {
-        Instance = this;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -29,34 +29,80 @@ public class AudioManager : MonoBehaviour
         switch(sfxName)
         {
             case "Jump":
-                audioSource.PlayOneShot(jumpSFX); 
+                audioSource.PlayOneShot(jumpSFX, 2f); 
                 break;
             case "Attack1":
-                audioSource.PlayOneShot(attack1SFX);
+                audioSource.PlayOneShot(attack1SFX, 2f);
                 break;
             case "Attack2":
-                audioSource.PlayOneShot(attack2SFX);
+                audioSource.PlayOneShot(attack2SFX, 2f);
                 break;
             case "Hit":
-                audioSource.PlayOneShot(hitSFX);
+                audioSource.PlayOneShot(hitSFX, 2f);
                 break;
             case "Dash":
-                audioSource.PlayOneShot(dashSFX, 0.5f);
+                audioSource.PlayOneShot(dashSFX, 2f);
                 break;
             case "Buff":
-                audioSource.PlayOneShot(buffSFX);
+                audioSource.PlayOneShot(buffSFX, 0.5f);
                 break;
             case "HealthBuff":
                 audioSource.PlayOneShot(healthBuffSFX);
                 break;
             case "PlayerSkill":
-                audioSource.PlayOneShot(lightningSkillSFX);
+                audioSource.PlayOneShot(lightningSkillSFX, 2f);
                 break;
             case "EnemyDamageOrb":
                 audioSource.PlayOneShot(enemyDamageOrbSFX, 0.25f);
                 break;
             case "EnemyDeath":
-                audioSource.PlayOneShot(enemyDeathSFX, 0.25f);
+                audioSource.PlayOneShot(enemyDeathSFX);
+                break;
+            case "Hurt":
+                audioSource.PlayOneShot(hurtSFX);
+                break;
+            default:
+                Debug.Log(sfxName + " sfx not found.");
+                break;
+        }
+    }
+
+    public void PlaySFX(string sfxName, Vector3 position)
+    {
+        switch (sfxName)
+        {
+            case "Jump":
+                AudioSource.PlayClipAtPoint(jumpSFX, position, 2f);
+                break;
+            case "Attack1":
+                AudioSource.PlayClipAtPoint(attack1SFX, position, 2f);
+                break;
+            case "Attack2":
+                AudioSource.PlayClipAtPoint(attack2SFX, position, 2f);
+                break;
+            case "Hit":
+                AudioSource.PlayClipAtPoint(hitSFX, position, 4f);
+                break;
+            case "Dash":
+                AudioSource.PlayClipAtPoint(dashSFX, position, 2f);
+                break;
+            case "Buff":
+                AudioSource.PlayClipAtPoint(buffSFX, position, 0.5f);
+                break;
+            case "HealthBuff":
+                AudioSource.PlayClipAtPoint(healthBuffSFX, position);
+                break;
+            case "PlayerSkill":
+                AudioSource.PlayClipAtPoint(lightningSkillSFX, position, 2f);
+                break;
+            case "EnemyDamageOrb":
+                AudioSource.PlayClipAtPoint(enemyDamageOrbSFX, position, 0.25f);
+                break;
+            case "EnemyDeath":
+                AudioSource.PlayClipAtPoint(enemyDeathSFX, position);
+                break;
+            case "Hurt":
+                AudioSource.PlayClipAtPoint(hurtSFX, position);
                 break;
             default:
                 Debug.Log(sfxName + " sfx not found.");

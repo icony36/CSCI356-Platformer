@@ -6,14 +6,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static Player;
 
-public class GameMenu : MonoBehaviour
+public class GameMenu : GenericSingleton<GameMenu>
 {
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private GameObject GameOverMenu;
     [SerializeField] private GameObject GameWinMenu;
 
     private GameManager gameManager;
-    private PlayerState previousState;
 
     private enum GameUIState
     {
@@ -27,7 +26,7 @@ public class GameMenu : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager = GameManager.Instance.GetComponent<GameManager>();
         
         SwitchUIState(GameUIState.GamePlay);
     }
@@ -43,10 +42,8 @@ public class GameMenu : MonoBehaviour
         switch (state)
         {
             case GameUIState.GamePlay:
-                gameManager.Player.PlayerInput.SwitchCurrentActionMap("Player");
                 break;
             case GameUIState.GamePause:
-                gameManager.Player.PlayerInput.SwitchCurrentActionMap("UI");
                 Time.timeScale = 0;
                 PauseMenu.SetActive(true);
                 break;

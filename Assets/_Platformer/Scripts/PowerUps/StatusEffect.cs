@@ -16,12 +16,7 @@ public class StatusEffect : MonoBehaviour
 
     private void Start()
     {
-        buffIndicator = GameObject.FindGameObjectWithTag("UICanvas")?.GetComponent<BuffIndicator>();
-    }
-
-    private void Update()
-    {
-        
+        buffIndicator = GameMenu.Instance?.GetComponent<BuffIndicator>();
     }
 
     public void ApplyEffect(PowerupType type, float value, float duration)

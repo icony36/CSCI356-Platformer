@@ -23,7 +23,6 @@ public class EnemyCombat : Combat
 
     // References
     protected Bot bot;
-    protected AudioManager audioManager;
     protected GameManager gameManager;
 
     // Local Variables
@@ -31,8 +30,7 @@ public class EnemyCombat : Combat
     protected virtual void Start()
     {
         bot = GetComponent<Bot>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager")?.GetComponent<GameManager>();
+        gameManager = GameManager.Instance.GetComponent<GameManager>();
 
         CurrentHealth = MaxHealth;
     }

@@ -10,7 +10,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager = GameManager.Instance.GetComponent<GameManager>();
         
         sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.enabled = true;
@@ -24,8 +24,6 @@ public class CheckPoint : MonoBehaviour
             player.SetLastCheckPoint(gameObject);
 
             gameManager.SaveData();
-
-            //sphereCollider.enabled = false;
         }
     }
 }

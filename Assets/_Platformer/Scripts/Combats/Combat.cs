@@ -11,6 +11,8 @@ public abstract class Combat : MonoBehaviour, IDamageable
     [Tooltip("For testing purpose.")]
     [SerializeField] protected bool isInvincible;
 
+    protected AudioManager audioManager;
+
     // Public Variables
     public bool CanAttack = true;
     public bool CanSkill = true;
@@ -19,4 +21,9 @@ public abstract class Combat : MonoBehaviour, IDamageable
     public abstract void CheckIsDead();
     public abstract void InstantKill();
     public abstract void InflictDamage(float damageToInflict, Vector3 damageSource);
+
+    protected virtual void Awake()
+    {
+        audioManager = AudioManager.Instance;
+    }
 }

@@ -24,10 +24,10 @@ public class SettingsMenu : MonoBehaviour
         settingMenuUI.SetActive(false);
 
         // Load saved volume settings or use default values
-        float savedMusicVolume = PlayerPrefs.GetFloat(BGM_VOLUME, 0.5f);
-        float savedSFXVolume = PlayerPrefs.GetFloat(SFX_VOLUME, 0.5f);
+        float savedMusicVolume = PlayerPrefs.GetFloat(BGM_VOLUME, 1f);
+        float savedSFXVolume = PlayerPrefs.GetFloat(SFX_VOLUME, 1f);
 
-        bgm.volume = savedMusicVolume;
+        bgm.volume = savedMusicVolume * 0.15f;
         bgmSlider.value = savedMusicVolume;
 
         sfx.volume = savedSFXVolume;
@@ -50,7 +50,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void OnBGMVolumeChanged()
     {
-        bgm.volume = bgmSlider.value;
+        bgm.volume = bgmSlider.value * 0.15f;
 
         // Save the updated BGM volume
         PlayerPrefs.SetFloat(BGM_VOLUME, bgm.volume);

@@ -11,10 +11,12 @@ public class DamageOrb : MonoBehaviour
     [SerializeField] private ParticleSystem hitVFX;
 
     private Rigidbody rigidBody;
+    private AudioManager audioManager;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        audioManager = AudioManager.Instance;
     }
 
     private void FixedUpdate()
@@ -38,6 +40,7 @@ public class DamageOrb : MonoBehaviour
         {
             if (hitVFX != null)
             {
+                audioManager.PlaySFX("Hit", transform.position);
                 Instantiate(hitVFX, transform.position, Quaternion.identity);
             }
 

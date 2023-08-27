@@ -27,8 +27,8 @@ public class Powerup : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager")?.GetComponent<GameManager>();
+        audioManager = AudioManager.Instance;
+        gameManager = GameManager.Instance.GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)

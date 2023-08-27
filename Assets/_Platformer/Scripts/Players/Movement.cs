@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager")?.GetComponent<AudioManager>();
+        audioManager = AudioManager.Instance;
         player = GetComponent<Player>();
         characterController = GetComponent<CharacterController>();
         motionTrail = GetComponentInChildren<TrailRenderer>();
@@ -248,8 +248,6 @@ public class Movement : MonoBehaviour
 
     public void Climb(float climbValue, bool shouldJump)
     {
-        Debug.Log("can climb: " + CanClimb);
-
         if (!CanClimb) { return; }     
 
         if (shouldJump)

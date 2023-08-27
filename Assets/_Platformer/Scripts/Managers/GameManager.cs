@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] GameMenu gameMenu;
-
+    
     public Player Player { get; private set; }
 
     public PlayerData playerData;
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.FindWithTag("Player").GetComponent<Player>();           
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();           
 
         Init();
     }

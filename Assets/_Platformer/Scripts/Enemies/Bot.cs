@@ -60,7 +60,7 @@ public class Bot : MonoBehaviour
 
         targetTag = combat?.TargetTag;
 
-        target = GameObject.FindWithTag(targetTag);
+        target = GameObject.FindGameObjectWithTag(targetTag);
 
         startingPosition = transform.position;
         startingRotation = transform.rotation;
