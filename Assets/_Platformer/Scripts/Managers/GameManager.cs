@@ -38,8 +38,10 @@ public class GameManager : GenericSingleton<GameManager>
 
     private void HandleUIInput()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Escape");
             gameMenu.TogglePauseMenu();
         }
     }
