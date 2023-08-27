@@ -274,7 +274,7 @@ Transform:
   - {fileID: 3907500962446965306}
   - {fileID: 8572669382358728283}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &4456769115175940226
 Animator:
@@ -398,8 +398,10 @@ MonoBehaviour:
   terminalVelocity: -20
   gravity: -20
   isDashing: 0
+  CanDash: 1
   dashSpeed: 10
   dashTime: 0.2
+  dashCooldown: 3
   slideDirection: {x: 0, y: 0, z: 0}
   isSliding: 0
   onIceSurface: 0

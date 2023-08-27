@@ -18,8 +18,10 @@ public class Movement : MonoBehaviour
 
     [Header("Dash")]
     [SerializeField] private bool isDashing = false;
+    [SerializeField] private bool CanDash = true;
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashTime = 0.3f;
+    [SerializeField] private float dashCooldown = 3f;
 
     [Header("Slide")]
     [SerializeField] private Vector3 slideDirection = Vector3.zero;
@@ -155,7 +157,7 @@ public class Movement : MonoBehaviour
         }
 
         // dash
-        if (!isDashing && !isSliding && shouldDash && moveVec != Vector3.zero)
+        if (CanDash && !isSliding && shouldDash && moveVec != Vector3.zero)
         {
             StartCoroutine(Dash(moveVec));
         }
@@ -227,7 +229,7 @@ public class Movement : MonoBehaviour
         audioManager?.PlaySFX("Dash");
 
         motionTrail.emitting = true;
-
+        CanDash = false;
         isDashing = true;
         CanMove = false;
 
@@ -241,9 +243,12 @@ public class Movement : MonoBehaviour
         }
 
         motionTrail.emitting = false;
-
-        isDashing = false;
         CanMove = true;
+        isDashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+
+        CanDash = true;
     }
 
     public void Climb(float climbValue, bool shouldJump)

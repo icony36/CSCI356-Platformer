@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         gameState.newGame = true;
+        gameState.restartGame = false;
         SceneManager.LoadScene(gameLevel);
     }
 

@@ -88,7 +88,9 @@ public class GameManager : GenericSingleton<GameManager>
                     if (child.gameObject.GetComponent<Bot>())
                         enemyState.Add(child.gameObject.GetComponent<Bot>().ID, true);
                 }
+            Debug.Log("new game");
 
+            playerData.currentHealth = playerData.maxHealth;
             gameState.newGame = false;
         }
 
@@ -96,6 +98,7 @@ public class GameManager : GenericSingleton<GameManager>
         { 
             LoadData();
             gameState.restartGame = false;
+            Debug.Log("restart game");
         }
     }
 
@@ -183,7 +186,7 @@ public class GameManager : GenericSingleton<GameManager>
         playerData.currentHealth = saveData.currentHealth;
 
         sceneRef.player.transform.position = new Vector3(saveData.posX, saveData.posY, saveData.posZ);
-
+        Debug.Log(sceneRef.player.transform.position);
         enemyState = saveData.enemySaveState;
         powerUpState = saveData.powerupSaveState;
 

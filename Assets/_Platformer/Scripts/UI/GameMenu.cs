@@ -42,15 +42,19 @@ public class GameMenu : GenericSingleton<GameMenu>
         switch (state)
         {
             case GameUIState.GamePlay:
+                Cursor.visible = false;
                 break;
             case GameUIState.GamePause:
                 Time.timeScale = 0;
+                Cursor.visible = true;
                 PauseMenu.SetActive(true);
                 break;
             case GameUIState.GameOver:
+                Cursor.visible = true;
                 GameOverMenu.SetActive(true);
                 break;
             case GameUIState.GameIsFinished:
+                Cursor.visible = true;
                 GameWinMenu.SetActive(true);
                 break;
             default:

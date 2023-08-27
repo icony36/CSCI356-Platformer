@@ -44,7 +44,7 @@ public class PlayerCombat : Combat
         buffIndicator = GameMenu.Instance?.GetComponent<BuffIndicator>();
 
         playerData = player.playerData;
-        playerData.currentHealth = playerData.maxHealth;
+        
         playerData.currentAttackSpeed = playerData.baseAttackSpeed;
     }
 
