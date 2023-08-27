@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 ////TODO: localization support
@@ -228,6 +229,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 action.RemoveBindingOverride(bindingIndex);
             }
             UpdateBindingDisplay();
+
+            // prevent button stucked at pressed
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         /// <summary>

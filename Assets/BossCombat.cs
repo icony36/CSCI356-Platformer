@@ -57,7 +57,7 @@ public class BossCombat : EnemyCombat
         AttackHitbox.EnableHitBox(AttackDamage);
 
         // play sfx
-        audioManager?.PlaySFX("EnemyDamageOrb");
+        audioManager?.PlaySFX("Punch");
 
         // play vfx
         boss.BossVFXManager.PlayHitEffect();
@@ -69,7 +69,7 @@ public class BossCombat : EnemyCombat
         smashHitBox.EnableHitBox(smashDamage);
 
         // play sfx
-        audioManager?.PlaySFX("EnemyDamageOrb");
+        audioManager?.PlaySFX("Smash");
 
         // play vfx
         boss.BossVFXManager.PlaySmashEffect();

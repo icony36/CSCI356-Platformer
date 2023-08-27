@@ -607,21 +607,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1042037759841030028, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2047253354144886211, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: m_Name
       value: SettingsCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2875976080688833313, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4835985566061632727, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5383682665759189448, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: bgm

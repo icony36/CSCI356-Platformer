@@ -153,7 +153,12 @@ MonoBehaviour:
   enemyDamageOrbSFX: {fileID: 8300000, guid: 261bcbd4892f3d046b7c935adb236619, type: 3}
   enemyDeathSFX: {fileID: 8300000, guid: b3b5c27ee32c2114685511108f22676d, type: 3}
   enemyHealSFX: {fileID: 8300000, guid: 83829ff414f47a048b5387e4ab33571c, type: 3}
+  punchSFX: {fileID: 8300000, guid: 8b9e5da9697fb364b8c01b57ce3f7c0d, type: 3}
+  smashSFX: {fileID: 8300000, guid: c99860ff5c1e4594780d1fc4c2057b11, type: 3}
   hurtSFX: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  hoverSound: {fileID: 8300000, guid: 0490920a080a2674da9fb5109b9ad5b6, type: 3}
+  clickSound: {fileID: 8300000, guid: e99fe5db008097447ad0a6960949da6a, type: 3}
+  closeSound: {fileID: 8300000, guid: 65d8e030ed257d744b7bfc0c81e9f20d, type: 3}
 --- !u!1 &5172567920153432299
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +201,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f7cd4fe1ff0fe9644ba5d9348888be9e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0555d4a6a6bf6ec4a87ff63e7accf994, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1

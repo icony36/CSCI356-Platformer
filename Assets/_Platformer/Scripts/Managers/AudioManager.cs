@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +8,7 @@ public class AudioManager : GenericSingleton<AudioManager>
 {
     private AudioSource audioSource;
 
+    [Header("Game")]
     [SerializeField] private AudioClip jumpSFX;
     [SerializeField] private AudioClip attack1SFX;
     [SerializeField] private AudioClip attack2SFX;
@@ -18,7 +20,14 @@ public class AudioManager : GenericSingleton<AudioManager>
     [SerializeField] private AudioClip enemyDamageOrbSFX;
     [SerializeField] private AudioClip enemyDeathSFX;
     [SerializeField] private AudioClip enemyHealSFX;
+    [SerializeField] private AudioClip punchSFX;
+    [SerializeField] private AudioClip smashSFX;
     [SerializeField] private AudioClip hurtSFX;
+
+    [Header("UI")]
+    [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private AudioClip closeSound;
 
     private void Awake()
     {
@@ -61,6 +70,12 @@ public class AudioManager : GenericSingleton<AudioManager>
                 break;
             case "EnemyHeal":
                 audioSource.PlayOneShot(enemyHealSFX);
+                break;
+            case "Punch":
+                audioSource.PlayOneShot(punchSFX);
+                break;
+            case "Smash":
+                audioSource.PlayOneShot(smashSFX, 0.5f);
                 break;
             case "Hurt":
                 audioSource.PlayOneShot(hurtSFX);
@@ -108,11 +123,36 @@ public class AudioManager : GenericSingleton<AudioManager>
             case "EnemyHeal":
                 AudioSource.PlayClipAtPoint(enemyHealSFX, position);
                 break;
+            case "Punch":
+                AudioSource.PlayClipAtPoint(punchSFX, position);
+                break;
+            case "Smash":
+                AudioSource.PlayClipAtPoint(smashSFX, position, 0.5f);
+                break;
             case "Hurt":
                 AudioSource.PlayClipAtPoint(hurtSFX, position);
                 break;
             default:
                 Debug.Log(sfxName + " sfx not found.");
+                break;
+        }
+    }
+
+    public void PlayUISound(string sound)
+    {
+        switch (sound)
+        {
+            case "Hover":
+                audioSource.PlayOneShot(hoverSound, 2f);
+                break;
+            case "Click":
+                audioSource.PlayOneShot(clickSound, 2f);
+                break;
+            case "Close":
+                audioSource.PlayOneShot(closeSound, 4f);
+                break;
+            default:
+                Debug.Log(sound + " sfx not found.");
                 break;
         }
     }
