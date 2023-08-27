@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIAudioManager : MonoBehaviour, IPointerEnterHandler
+public class ButtonAudio : MonoBehaviour, IPointerEnterHandler
 {
     private AudioManager audioManager;
 
