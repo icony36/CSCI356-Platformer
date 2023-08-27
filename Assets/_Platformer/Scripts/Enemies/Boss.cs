@@ -96,9 +96,7 @@ public class Boss : Bot
  
         }
         else if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
-        {
-            Debug.Log("In attack range");
-                
+        {                
             PlayAnimIdle();
   
             if (CheckShouldSmash())

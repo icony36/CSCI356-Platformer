@@ -35,7 +35,7 @@ Transform:
   - {fileID: 2467464428928446142}
   - {fileID: 255815247496036704}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &7317459564088126111
 BoxCollider:
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 7770999068838106517}
   m_Layer: 0
   m_Name: LadderExitTrigger
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 1007226613540129242}
   m_Layer: 0
   m_Name: LadderEnterTrigger
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

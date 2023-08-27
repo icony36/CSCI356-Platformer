@@ -9,7 +9,7 @@ TagManager:
   - PowerUp
   - GameManager
   - AudioManager
-  - CheckPoint
+  - Trigger
   layers:
   - Default
   - TransparentFX
