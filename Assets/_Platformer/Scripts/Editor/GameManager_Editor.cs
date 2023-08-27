@@ -22,15 +22,5 @@ public class GameManager_Editor : Editor
         {
             gameManager.AssignPowerupID();
         }
-
-        if (GUILayout.Button("Save Data"))
-        {
-            gameManager.SaveData();
-        }
-
-        if (GUILayout.Button("Load Data"))
-        {
-            gameManager.LoadData();
-        }
     }
 }

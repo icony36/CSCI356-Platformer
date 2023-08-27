@@ -1393,6 +1393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1dc15d1f7549040bda525cd13385c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: {fileID: 11400000, guid: 4d904d50e41fe634f95e00dc7a2e12b8, type: 2}
   settingsMenu: {fileID: 1482795814}
   gameLevel: Regina
 --- !u!224 &1482795813 stripped
@@ -1916,6 +1917,7 @@ MonoBehaviour:
   lightningSkillSFX: {fileID: 8300000, guid: ce0e4297d2fde6b4e80f3d1fd42639c1, type: 3}
   enemyDamageOrbSFX: {fileID: 8300000, guid: 261bcbd4892f3d046b7c935adb236619, type: 3}
   enemyDeathSFX: {fileID: 8300000, guid: b3b5c27ee32c2114685511108f22676d, type: 3}
+  enemyHealSFX: {fileID: 0}
   hurtSFX: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
 --- !u!1 &5172567919885471325
 GameObject:

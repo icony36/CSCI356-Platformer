@@ -8,23 +8,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] GameMenu gameMenu;
-    
-    public Player Player { get; private set; }
-
+    public SceneReferences sceneRef;
     public PlayerData playerData;
     public PlayerData initData;
+    public GameState gameState;
     public Dictionary<int, bool> enemyState = new Dictionary<int, bool>();
     public Dictionary<int, bool> powerUpState = new Dictionary<int, bool>();
-
-    [SerializeField] private GameObject enemiesHolder;
-    [SerializeField] private GameObject powerupHolder;
 
     private bool isGameOver;
 
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();           
-
         Init();
     }
 
@@ -34,7 +28,7 @@ public class GameManager : GenericSingleton<GameManager>
 
         if (!isGameOver)
         {
-            if(Player.CurrentState == Player.PlayerState.Dead)
+            if(sceneRef.player.CurrentState == Player.PlayerState.Dead)
             {
                 isGameOver = true;
                 GameIsOver();
@@ -59,8 +53,8 @@ public class GameManager : GenericSingleton<GameManager>
     public void GameIsFinished()
     {
         Debug.Log("GAME FINISHED");
-        Player.DisableAllActions();
-        Player.PlayAnimVictory();
+        sceneRef.player.DisableAllActions();
+        sceneRef.player.PlayAnimVictory();
         gameMenu.ShowGameWinMenu();
     }
 
@@ -73,34 +67,43 @@ public class GameManager : GenericSingleton<GameManager>
 
     public void RestartGame()
     {
-        //gameMenu.TogglePauseMenu();
+        gameState.restartGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        LoadData();
     }
 
-    public void Init() //need this to only be called on new game start
+    public void Init() 
     {
-        if(powerupHolder != null)
-            foreach (Transform child in powerupHolder.transform)
-            {
-                if (child.gameObject.GetComponent<Powerup>())
-                    powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, true);
-            }
+        if(gameState.newGame) 
+        {
+            if (sceneRef.powerupHolder != null)
+                foreach (Transform child in sceneRef.powerupHolder.transform)
+                {
+                    if (child.gameObject.GetComponent<Powerup>())
+                        powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, true);
+                }
 
-        if(enemiesHolder != null)
-            foreach (Transform child in enemiesHolder.transform)
-            {
-                if (child.gameObject.GetComponent<Bot>())
-                    enemyState.Add(child.gameObject.GetComponent<Bot>().ID, true);
-            }
+            if (sceneRef.enemiesHolder != null)
+                foreach (Transform child in sceneRef.enemiesHolder.transform)
+                {
+                    if (child.gameObject.GetComponent<Bot>())
+                        enemyState.Add(child.gameObject.GetComponent<Bot>().ID, true);
+                }
+
+            gameState.newGame = false;
+        }
+
+        if (gameState.restartGame)
+        {
+            LoadData();
+            gameState.restartGame = false;
+        }
     }
 
     public void AssignEnemyID() //used in editor
     {
         int i = 0;
 
-        foreach (Transform child in enemiesHolder.transform)
+        foreach (Transform child in sceneRef.enemiesHolder.transform)
         {
             child.gameObject.GetComponent<Bot>().ID = i;
             enemyState.Add(child.gameObject.GetComponent<Bot>().ID, false);
@@ -118,7 +121,7 @@ public class GameManager : GenericSingleton<GameManager>
     {
         int i = 0;
 
-        foreach (Transform child in powerupHolder.transform)
+        foreach (Transform child in sceneRef.powerupHolder.transform)
         {
             child.gameObject.GetComponent<Powerup>().ID = i;
             powerUpState.Add(child.gameObject.GetComponent<Powerup>().ID, false);
@@ -136,14 +139,20 @@ public class GameManager : GenericSingleton<GameManager>
         SaveData savedData = new SaveData
         {
             currentHealth = playerData.currentHealth,
-            posX = Player.transform.position.x,
-            posY = Player.transform.position.y,
-            posZ = Player.transform.position.z,
+            posX = sceneRef.player.transform.position.x,
+            posY = sceneRef.player.transform.position.y,
+            posZ = sceneRef.player.transform.position.z,
             enemySaveState = enemyState,
             powerupSaveState = powerUpState
         };
 
+        #if UNITY_STANDALONE
         string filePath = Application.streamingAssetsPath + "/savedata.sav";
+        #endif
+
+        #if UNITY_WEBGL
+        string filePath = Application.persistentDataPath + "/savedata.sav";
+        #endif
 
         DataSerializer.SaveJson(savedData, filePath);
 
@@ -154,7 +163,13 @@ public class GameManager : GenericSingleton<GameManager>
     {
         SaveData savedData = new SaveData();
 
+        #if UNITY_STANDALONE
         string filePath = Application.streamingAssetsPath + "/savedata.sav";
+        #endif
+
+        #if UNITY_WEBGL
+        string filePath = Application.persistentDataPath + "/savedata.sav";
+        #endif
 
         savedData = DataSerializer.LoadJson(filePath);
 
@@ -167,19 +182,19 @@ public class GameManager : GenericSingleton<GameManager>
     {
         playerData.currentHealth = saveData.currentHealth;
 
-        Player.transform.position = new Vector3(saveData.posX, saveData.posY, saveData.posZ);
+        sceneRef.player.transform.position = new Vector3(saveData.posX, saveData.posY, saveData.posZ);
 
         enemyState = saveData.enemySaveState;
         powerUpState = saveData.powerupSaveState;
 
-        if (powerupHolder != null)
-            foreach (Transform child in powerupHolder.transform)
+        if (sceneRef.powerupHolder != null)
+            foreach (Transform child in sceneRef.powerupHolder.transform)
             {
                 child.gameObject.SetActive(powerUpState[child.gameObject.GetComponent<Powerup>().ID]);
             }
 
-        if (enemiesHolder != null)
-            foreach (Transform child in enemiesHolder.transform)
+        if (sceneRef.enemiesHolder != null)
+            foreach (Transform child in sceneRef.enemiesHolder.transform)
             {
                 child.gameObject.SetActive(enemyState[child.gameObject.GetComponent<Bot>().ID]);
             }

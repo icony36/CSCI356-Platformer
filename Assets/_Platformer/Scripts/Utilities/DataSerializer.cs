@@ -25,7 +25,7 @@ public static class DataSerializer
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string jsonString = reader.ReadToEnd();
-
+ 
                 SaveData saveData = JsonConvert.DeserializeObject<SaveData>(jsonString);
 
                 return saveData;

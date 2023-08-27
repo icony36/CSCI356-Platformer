@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameState gameState;
     [SerializeField] private SettingsMenu settingsMenu;
     [SerializeField] private string gameLevel;
 
     public void PlayGame()
     {
+        gameState.newGame = true;
         SceneManager.LoadScene(gameLevel);
     }
 
