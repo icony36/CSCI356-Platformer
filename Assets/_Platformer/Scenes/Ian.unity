@@ -990,7 +990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1555530820
 Transform:
   m_ObjectHideFlags: 0
@@ -999,7 +999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555530819}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.947, y: 0.5, z: 0}
+  m_LocalPosition: {x: 13.86, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  shouldPatrol: 1
+  shouldPatrol: 0
   visionRange: 10
   patrolEndPoint: {fileID: 1950217830}
   attackRange: 1.6
@@ -1436,11 +1436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2981875853732054059, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2981875853732054059, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4011327085595404846, guid: ebdce8fa87ff12448841d51893be00fa, type: 3}
       propertyPath: parent
@@ -1937,15 +1937,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8883949269946772364, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8883949269946772364, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8950099084063973195, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
       propertyPath: m_Name
       value: Slime_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8950099084063973195, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

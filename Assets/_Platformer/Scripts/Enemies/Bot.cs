@@ -28,13 +28,14 @@ public class Bot : MonoBehaviour
     protected Animator animator;
     protected GameObject target;
     protected Combat combat;
+    protected Collider coliider;
 
     // Animation Params
-    private const string ANIM_ATTACK = "Attack";
-    private const string ANIM_ATTACK_SPEED = "AttackSpeed";
-    private const string ANIM_SPEED = "Speed";
-    private const string ANIM_HURT = "Hurt";
-    private const string ANIM_DEAD = "Dead";
+    protected const string ANIM_ATTACK = "Attack";
+    protected const string ANIM_ATTACK_SPEED = "AttackSpeed";
+    protected const string ANIM_SPEED = "Speed";
+    protected const string ANIM_HURT = "Hurt";
+    protected const string ANIM_DEAD = "Dead";
 
     // State Machine
     public enum BotState
@@ -46,7 +47,7 @@ public class Bot : MonoBehaviour
 
     // Variables
     protected string targetTag;
-    private BotState currentState;
+    protected BotState currentState;
     protected Vector3 startingPosition;
     protected Vector3 endingPosition;
     protected Quaternion startingRotation;
@@ -56,6 +57,7 @@ public class Bot : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         combat = GetComponent<Combat>();
+        coliider = GetComponent<Collider>();
         EnemyVFXManager = GetComponent<EnemyVFXManager>();
 
         targetTag = combat?.TargetTag;
@@ -69,7 +71,7 @@ public class Bot : MonoBehaviour
         currentState = BotState.Patrolling;
     }
 
-    private void Update()
+    protected virtual void Update()
     {             
         if(CheckIsTargetDead())
         {
@@ -105,6 +107,7 @@ public class Bot : MonoBehaviour
                 break;
             case BotState.Dead:
                 animator.ResetTrigger(ANIM_DEAD);
+                coliider.enabled = true;
                 break;
             default:
                 break;
@@ -115,23 +118,20 @@ public class Bot : MonoBehaviour
         // entering new state
         switch (currentState)
         {
-            case BotState.Patrolling:
-                if (!shouldPatrol)
-                {
-                    transform.rotation = startingRotation;
-                }
+            case BotState.Patrolling:            
                 break;
             case BotState.Chasing:
                 break;
             case BotState.Dead:
                 animator.SetTrigger(ANIM_DEAD);
+                coliider.enabled = false;
                 break;
             default:
                 break;
         }        
     }
 
-    private void Patrolling()
+    protected virtual void Patrolling()
     {
         if (target == null) { return; }        
 
@@ -148,13 +148,21 @@ public class Bot : MonoBehaviour
                 Vector3 temp = endingPosition;
                 endingPosition = startingPosition;
                 startingPosition = temp;
-            }         
+            }
 
-            MoveToTarget(endingPosition);   
+            if (shouldPatrol)
+            {
+                MoveToTarget(endingPosition);   
+            }
+            else
+            {
+                transform.rotation = startingRotation;
+                PlayAnimIdle();
+            }
         }
     }
 
-    private void Chasing()
+    protected virtual void Chasing()
     {
         if (target == null) { return; }
 
@@ -173,7 +181,14 @@ public class Bot : MonoBehaviour
             }
             else
             {
-                MoveToTarget(target.transform.position);
+                if (shouldPatrol)
+                {
+                    MoveToTarget(target.transform.position);
+                }
+                else
+                {
+                    PlayAnimIdle();
+                }
             }
         }
         else
@@ -185,13 +200,13 @@ public class Bot : MonoBehaviour
 
     protected virtual void MoveToTarget(Vector3 targetPosition)
     {
-        if (!shouldPatrol)
+        if (Vector3.Distance(targetPosition, transform.position) < 0.1f)
         {
-            animator.SetFloat(ANIM_SPEED, 0);
-            
+            PlayAnimIdle();
+
             return;
         }
-        
+
         // get movement direction
         Vector3 direction = targetPosition - transform.position;
         direction.y = 0;
@@ -221,7 +236,7 @@ public class Bot : MonoBehaviour
         animator.SetFloat(ANIM_SPEED, 1, 0.1f, Time.deltaTime);
     }
 
-    public void RotateToTarget()
+    protected void RotateToTarget()
     {
         if (currentState != BotState.Dead)
         {
@@ -230,7 +245,7 @@ public class Bot : MonoBehaviour
     }
 
 
-    private IEnumerator DelaySwitchToPatrolling(float delaySeconds)
+    protected IEnumerator DelaySwitchToPatrolling(float delaySeconds)
     {
         yield return new WaitForSeconds(delaySeconds);
 

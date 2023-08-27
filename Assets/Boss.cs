@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : Bot
@@ -19,158 +18,85 @@ public class Boss : Bot
     [SerializeField] private int smashCount = 1;
 
     // Animation Params
-    private const string ANIM_ATTACK = "Attack";
-    private const string ANIM_ATTACK_SPEED = "AttackSpeed";
-    private const string ANIM_SPEED = "Speed";
     private const string ANIM_SHOOT = "Shoot";
     private const string ANIM_SMASH = "Smash";
     private const string ANIM_HEAL = "Heal";
-    private const string ANIM_HURT = "Hurt";
-    private const string ANIM_DEAD = "Dead";
     private const string ANIM_VICTORY = "Victory";
     
     // Referencse
     private BossCombat bossCombat;
-    private Collider coliider;
+    
 
     // Variables 
-    private BossState currentBossState;
     private int healCounter = 0;
     private int shootCounter = 0;
     private int smashCounter = 0;
     private float lastShootTime = 0f;
     private float lastSmashTime = 0f;
 
-    // State Machine
-    public enum BossState
-    {
-        Idle,
-        Attacking,
-        Shooting,
-        Smashing,
-        Healing,
-        Dead
-    }
-
+   
     protected override void Awake()
     {
         base.Awake();
 
-        coliider = GetComponent<Collider>();
-
         bossCombat = (BossCombat)combat;
-
-        currentBossState = BossState.Idle;
    }
 
-    private void Update()
+    protected override void Patrolling()
     {
-        if (CheckIsTargetDead())
-        {
-            PlayAnimVictory();
+        if (target == null) { return; }
 
-            return;
-        }
-
-        switch (currentBossState)
+        // chase target if target is within sight and agro range
+        if (CanSeeTarget())
         {
-            case BossState.Idle:
-                Idle();
-                break;
-            case BossState.Attacking:
-                Attacking();
-                break;
-            case BossState.Shooting:
-                Shooting();
-                break;
-            case BossState.Smashing:
-                Smashing();
-                break;
-            case BossState.Healing:
-                Healing();
-                break;
-            case BossState.Dead:
-                return;
-            default:
-                break;
+            currentState = BotState.Chasing;
         }
-
-        if (CheckShouldHeal())
+        else if (Vector3.Distance(startingPosition, transform.position) > 1f)
         {
-            SwitchBossState(BossState.Healing);
+            MoveToTarget(startingPosition);
         }
-        else if (CheckShouldShoot())
+        else
         {
-            SwitchBossState(BossState.Shooting);
-        }
-        else if (CheckShouldSmash())
-        {
-            SwitchBossState(BossState.Smashing);
+            transform.rotation = startingRotation;
+            PlayAnimIdle();
         }
     }
 
-    public void SwitchBossState(BossState newState)
+    protected override void Chasing()
     {
-        // exiting current state
-        switch (currentBossState)
-        {
-            case BossState.Idle:
-                break;
-            case BossState.Attacking:
-                break;
-            case BossState.Shooting:
-                animator.ResetTrigger(ANIM_SHOOT);
-                break;
-            case BossState.Smashing:
-                animator.ResetTrigger(ANIM_SMASH);
-                break;
-            case BossState.Healing:
-                animator.ResetTrigger(ANIM_HEAL);
-                break;
-            case BossState.Dead:
-                animator.ResetTrigger(ANIM_DEAD);
-                //coliider.enabled = true;
-                break;
-            default:
-                break;
-        }     
+        if (target == null) { return; }
 
-        currentBossState = newState;
-
-        // entering new state
-        switch (currentBossState)
-        {          
-            case BossState.Dead:
-                animator.SetTrigger(ANIM_DEAD);
-                coliider.enabled = false;
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void Idle()
-    {
-        PlayAnimIdle();
-        
-        if(CanSeeTarget())
-        {
-            SwitchBossState(BossState.Attacking);
-        }
-    }
-
-    private void Attacking()
-    {
         if (Vector3.Distance(target.transform.position, transform.position) < visionRange)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
+            if (CheckShouldHeal())
             {
-                PlayAnimIdle();
+                bossCombat.Heal();
+            }
+            else if (CheckShouldShoot())
+            {
+                RotateToTarget();
 
-                if (CheckShouldAttack())
+                bossCombat.Shoot();
+ 
+            }
+            else if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
+            {
+                Debug.Log("In attack range");
+                
+                PlayAnimIdle();
+  
+                if (CheckShouldSmash())
                 {
                     RotateToTarget();
+
+                    bossCombat.Smash();  
+                }
+                else if (CheckShouldAttack())
+                {
+                    RotateToTarget();
+
                     bossCombat.Attack();
+
                     lastAttackTime = Time.time;
                 }
             }
@@ -181,51 +107,15 @@ public class Boss : Bot
         }
         else
         {
-            // switch back to idle after 1 second
-            StartCoroutine(DelaySwitchToIdle(1));
+            // switch back to patrolling after 1 second
+            StartCoroutine(DelaySwitchToPatrolling(1));
         }
     }
-
-    private void Shooting()
-    {
-        RotateToTarget();
-
-        bossCombat.Shoot();
-
-        shootCounter++;
-
-        if (shootCounter >= shootCount) 
-        {
-            lastShootTime = Time.time;
-        }
-    }
-
-    private void Smashing()
-    {
-        RotateToTarget();
-
-        bossCombat.Smash();
-
-        smashCounter++;
-
-        if (smashCounter >= smashCount)
-        {
-            lastSmashTime = Time.time;
-        }
-    }
-
-    private void Healing()
-    {
-        bossCombat.Heal();
-
-        healCounter++;
-    }
+    
 
     private bool CheckShouldHeal()
     {
         float healthPercent = (float)bossCombat.CurrentHealth / bossCombat.MaxHealth;
-
-        Debug.Log(healthPercent);
 
         if (healthPercent <= 0.5f && healCounter < healCount)
         {
@@ -265,27 +155,36 @@ public class Boss : Bot
         return false;
     }
 
-    private IEnumerator DelaySwitchToIdle(float delaySeconds)
+    public void HandleHealEnd()
     {
-        yield return new WaitForSeconds(delaySeconds);
-
-        SwitchBossState(BossState.Idle);
+        healCounter++;
     }
 
-    public override void PlayAnimAttack()
+    public void HandleShootEnd()
     {
-        animator.SetTrigger(ANIM_ATTACK);
-        animator.SetFloat(ANIM_ATTACK_SPEED, attackRate);
+        shootCounter++;
+
+        if (shootCounter > shootCount - 1)
+        {
+            lastShootTime = Time.time;
+            shootCounter = 0;
+        }
+    }
+
+    public void HandleSmashEnd()
+    {
+        smashCounter++;
+
+        if (smashCounter > smashCount - 1)
+        {
+            lastSmashTime = Time.time;
+            smashCounter = 0;
+        }
     }
 
     public override void PlayAnimIdle()
     {
         animator.SetFloat(ANIM_SPEED, 0f, 0.1f, Time.deltaTime);
-    }
-
-    public override void PlayAnimHurt()
-    {
-        animator.SetTrigger(ANIM_HURT);
     }
 
     public void PlayAnimHeal()
@@ -307,6 +206,4 @@ public class Boss : Bot
     {
         animator.SetTrigger(ANIM_VICTORY);
     }
-
-    // Animation Events
 }

@@ -17,7 +17,7 @@ public class BossCombat : EnemyCombat
     {
         if (CurrentHealth <= 0)
         {
-            boss.SwitchBossState(Boss.BossState.Dead);
+            boss.SwitchBotState(Bot.BotState.Dead);
 
             // play sfx
             audioManager?.PlaySFX("EnemyDeath");
@@ -33,16 +33,29 @@ public class BossCombat : EnemyCombat
 
     public void Shoot()
     {
-        Debug.Log("Shoot");
-
         boss.PlayAnimShoot();
     }
     
     public void Smash()
     {
-        Debug.Log("Smash");
-
         boss.PlayAnimSmash();
     }
 
+    // Animation Event
+    public virtual void AnimEvents_HealEnd()
+    {
+        boss.HandleHealEnd();
+    }
+
+    // Animation Event
+    public virtual void AnimEvents_SmashEnd()
+    {
+        boss.HandleSmashEnd();
+    }
+
+    // Animation Event
+    public virtual void AnimEvents_ShootEnd()
+    {
+        boss.HandleShootEnd();
+    }
 }
