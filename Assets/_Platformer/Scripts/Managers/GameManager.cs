@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         LoadData();
-
     }
 
     public void Init() //need this to only be called on new game start

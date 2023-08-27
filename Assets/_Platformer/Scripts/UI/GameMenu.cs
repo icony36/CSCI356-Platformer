@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static Player;
@@ -72,6 +73,8 @@ public class GameMenu : MonoBehaviour
         {
             SwitchUIState(GameUIState.GamePlay);
         }
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void GoToMainMenu()

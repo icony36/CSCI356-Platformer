@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4835985566061632727, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5383682665759189448, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: bgm
       value: 
@@ -1656,6 +1660,10 @@ PrefabInstance:
     - target: {fileID: 4961644993820530825, guid: 2dce96ab4c8b872498d31808f1854f65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042575416441859776, guid: 2dce96ab4c8b872498d31808f1854f65, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
