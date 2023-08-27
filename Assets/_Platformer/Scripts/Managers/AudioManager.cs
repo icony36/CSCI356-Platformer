@@ -17,6 +17,7 @@ public class AudioManager : GenericSingleton<AudioManager>
     [SerializeField] private AudioClip lightningSkillSFX;
     [SerializeField] private AudioClip enemyDamageOrbSFX;
     [SerializeField] private AudioClip enemyDeathSFX;
+    [SerializeField] private AudioClip enemyHealSFX;
     [SerializeField] private AudioClip hurtSFX;
 
     private void Awake()
@@ -57,6 +58,9 @@ public class AudioManager : GenericSingleton<AudioManager>
                 break;
             case "EnemyDeath":
                 audioSource.PlayOneShot(enemyDeathSFX);
+                break;
+            case "EnemyHeal":
+                audioSource.PlayOneShot(enemyHealSFX);
                 break;
             case "Hurt":
                 audioSource.PlayOneShot(hurtSFX);
@@ -100,6 +104,9 @@ public class AudioManager : GenericSingleton<AudioManager>
                 break;
             case "EnemyDeath":
                 AudioSource.PlayClipAtPoint(enemyDeathSFX, position);
+                break;
+            case "EnemyHeal":
+                AudioSource.PlayClipAtPoint(enemyHealSFX, position);
                 break;
             case "Hurt":
                 AudioSource.PlayClipAtPoint(hurtSFX, position);

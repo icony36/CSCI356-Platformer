@@ -421,7 +421,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.0027038255
-        functionName: AnimEvents_HealEnd
+        functionName: AnimEvents_Heal
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

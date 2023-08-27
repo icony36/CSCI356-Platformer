@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Boss : Bot
 {
+    public BossVFXManager BossVFXManager { get; protected set; }
+
     [Header("Heal")]
     [SerializeField] private int healCount = 1;
 
@@ -38,6 +40,8 @@ public class Boss : Bot
     protected override void Awake()
     {
         base.Awake();
+
+        BossVFXManager = GetComponent<BossVFXManager>();
 
         bossCombat = (BossCombat)combat;
    }

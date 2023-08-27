@@ -6,6 +6,10 @@ public class BossCombat : EnemyCombat
 {
     private Boss boss;
 
+    [Header("Smash")]
+    [SerializeField] private int smashDamage;
+    [SerializeField] private HitBox smashHitBox;
+
     protected override void Start()
     {
         base.Start();
@@ -28,6 +32,12 @@ public class BossCombat : EnemyCombat
     {
         CurrentHealth = MaxHealth;
 
+        // play sfx
+        audioManager.PlaySFX("EnemyHeal");
+
+        // play vfx
+        boss.BossVFXManager.PlayHealEffect();
+
         boss.PlayAnimHeal();
     }
 
@@ -42,15 +52,53 @@ public class BossCombat : EnemyCombat
     }
 
     // Animation Event
-    public virtual void AnimEvents_HealEnd()
+    public override void AnimEvents_Hit()
     {
-        boss.HandleHealEnd();
+        AttackHitbox.EnableHitBox(AttackDamage);
+
+        // play sfx
+        audioManager?.PlaySFX("EnemyDamageOrb");
+
+        // play vfx
+        boss.BossVFXManager.PlayHitEffect();
+    }
+
+    // Animation Event
+    public virtual void AnimEvents_Smash()
+    {
+        smashHitBox.EnableHitBox(smashDamage);
+
+        // play sfx
+        audioManager?.PlaySFX("EnemyDamageOrb");
+
+        // play vfx
+        boss.BossVFXManager.PlaySmashEffect();
     }
 
     // Animation Event
     public virtual void AnimEvents_SmashEnd()
     {
+        smashHitBox.DisableHitBox();
+
         boss.HandleSmashEnd();
+    }
+
+    // Animation Event
+    public virtual void AnimEvents_Heal()
+    {        
+        boss.HandleHealEnd();
+    }
+
+    // Animation Event
+    public override void AnimEvents_Shoot()
+    {
+        Instantiate(damageOrbPrefab, shootingPoint.position, Quaternion.LookRotation(shootingPoint.forward));
+
+        // play sfx
+        audioManager?.PlaySFX("EnemyDamageOrb");
+
+        // play vfx
+        boss.BossVFXManager.PlayShootEffect();
     }
 
     // Animation Event
