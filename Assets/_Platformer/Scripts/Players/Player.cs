@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public const string ANIM_CLIMB_SPEED = "ClimbSpeed";
     public const string ANIM_RESPAWN = "Respawn";
     public const string ANIM_VICTORY = "Victory";
+    public const string ANIM_RANGE_ATTACK = "RangeAttack";
 
     public enum PlayerState
     {
@@ -74,6 +75,7 @@ public class Player : MonoBehaviour
             case PlayerState.Attacking:
                 PlayerCombat.AttackHitbox.DisableHitBox();
                 Animator.ResetTrigger(ANIM_ATTACK);
+                Animator.ResetTrigger(ANIM_RANGE_ATTACK);
                 break;
             case PlayerState.Casting:
                 Animator.ResetTrigger(ANIM_SKILL);
@@ -217,6 +219,11 @@ public class Player : MonoBehaviour
     public void PlayAnimVictory()
     {
         Animator.SetTrigger(ANIM_VICTORY);
+    }
+
+    public void PlayAnimRangeAttack()
+    {
+        Animator.SetTrigger(ANIM_RANGE_ATTACK);
     }
 }
 

@@ -105,6 +105,10 @@ public class PlayerCombat : Combat
             projectile.transform.position = directionIndicator.transform.GetChild(0).position;
             projectile.transform.eulerAngles = new Vector3(directionIndicator.transform.eulerAngles.x, transform.eulerAngles.y, 0);
 
+            player.PlayAnimRangeAttack();
+
+            audioManager.PlaySFX("Attack2");
+
             canFire = false;
         }
     }
@@ -193,31 +197,12 @@ public class PlayerCombat : Combat
     }
 
     // Animation Event
-    public void AnimEvents_Hit1()
-    {
-        AttackHitbox.EnableHitBox(playerData.attackDamage);
-
-        // play sfx
-        audioManager?.PlaySFX("Attack2");
-    }
-
-    // Animation Event
     public void AnimEvents_Hit2()
     {
         AttackHitbox.EnableHitBox(playerData.attackDamage);
 
         // play sfx
-        audioManager?.PlaySFX("Attack1");
-    }
-
-    // Animation Event
-    public void AnimEvents_Hit3()
-    {
-        AttackHitbox.EnableHitBox(playerData.attackDamage);
-
-        // play sfx
         audioManager?.PlaySFX("Attack2");
-        // play vfx
     }
 
     // Animation Event
