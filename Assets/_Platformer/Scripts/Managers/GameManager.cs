@@ -93,7 +93,7 @@ public class GameManager : GenericSingleton<GameManager>
         }
 
         if (gameState.restartGame)
-        {
+        { 
             LoadData();
             gameState.restartGame = false;
         }
@@ -147,11 +147,11 @@ public class GameManager : GenericSingleton<GameManager>
         };
 
         #if UNITY_STANDALONE
-        string filePath = Application.streamingAssetsPath + "/savedata.sav";
+            string filePath = Application.streamingAssetsPath + "/savedata.sav";
         #endif
 
         #if UNITY_WEBGL
-        string filePath = Application.persistentDataPath + "/savedata.sav";
+            string filePath = Application.persistentDataPath + "/savedata.sav";
         #endif
 
         DataSerializer.SaveJson(savedData, filePath);
@@ -164,11 +164,11 @@ public class GameManager : GenericSingleton<GameManager>
         SaveData savedData = new SaveData();
 
         #if UNITY_STANDALONE
-        string filePath = Application.streamingAssetsPath + "/savedata.sav";
+            string filePath = Application.streamingAssetsPath + "/savedata.sav";
         #endif
 
         #if UNITY_WEBGL
-        string filePath = Application.persistentDataPath + "/savedata.sav";
+            string filePath = Application.persistentDataPath + "/savedata.sav";
         #endif
 
         savedData = DataSerializer.LoadJson(filePath);

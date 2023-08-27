@@ -227,11 +227,11 @@ MonoBehaviour:
   <TagColor>k__BackingField: {r: 255, g: 0, b: 0, a: 1}
   <MaxHealth>k__BackingField: 300
   <CurrentHealth>k__BackingField: 0
-  <AttackDamage>k__BackingField: 20
+  <AttackDamage>k__BackingField: 10
   shootingPoint: {fileID: 3001897180354115874}
   damageOrbPrefab: {fileID: 7918134093635173403, guid: 78a7839f654f14746b1d6909547759be, type: 3}
   damageTextPrefab: {fileID: 2505701859587733129, guid: 040f1c12f6e5cf3458a85003f01d1227, type: 3}
-  smashDamage: 50
+  smashDamage: 30
   smashHitBox: {fileID: 2013226522110819019}
 --- !u!114 &2894444027797566915
 MonoBehaviour:
