@@ -62,6 +62,7 @@ public class StatusEffect : MonoBehaviour
             yield return null;
         }
 
+        playerData.attackDamage = initData.attackDamage;
         buffIndicator?.SetAttackUpRotationFill(1f);
     }
 
@@ -80,6 +81,7 @@ public class StatusEffect : MonoBehaviour
             yield return null;
         }
 
+        playerData.currentMoveSpeed = initData.baseMoveSpeed;
         buffIndicator?.SetSpeedUpRotationFill(1f);
     }
 
@@ -98,6 +100,7 @@ public class StatusEffect : MonoBehaviour
             yield return null;
         }
 
+        playerData.maxJumps = initData.maxJumps;
         buffIndicator?.SetJumpUpRotationFill(1f);
     }
 }
