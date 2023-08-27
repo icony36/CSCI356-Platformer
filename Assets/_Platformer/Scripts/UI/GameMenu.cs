@@ -8,9 +8,10 @@ using static Player;
 
 public class GameMenu : GenericSingleton<GameMenu>
 {
-    [SerializeField] private GameObject PauseMenu;
-    [SerializeField] private GameObject GameOverMenu;
-    [SerializeField] private GameObject GameWinMenu;
+    [SerializeField] private SettingsMenu settingsMenu;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject gameWinMenu;
 
     private GameManager gameManager;
 
@@ -33,29 +34,29 @@ public class GameMenu : GenericSingleton<GameMenu>
 
     private void SwitchUIState(GameUIState state)
     {
-        PauseMenu.SetActive(false);
-        GameOverMenu.SetActive(false);
-        GameWinMenu.SetActive(false);
+        settingsMenu.CloseSettingsMenu();
+        pauseMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        gameWinMenu.SetActive(false);
 
         Time.timeScale = 1; // to prevent game stop
 
         switch (state)
         {
             case GameUIState.GamePlay:
-                Cursor.visible = false;
                 break;
             case GameUIState.GamePause:
                 Time.timeScale = 0;
                 Cursor.visible = true;
-                PauseMenu.SetActive(true);
+                pauseMenu.SetActive(true);
                 break;
             case GameUIState.GameOver:
                 Cursor.visible = true;
-                GameOverMenu.SetActive(true);
+                gameOverMenu.SetActive(true);
                 break;
             case GameUIState.GameIsFinished:
                 Cursor.visible = true;
-                GameWinMenu.SetActive(true);
+                gameWinMenu.SetActive(true);
                 break;
             default:
                 break;
@@ -81,6 +82,16 @@ public class GameMenu : GenericSingleton<GameMenu>
     public void GoToMainMenu()
     {
         gameManager.ReturnToMainMenu();
+    }
+
+    public void OpenSettingsMenu()
+    {
+        settingsMenu.OpenSettingsMenu();
+    }
+
+    public void CloseSettingsMenu()
+    {
+        settingsMenu.CloseSettingsMenu();
     }
 
     public void RestartGame()
