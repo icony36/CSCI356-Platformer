@@ -9,6 +9,7 @@ TagManager:
   - PowerUp
   - GameManager
   - AudioManager
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

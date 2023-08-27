@@ -36,7 +36,7 @@ public class DamageOrb : MonoBehaviour
             }        
         }
 
-        if (other.tag != "PowerUp")
+        if (other.tag != "PowerUp" && other.tag != "CheckPoint")
         {
             if (hitVFX != null)
             {

@@ -6,6 +6,9 @@ public class Boss : Bot
 {
     public BossVFXManager BossVFXManager { get; protected set; }
 
+    [Header("Patrolling")]
+    [SerializeField] protected Transform patrolStartPoint;
+
     [Header("Heal")]
     [SerializeField] private int healCount = 1;
 
@@ -27,9 +30,10 @@ public class Boss : Bot
     
     // Referencse
     private BossCombat bossCombat;
-    
+
 
     // Variables 
+    private Vector3 patrolStartPosition;
     private int healCounter = 0;
     private int shootCounter = 0;
     private int smashCounter = 0;
@@ -44,18 +48,20 @@ public class Boss : Bot
         BossVFXManager = GetComponent<BossVFXManager>();
 
         bossCombat = (BossCombat)combat;
+
+        patrolStartPosition = patrolStartPoint.position;
    }
 
     protected override void Patrolling()
     {
         if (target == null) { return; }
 
-        // chase target if target is within sight and agro range
-        if (CanSeeTarget())
+        // chase target if target is within agro range (eyes on back)
+        if (IsWithinAgroRange() && IsTargetSameHeight())
         {
             CurrentState = BotState.Chasing;
         }
-        else if (Vector3.Distance(startingPosition, transform.position) > 1f)
+        else if (Vector3.Distance(startingPosition, transform.position) > 0.1f) // back to starting position if not at starting position
         {
             MoveToTarget(startingPosition);
         }
@@ -70,52 +76,101 @@ public class Boss : Bot
     {
         if (target == null) { return; }
 
-        if (Vector3.Distance(target.transform.position, transform.position) < visionRange)
+        if (!IsWithinAgroRange() || !IsTargetSameHeight())
         {
-            if (CheckShouldHeal())
-            {
-                bossCombat.Heal();
-            }
-            else if (CheckShouldShoot())
+            // switch back to patrolling after 1 second
+            StartCoroutine(DelaySwitchToPatrolling(1));
+
+            return;
+        }
+
+        if (CheckShouldHeal())
+        {
+            bossCombat.Heal();
+        }
+        else if (CheckShouldShoot())
+        {
+            RotateToTarget();
+
+            bossCombat.Shoot();
+ 
+        }
+        else if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
+        {
+            Debug.Log("In attack range");
+                
+            PlayAnimIdle();
+  
+            if (CheckShouldSmash())
             {
                 RotateToTarget();
 
-                bossCombat.Shoot();
- 
+                bossCombat.Smash();  
             }
-            else if (Vector3.Distance(target.transform.position, transform.position) < attackRange)
+            else if (CheckShouldAttack())
             {
-                Debug.Log("In attack range");
-                
-                PlayAnimIdle();
-  
-                if (CheckShouldSmash())
-                {
-                    RotateToTarget();
+                RotateToTarget();
 
-                    bossCombat.Smash();  
-                }
-                else if (CheckShouldAttack())
-                {
-                    RotateToTarget();
+                bossCombat.Attack();
 
-                    bossCombat.Attack();
-
-                    lastAttackTime = Time.time;
-                }
-            }
-            else
-            {
-                MoveToTarget(target.transform.position);
+                lastAttackTime = Time.time;
             }
         }
         else
         {
-            // switch back to patrolling after 1 second
-            StartCoroutine(DelaySwitchToPatrolling(1));
-        }
+            MoveToTarget(target.transform.position);
+        }        
     }
+
+    protected override void MoveToTarget(Vector3 targetPosition)
+    {
+        if (Vector3.Distance(targetPosition, transform.position) < 0.1f)
+        {
+            PlayAnimIdle();
+
+            return;
+        }
+
+        // get movement direction
+        Vector3 direction = targetPosition - transform.position;
+        direction.y = 0;
+        direction.z = 0;
+
+        // rotate to target
+        transform.rotation = Quaternion.LookRotation(direction);
+
+        // constraint movement between starting position and ending position
+        float maxX = Mathf.Max(patrolStartPosition.x, endingPosition.x);
+        float minX = Mathf.Min(patrolStartPosition.x, endingPosition.x);
+        if (transform.position.x <= maxX && transform.position.x >= minX)
+        {
+            // move forward
+            transform.Translate(0, 0, 0.2f * Time.deltaTime * speed);
+        }
+        else // relocate to nearest waypoint if out of boundary
+        {
+            float distFromStart = Vector3.Distance(transform.position, patrolStartPosition);
+            float distFromEnd = Vector3.Distance(transform.position, endingPosition);
+
+            Vector3 nearestPoint = distFromStart < distFromEnd ? patrolStartPosition : endingPosition;
+
+            transform.position = nearestPoint;
+        }
+
+        animator.SetFloat(ANIM_SPEED, 1, 0.1f, Time.deltaTime);
+    }
+
+    private bool IsWithinAgroRange()
+    {
+        return Vector3.Distance(target.transform.position, transform.position) < visionRange;
+    }
+
+    private bool IsTargetSameHeight()
+    {
+        float deltaY = Mathf.Abs(target.transform.position.y - transform.position.y);
     
+        return deltaY <= 1.2f;
+    }
 
     private bool CheckShouldHeal()
     {
