@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceSurface
       objectReference: {fileID: 0}
+    - target: {fileID: 6659629836422334158, guid: 5bd721e46fe2b3547b8fb32049b48426, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8822568762701314432, guid: 5bd721e46fe2b3547b8fb32049b48426, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
@@ -118,10 +122,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice Platform Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2239258970253432651, guid: 0f9ce8b3cfb13f246b47564114a17016, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6725067619189043194, guid: 0f9ce8b3cfb13f246b47564114a17016, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8302e328b12b5204c9f7a3403fb4c597, type: 2}
+    - target: {fileID: 8690080031602443977, guid: 0f9ce8b3cfb13f246b47564114a17016, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -146,9 +158,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4065776874852338972}
     m_Modifications:
+    - target: {fileID: 400480285327154377, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2496102730733415477, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
       propertyPath: m_Name
       value: SpeedUp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496102730733415477, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4340925874867139864, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,6 +209,14 @@ PrefabInstance:
     - target: {fileID: 4340925874867139864, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370225408981507969, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622272685721175715, guid: 32fb87961f47be345bc9917af6fe274d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

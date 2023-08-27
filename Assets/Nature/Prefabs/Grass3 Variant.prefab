@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass3 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5d1150fbaa24aa24da8c409fd45a1433, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d1150fbaa24aa24da8c409fd45a1433, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.813395

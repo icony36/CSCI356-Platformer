@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3201421751802060341
 Transform:
@@ -44,6 +44,22 @@ PrefabInstance:
     - target: {fileID: 171340212627718467, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
       propertyPath: m_Name
       value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 171340212627718467, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581811653226100657, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192211521373419110, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421180316006108532, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7906902514002659811, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
       propertyPath: m_RootOrder
@@ -88,6 +104,14 @@ PrefabInstance:
     - target: {fileID: 7906902514002659811, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224702594373055201, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107185831402445144, guid: 035ea2e44a4037e47b532ef7fd22f44c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -151,9 +175,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2388668925449737244, guid: ec1c302efe2301141a4b4f34aed9b5e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859421220341406741, guid: ec1c302efe2301141a4b4f34aed9b5e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8937207798476388143, guid: ec1c302efe2301141a4b4f34aed9b5e9, type: 3}
       propertyPath: m_Name
       value: Platform_Thin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937207798476388143, guid: ec1c302efe2301141a4b4f34aed9b5e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
