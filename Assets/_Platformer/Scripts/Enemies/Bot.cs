@@ -63,8 +63,8 @@ public class Bot : MonoBehaviour
         target = GameObject.FindWithTag(targetTag);
 
         startingPosition = transform.position;
-        endingPosition = patrolEndPoint.position;
         startingRotation = transform.rotation;
+        endingPosition = patrolEndPoint.position;
 
         currentState = BotState.Patrolling;
     }
@@ -258,8 +258,8 @@ public class Bot : MonoBehaviour
         //}
 
         float dot = Vector3.Dot(transform.forward, (target.transform.position - transform.position).normalized);
-
         float distance = Vector3.Distance(target.transform.position, transform.position);
+
         if (dot > 0.99f && distance <= visionRange) 
         { 
             return true; 

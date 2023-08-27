@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
     public PlayerCombat PlayerCombat { get; private set; }
     public PlayerController PlayerController { get; private set; }
     public Movement Movement { get; private set; }
+
+    public PlayerInput PlayerInput { get; private set; } 
 
     public GameObject LastCheckPoint { get; private set; }
 
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour
         PlayerCombat = GetComponent<PlayerCombat>();
         PlayerController = GetComponent<PlayerController>();
         Movement = GetComponent<Movement>();
+        PlayerInput = GetComponent<PlayerInput>();
 
         InitState();
     }
@@ -132,6 +136,18 @@ public class Player : MonoBehaviour
     {
         Movement.CanMove = false;
         Movement.CanClimb = false;
+        PlayerCombat.CanAttack = false;
+        PlayerCombat.CanSkill = false;
+    }
+
+    public void EnableCombatActions()
+    {
+        PlayerCombat.CanAttack = true;
+        PlayerCombat.CanSkill = true;
+    }
+
+    public void DisableCombatActions()
+    {
         PlayerCombat.CanAttack = false;
         PlayerCombat.CanSkill = false;
     }

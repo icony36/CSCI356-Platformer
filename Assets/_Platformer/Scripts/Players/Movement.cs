@@ -248,7 +248,9 @@ public class Movement : MonoBehaviour
 
     public void Climb(float climbValue, bool shouldJump)
     {
-        if (!CanClimb) { return; }
+        Debug.Log("can climb: " + CanClimb);
+
+        if (!CanClimb) { return; }     
 
         if (shouldJump)
         {
@@ -260,6 +262,7 @@ public class Movement : MonoBehaviour
             if (!isClimbing && climbValue > 0)
             {
                 isClimbing = true;
+                player.DisableCombatActions();
                 player.PlayAnimOnClimb(true);
                 characterController.radius = 0.2f;
 
@@ -307,6 +310,7 @@ public class Movement : MonoBehaviour
     {
         isNearLadder = false;
         isClimbing = false;
+        player.EnableCombatActions();
         player.PlayAnimOnClimb(false);
         characterController.radius = startingColliderRadius;
     }

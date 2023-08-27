@@ -1897,18 +1897,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5924841189347685284, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
-      propertyPath: attackRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5924841189347685284, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
-      propertyPath: visionRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5924841189347685284, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
-      propertyPath: shouldPatrol
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8883949269946772364, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1920,10 +1908,6 @@ PrefabInstance:
     - target: {fileID: 8950099084063973195, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
       propertyPath: m_Name
       value: Slime_03
-      objectReference: {fileID: 0}
-    - target: {fileID: 8950099084063973195, guid: 25be252bc71601f4d869a7afc9559417, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

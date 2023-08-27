@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 {
     // References
     private Player player;
-    private PlayerInput playerInput;
 
     // Input Action
     private InputAction moveAction;
@@ -22,15 +21,14 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        player = GetComponent<Player>();
-        playerInput = GetComponent<PlayerInput>();
+        player = GetComponent<Player>();      
 
-        moveAction = playerInput.actions["Move"];
-        jumpAction = playerInput.actions["Jump"];
-        dashAction = playerInput.actions["Dash"];
-        attackAction = playerInput.actions["Attack"];
-        skillAction = playerInput.actions["Skill"];
-        rangeToggle = playerInput.actions["Toggle"];
+        moveAction = player.PlayerInput?.actions["Move"];
+        jumpAction = player.PlayerInput?.actions["Jump"];
+        dashAction = player.PlayerInput?.actions["Dash"];
+        attackAction = player.PlayerInput?.actions["Attack"];
+        skillAction = player.PlayerInput?.actions["Skill"];
+        rangeToggle = player.PlayerInput?.actions["Toggle"];
     }
 
     private void Update()
@@ -56,7 +54,9 @@ public class PlayerController : MonoBehaviour
             if (player.CurrentState != Player.PlayerState.Normal && player.CurrentState != Player.PlayerState.Dead)
             {
                 if (player.Movement.CanMove)
+                {
                     player.SwitchPlayerState(Player.PlayerState.Normal);
+                }
             }
         }
 
