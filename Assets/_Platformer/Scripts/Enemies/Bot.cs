@@ -6,6 +6,9 @@ using UnityEngine;
 public class Bot : MonoBehaviour
 {
     public int ID;
+
+    public BotState CurrentState { get; protected set; }
+
     public EnemyVFXManager EnemyVFXManager { get; protected set; }
 
     [Header("Patrolling")]
@@ -47,7 +50,6 @@ public class Bot : MonoBehaviour
 
     // Variables
     protected string targetTag;
-    protected BotState currentState;
     protected Vector3 startingPosition;
     protected Vector3 endingPosition;
     protected Quaternion startingRotation;
@@ -68,7 +70,7 @@ public class Bot : MonoBehaviour
         startingRotation = transform.rotation;
         endingPosition = patrolEndPoint.position;
 
-        currentState = BotState.Patrolling;
+        CurrentState = BotState.Patrolling;
     }
 
     protected virtual void Update()
@@ -80,7 +82,7 @@ public class Bot : MonoBehaviour
             return;
         }
         
-        switch (currentState)
+        switch (CurrentState)
         {
             case BotState.Patrolling:
                 Patrolling();
@@ -98,7 +100,7 @@ public class Bot : MonoBehaviour
     public void SwitchBotState(BotState newState)
     {
         // exiting current state
-        switch (currentState)
+        switch (CurrentState)
         {
             case BotState.Patrolling:               
                 break;
@@ -113,10 +115,10 @@ public class Bot : MonoBehaviour
                 break;
         }
 
-        currentState = newState;
+        CurrentState = newState;
 
         // entering new state
-        switch (currentState)
+        switch (CurrentState)
         {
             case BotState.Patrolling:            
                 break;
@@ -138,7 +140,7 @@ public class Bot : MonoBehaviour
         // chase target if target is within sight and agro range
         if(CanSeeTarget())
         {
-            currentState = BotState.Chasing;
+            CurrentState = BotState.Chasing;
         }
         else
         {            
@@ -238,7 +240,7 @@ public class Bot : MonoBehaviour
 
     protected void RotateToTarget()
     {
-        if (currentState != BotState.Dead)
+        if (CurrentState != BotState.Dead)
         {
             transform.LookAt(new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z), Vector3.up);
         }

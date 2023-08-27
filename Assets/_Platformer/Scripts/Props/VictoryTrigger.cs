@@ -5,16 +5,19 @@ using UnityEngine.Events;
 
 public class VictoryTrigger : MonoBehaviour
 {
-    [SerializeField] private UnityEvent onPassedThrough;
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
+
 
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player")
         {
-            if(onPassedThrough != null)
-            {
-                onPassedThrough.Invoke();
-            }
+            gameManager.GameIsFinished();
         }
     }
 }

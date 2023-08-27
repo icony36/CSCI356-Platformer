@@ -53,7 +53,7 @@ public class Boss : Bot
         // chase target if target is within sight and agro range
         if (CanSeeTarget())
         {
-            currentState = BotState.Chasing;
+            CurrentState = BotState.Chasing;
         }
         else if (Vector3.Distance(startingPosition, transform.position) > 1f)
         {
