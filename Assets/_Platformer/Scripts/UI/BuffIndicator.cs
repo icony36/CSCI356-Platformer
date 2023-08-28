@@ -14,7 +14,6 @@ public class BuffIndicator : MonoBehaviour
     [SerializeField] private Image skillCDImage;
 
     private float coolDownRotationFill = 1f;
-    private float coolDownOpacity = 1f;
     private float attackUpFill = 0f;
     private float speedUpFill = 0f;
     private float jumpUpFill = 0f;

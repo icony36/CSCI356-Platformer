@@ -14,8 +14,6 @@ public class GameMenu : GenericSingleton<GameMenu>
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject gameWinMenu;
 
-    public bool IsRebindingKey = false;
-
     private GameManager gameManager;
 
     private enum GameUIState
