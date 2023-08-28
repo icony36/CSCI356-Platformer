@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UIElements;
 
 public class PlayerCombat : Combat
 {
@@ -61,16 +56,16 @@ public class PlayerCombat : Combat
             canFire = true;
         }
 
-        if (aimingMode)
-        {
-            float rot = 0;
-            rot -= Mouse.current.delta.y.ReadValue() * Time.deltaTime * 25.0f;
+        //if (aimingMode)
+        //{
+        //    float rot = 0;
+        //    rot -= Mouse.current.delta.y.ReadValue() * Time.deltaTime * 25.0f;
 
-            if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
-            {
-                directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
-            }
-        }
+        //    if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
+        //    {
+        //        directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
+        //    }
+        //}
     }
 
     public void Aiming(float moveValueY)
@@ -187,7 +182,9 @@ public class PlayerCombat : Combat
     {
         if (isInvincible) { return; }
 
-        playerData.currentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
+        int finalDamage = Mathf.CeilToInt(damageToInflict) + Mathf.FloorToInt(Random.Range(-3f, 3f));
+
+        playerData.currentHealth -= Mathf.Clamp(finalDamage, 0, finalDamage);
 
         player.PlayAnimHurt();
 
@@ -195,7 +192,7 @@ public class PlayerCombat : Combat
 
         // instantiate floating damage
         DamageIndicator indicator = Instantiate(DamageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
-        indicator.SetDamageText(damageToInflict);
+        indicator.SetDamageText(finalDamage);
 
         // play sfx
         audioManager.PlaySFX("Hurt");

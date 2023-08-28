@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyCombat : Combat
@@ -65,16 +64,15 @@ public class EnemyCombat : Combat
     {
         if (isInvincible) { return; }
 
-        CurrentHealth -= (int)Mathf.Clamp(damageToInflict, 0, damageToInflict);
+        int finalDamage = Mathf.CeilToInt(damageToInflict) + Mathf.FloorToInt(Random.Range(-2f, 3f));
+
+        CurrentHealth -= Mathf.Clamp(finalDamage, 0, finalDamage);
 
         bot.PlayAnimHurt();
 
         // instantiate floating damage
         DamageIndicator indicator = Instantiate(damageTextPrefab, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
-        indicator.SetDamageText(damageToInflict);
-
-        // play sfx
-        // play vfx
+        indicator.SetDamageText(finalDamage);
 
         CheckIsDead();
     }
