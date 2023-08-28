@@ -69,7 +69,20 @@ public class PlayerCombat : Combat
             if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
             {
                 directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
-            }      
+            }
+        }
+    }
+
+    public void Aiming(float moveValueY)
+    {
+        if (!aimingMode) { return; }
+        
+        float rot = 0;
+        rot -= moveValueY * Time.deltaTime * 80f;
+
+        if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
+        {
+            directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
         }
     }
 

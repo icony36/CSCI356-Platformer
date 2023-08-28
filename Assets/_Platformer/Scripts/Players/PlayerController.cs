@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     {
         HandleMoveInput();
 
+        HandleAimingInput();
+
         HandleAttackInput();
 
         HandleSkillInput();
@@ -91,6 +93,15 @@ public class PlayerController : MonoBehaviour
         {
             player.PlayerCombat.UseSkill();
         }
+    }
+
+    private void HandleAimingInput()
+    {
+        if (moveAction == null) { return; }
+
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+
+        player.PlayerCombat.Aiming(moveValue.y);
     }
 }
 
