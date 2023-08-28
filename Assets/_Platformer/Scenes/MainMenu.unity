@@ -1332,6 +1332,7 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: 4d904d50e41fe634f95e00dc7a2e12b8, type: 2}
   settingsMenu: {fileID: 1482795814}
   gameLevel: Regina
+  loadButton: {fileID: 1875469671}
 --- !u!224 &1482795813 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 305081386799644280, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
@@ -1560,7 +1561,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1240207244}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OpenSettingsMenu
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
