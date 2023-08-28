@@ -97,7 +97,7 @@ public class Bot : MonoBehaviour
         }
     }
 
-    public void SwitchBotState(BotState newState)
+    public virtual void SwitchBotState(BotState newState)
     {
         // exiting current state
         switch (CurrentState)
@@ -140,7 +140,7 @@ public class Bot : MonoBehaviour
         // chase target if target is within sight and agro range
         if(CanSeeTarget())
         {
-            CurrentState = BotState.Chasing;
+            SwitchBotState(BotState.Chasing);
         }
         else
         {            

@@ -30,7 +30,7 @@ public class Boss : Bot
     
     // Referencse
     private BossCombat bossCombat;
-
+    private GameManager gameManager;
 
     // Variables 
     private Vector3 patrolStartPosition;
@@ -49,8 +49,20 @@ public class Boss : Bot
 
         bossCombat = (BossCombat)combat;
 
+        gameManager = GameManager.Instance;
+
         patrolStartPosition = patrolStartPoint.position;
-   }
+    }
+
+    public override void SwitchBotState(BotState newState)
+    {
+        if (newState == BotState.Chasing)
+        {
+            gameManager.SetIsFightingBoss(true);
+        }
+
+        base.SwitchBotState(newState);
+    }
 
     protected override void Patrolling()
     {
@@ -59,7 +71,7 @@ public class Boss : Bot
         // chase target if target is within agro range (eyes on back)
         if (IsWithinAgroRange() && IsTargetSameHeight())
         {
-            CurrentState = BotState.Chasing;
+            SwitchBotState(BotState.Chasing);
         }
         else if (Vector3.Distance(startingPosition, transform.position) > 0.1f) // back to starting position if not at starting position
         {

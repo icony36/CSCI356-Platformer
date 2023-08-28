@@ -17,9 +17,13 @@ public class GameManager : GenericSingleton<GameManager>
     public Dictionary<int, bool> powerUpState = new Dictionary<int, bool>();
 
     private bool isGameOver;
+    private AudioManager audioManager;
+    private bool isFightingBoss;
 
     private void Start()
     {
+        audioManager = AudioManager.Instance;
+        
         Init();
     }
 
@@ -50,10 +54,26 @@ public class GameManager : GenericSingleton<GameManager>
         }
     }
 
+    public void SetIsFightingBoss(bool isFightingBoss)
+    {
+        if (isFightingBoss && !this.isFightingBoss) 
+        {
+            audioManager.ChangeBGM("Boss");
+        }
+
+        if (!isFightingBoss && this.isFightingBoss)
+        {
+            audioManager.PlayDefaultBGM();
+        }
+
+        this.isFightingBoss = isFightingBoss;
+    }
+
     private void GameIsOver()
     {
         Debug.Log("GAME OVER");
         gameMenu.ShowGameOverMenu();
+        audioManager.ChangeBGM("Lose");
     }
 
     public void GameIsFinished()
@@ -62,6 +82,7 @@ public class GameManager : GenericSingleton<GameManager>
         sceneRef.player.DisableAllActions();
         sceneRef.player.PlayAnimVictory();
         gameMenu.ShowGameWinMenu();
+        audioManager.ChangeBGM("Win");
     }
 
     public void ReturnToMainMenu()

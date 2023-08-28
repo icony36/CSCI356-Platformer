@@ -2099,7 +2099,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5023e27c18c9067488800a1fadd933c4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 31d4cecf0bfd32047ac8e9970eb673c1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2349,6 +2349,10 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: e99fe5db008097447ad0a6960949da6a, type: 3}
   closeSound: {fileID: 8300000, guid: 65d8e030ed257d744b7bfc0c81e9f20d, type: 3}
   toggleSound: {fileID: 0}
+  bgmAudio: {fileID: 0}
+  bossBGM: {fileID: 0}
+  winBGM: {fileID: 0}
+  loseBGM: {fileID: 0}
 --- !u!1 &5172567919885471325
 GameObject:
   m_ObjectHideFlags: 0

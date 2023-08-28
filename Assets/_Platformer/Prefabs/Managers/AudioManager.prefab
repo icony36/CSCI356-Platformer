@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3237991980433238248}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6440492318943881632
 AudioSource:
@@ -160,6 +160,10 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: e99fe5db008097447ad0a6960949da6a, type: 3}
   closeSound: {fileID: 8300000, guid: 65d8e030ed257d744b7bfc0c81e9f20d, type: 3}
   toggleSound: {fileID: 8300000, guid: 6c97afe04465fd5479baec1d273f6225, type: 3}
+  bgmAudio: {fileID: 1352264677383997448}
+  bossBGM: {fileID: 8300000, guid: 7c45657e8b66d504f93d9c5a5f6b8959, type: 3}
+  winBGM: {fileID: 8300000, guid: 09564b8b17d810044ba97eca4ffaf6e1, type: 3}
+  loseBGM: {fileID: 8300000, guid: 3ddb4f541102f8f43bf9888f889638fa, type: 3}
 --- !u!1 &5172567920153432299
 GameObject:
   m_ObjectHideFlags: 0

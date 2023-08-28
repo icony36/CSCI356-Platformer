@@ -5,10 +5,10 @@ using UnityEngine;
 public class VictoryGroup : MonoBehaviour
 {
     [SerializeField] private Boss boss;
-    [SerializeField] private VictoryTrigger victoryTrigger;
+    [SerializeField] private VictoryTrigger victoryTrigger; 
 
     private void Awake()
-    {
+    {        
         if (victoryTrigger != null)
         {
             victoryTrigger.gameObject.SetActive(false);

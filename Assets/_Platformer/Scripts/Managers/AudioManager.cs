@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,9 +31,19 @@ public class AudioManager : GenericSingleton<AudioManager>
     [SerializeField] private AudioClip closeSound;
     [SerializeField] private AudioClip toggleSound;
 
+    [Header("BGM")]
+    [SerializeField] private AudioSource bgmAudio;
+    [SerializeField] private AudioClip bossBGM;
+    [SerializeField] private AudioClip winBGM;
+    [SerializeField] private AudioClip loseBGM;
+
+    private AudioClip bgm;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        
+        bgm = bgmAudio.clip;
     }
 
     public void PlaySFX(string sfxName)
@@ -164,5 +175,37 @@ public class AudioManager : GenericSingleton<AudioManager>
     public void StopSFX()
     {
         audioSource.Stop();
+    }
+
+    public void ChangeBGM(string bgmName)
+    {
+        switch (bgmName)
+        {
+            case "Boss":
+                bgmAudio.Stop();
+                bgmAudio.clip = bossBGM;
+                bgmAudio.Play();
+                break;
+            case "Lose":
+                bgmAudio.Stop();
+                bgmAudio.clip = loseBGM;
+                bgmAudio.Play();
+                break;
+            case "Win":
+                bgmAudio.Stop();
+                bgmAudio.clip = winBGM;
+                bgmAudio.Play();
+                break;
+            default:
+                Debug.Log(bgmName + " BGM not found.");
+                break;
+        }
+    }
+
+    public void PlayDefaultBGM()
+    {
+        bgmAudio.Stop();
+        bgmAudio.clip = bgm;
+        bgmAudio.Play();
     }
 }
