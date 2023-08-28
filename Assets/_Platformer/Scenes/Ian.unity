@@ -619,10 +619,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1446253121647378604, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2047253354144886211, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: m_Name
       value: SettingsCanvas
@@ -633,6 +629,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309343307643762375, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309343307643762375, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3663034664387619605, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4804171109038418516, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
     - target: {fileID: 5081899765731871291, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -683,10 +687,6 @@ PrefabInstance:
       propertyPath: sfx
       value: 
       objectReference: {fileID: 484480224}
-    - target: {fileID: 8959486748161453589, guid: 39e3579c4ae471b49b70e7c30caa2996, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
