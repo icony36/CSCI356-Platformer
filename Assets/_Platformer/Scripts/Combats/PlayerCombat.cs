@@ -32,6 +32,7 @@ public class PlayerCombat : Combat
     private Player player;
     private PlayerData playerData;
     private BuffIndicator buffIndicator;
+    private ToggleIndicator toggleIndicator;
 
     // Local Variables
     private int currentAttackIndex = 0;
@@ -42,6 +43,7 @@ public class PlayerCombat : Combat
     {
         player = GetComponent<Player>();
         buffIndicator = GameMenu.Instance?.GetComponent<BuffIndicator>();
+        toggleIndicator = GameMenu.Instance?.GetComponent<ToggleIndicator>();
 
         playerData = player.playerData;
         
@@ -158,6 +160,7 @@ public class PlayerCombat : Combat
     {
         aimingMode = !aimingMode;
         directionIndicator.SetActive(aimingMode);
+        toggleIndicator.ToggleAttackType(aimingMode);
     }    
 
     public override void CheckIsDead()

@@ -159,6 +159,7 @@ MonoBehaviour:
   hoverSound: {fileID: 8300000, guid: 0490920a080a2674da9fb5109b9ad5b6, type: 3}
   clickSound: {fileID: 8300000, guid: e99fe5db008097447ad0a6960949da6a, type: 3}
   closeSound: {fileID: 8300000, guid: 65d8e030ed257d744b7bfc0c81e9f20d, type: 3}
+  toggleSound: {fileID: 8300000, guid: 6c97afe04465fd5479baec1d273f6225, type: 3}
 --- !u!1 &5172567920153432299
 GameObject:
   m_ObjectHideFlags: 0

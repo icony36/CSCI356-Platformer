@@ -28,6 +28,7 @@ public class AudioManager : GenericSingleton<AudioManager>
     [SerializeField] private AudioClip hoverSound;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private AudioClip closeSound;
+    [SerializeField] private AudioClip toggleSound;
 
     private void Awake()
     {
@@ -150,6 +151,9 @@ public class AudioManager : GenericSingleton<AudioManager>
                 break;
             case "Close":
                 audioSource.PlayOneShot(closeSound, 4f);
+                break;
+            case "Toggle":
+                audioSource.PlayOneShot(toggleSound, 2f);
                 break;
             default:
                 Debug.Log(sound + " sfx not found.");

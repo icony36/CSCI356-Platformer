@@ -15,17 +15,19 @@ public class ToggleIndicator : MonoBehaviour
         audioManager = AudioManager.Instance;
     }
 
-    public void ToggleImage(bool isMelee)
+    public void ToggleAttackType(bool isRange)
     {
-        if (isMelee)
-        {
-            meleeImage.gameObject.SetActive(true);
-            rangeImage.gameObject.SetActive(false);
-        }
-        else
+        audioManager.PlayUISound("Toggle");
+        
+        if (isRange)
         {
             meleeImage.gameObject.SetActive(false);
             rangeImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            meleeImage.gameObject.SetActive(true);
+            rangeImage.gameObject.SetActive(false);
         }
     }
 }

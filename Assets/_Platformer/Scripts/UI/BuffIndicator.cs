@@ -101,9 +101,4 @@ public class BuffIndicator : MonoBehaviour
             speedUpCDImage.gameObject.SetActive(false);
         }
     }
-
-    public void SetCDOpacity(float value)
-    {
-        coolDownOpacity = value;
-    }
 }
