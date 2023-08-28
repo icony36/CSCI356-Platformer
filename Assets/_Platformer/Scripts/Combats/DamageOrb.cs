@@ -26,7 +26,7 @@ public class DamageOrb : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {        
-        if (other.tag == targetTag)
+        if (other.CompareTag(targetTag))
         {
             Combat targetCombat = other.GetComponent<Combat>();
 
@@ -36,7 +36,7 @@ public class DamageOrb : MonoBehaviour
             }        
         }
 
-        if (other.tag != "PowerUp" && other.tag != "Trigger")
+        if (!other.CompareTag("PowerUp") && !other.CompareTag("Trigger"))
         {
             if (hitVFX != null)
             {

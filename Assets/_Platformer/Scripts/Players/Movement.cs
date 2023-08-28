@@ -198,14 +198,18 @@ public class Movement : MonoBehaviour
         knockBackImpact = Vector3.Lerp(knockBackImpact, Vector3.zero, Time.deltaTime * 5);
 
         // pass the movement to the character controller
-        if (!onIceSurface)
+
+        if(characterController.enabled)
         {
-            characterController.Move(moveVec * Time.deltaTime);
-        }
-        else if (onIceSurface && !isSliding)
-        {
-            characterController.Move(moveVec * Time.deltaTime);
-        }
+            if (!onIceSurface)
+            {
+                characterController.Move(moveVec * Time.deltaTime);
+            }
+            else if (onIceSurface && !isSliding)
+            {
+                characterController.Move(moveVec * Time.deltaTime);
+            }
+        }  
     }
 
     private void Jump()

@@ -5,6 +5,7 @@ using UnityEngine;
 //TODO : Add additional properties for use in differentating different node levels
 public class Node
 {
+    public int id;
     public int fCost
     {
         get
@@ -21,8 +22,9 @@ public class Node
     public List<Node> adjacentNodes;
     public Node nodeParent;
 
-    public Node(bool walkable, Vector3 _worldPos)
+    public Node(bool walkable, Vector3 _worldPos, int index)
     {
+        id = index;
         isWalkable = walkable;
         worldPos = _worldPos;
     }

@@ -21,5 +21,10 @@ public class NodeGraph_Editor : Editor
         {
             aStarGrid.ClearList();
         }
+
+        if (GUILayout.Button("Test"))
+        {
+            aStarGrid.Test();
+        }
     }
 }

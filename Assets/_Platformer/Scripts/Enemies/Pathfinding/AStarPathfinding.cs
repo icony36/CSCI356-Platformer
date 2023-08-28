@@ -11,10 +11,10 @@ public class AStarPathfinding : MonoBehaviour
 
     private List<Node> nodesToDraw = new List<Node>();
 
-    public List<Node> CalculatePath(Vector3 startPos, Vector3 endPos)
+    public List<Node> CalculatePath(Node startPos, Node endPos)
     {
-        Node startNode = nodeGraph.GetNearestNode(startPos);
-        Node endNode = nodeGraph.GetNearestNode(endPos);
+        Node startNode = startPos;
+        Node endNode = endPos;
 
         List<Node> openList = new List<Node>();
         HashSet<Node> closedList = new HashSet<Node>();
@@ -39,7 +39,7 @@ public class AStarPathfinding : MonoBehaviour
 
             List<Node> adjacentNodes = new List<Node>();
 
-            foreach (Node adjacentNode in nodeGraph.GetAdjacentNodes(currentNode))
+            foreach (Node adjacentNode in currentNode.adjacentNodes)
             {
                 if (!adjacentNode.isWalkable || closedList.Contains(adjacentNode))
                 {
@@ -132,12 +132,12 @@ public class AStarPathfinding : MonoBehaviour
         //Draw the path in yellow if debugging
         if (drawPath)
         {
-            Gizmos.color = Color.yellow;
+            Gizmos.color = Color.blue;
             if (nodesToDraw.Count > 0)
             {
                 foreach (Node n in nodesToDraw)
                 {
-                    //Gizmos.DrawWireCube(n.worldPos, new Vector3(1, 1, 1) * nodeGrid.nodeSize);
+                    Gizmos.DrawLine(n.worldPos, n.nodeParent.worldPos);
                 }
             }
         }

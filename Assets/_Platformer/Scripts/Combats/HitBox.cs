@@ -30,7 +30,7 @@ public class HitBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == targetTag && !hitTargetList.Contains(other))
+        if (other.CompareTag(targetTag) && !hitTargetList.Contains(other))
         {
             Combat targetCombat = other.GetComponent<Combat>();
             if (targetCombat != null)

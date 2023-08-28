@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -14,93 +16,56 @@ public class NodeGraph : MonoBehaviour
     //private Vector3 gridStartPos; //origin point of the grid, calculated based on the grid size
     //private float gridOffset;
 
+    [SerializeField] private List<GameObject> nodeObjects; 
+
+    private List<Node> graphNodes = new List<Node>();
+
     private void Start()
     {
-        ConstructGraph();
+        ConstructGraph(); 
     }
 
     public void ConstructGraph()
     {
-        foreach(Transform child in transform) 
-        {
-            if(child.gameObject.GetComponentInChildren<BoxCollider>() != null)
-            {
-
-            }
-        }
-    }
-
-    public List<Node> GetAdjacentNodes(Node node)
-    {
-        List<Node> adjacentNodes = new List<Node>();
-
-        //int x = node.gridPos.x;
-        //int y = node.gridPos.y;
-
-        ////checking for edge cases
-        //bool left = x != 0;
-        //bool right = x != gridX - 1;
-        //bool down = y != 0;
-        //bool up = y != gridY - 1;
-
-        ////add adjacent nodes to list
-        //if (left)
+        //int id = 0;
+        //foreach(Transform section in platformSections)
         //{
-        //    adjacentNodes.Add(nodes[x - 1, y]);
-        //}
-        //if (right)
-        //{
-        //    adjacentNodes.Add(nodes[x + 1, y]);
-        //}
-        //if (down)
-        //{
-        //    adjacentNodes.Add(nodes[x, y - 1]);
-        //}
-        //if (up)
-        //{
-        //    adjacentNodes.Add(nodes[x, y + 1]);
-        //}
-
-        //if (diagonalMovement)
-        //{
-        //    if (left)
+        //    foreach (Transform child in section)
         //    {
-        //        if (down)
+        //        if (child.transform.GetComponentInChildren<BoxCollider>() != null)
         //        {
-        //            if (nodes[x - 1, y].isWalkable && nodes[x, y - 1].isWalkable)
+        //            float extents = child.transform.GetComponentInChildren<BoxCollider>().bounds.extents.x;
+
+        //            Vector3 leftEdge = child.transform.GetComponentInChildren<BoxCollider>().bounds.center - new Vector3(extents - 0.5f, 0, 0);
+
+        //            for (int i = 0; i < (int)extents * 2; i++)
         //            {
-        //                adjacentNodes.Add(nodes[x - 1, y - 1]);
-        //            }
-        //        }
-        //        if (up)
-        //        {
-        //            if (nodes[x - 1, y].isWalkable && nodes[x, y + 1].isWalkable)
-        //            {
-        //                adjacentNodes.Add(nodes[x - 1, y + 1]);
+        //                Node node = new Node(true, leftEdge + new Vector3(i, 1f, 0), id);
+        //                nodePositions.Add(node.worldPos);
+        //                graphNodes.Add(node);
+        //                id++;
         //            }
         //        }
         //    }
-        //    if (right)
-        //    {
-        //        if (down)
-        //        {
-        //            if (nodes[x + 1, y].isWalkable && nodes[x, y - 1].isWalkable)
-        //            {
-        //                adjacentNodes.Add(nodes[x + 1, y - 1]);
-        //            }
-        //        }
-        //        if (up)
-        //        {
-        //            if (nodes[x + 1, y].isWalkable && nodes[x, y + 1].isWalkable)
-        //            {
-        //                adjacentNodes.Add(nodes[x + 1, y + 1]);
-        //            }
-        //        }
-        //    }
-        //}
-
-        return adjacentNodes;
+        //}  
     }
+
+    //public List<Node> GetAdjacentNodes(Node node)
+    //{
+    //    Debug.Log(graphNodes.Count);
+    //    Debug.Log(node.id);
+    //    List<Node> adjacentNodes = new List<Node>();
+
+    //    if (node.id - 1 > 0)
+    //        adjacentNodes.Add(graphNodes[node.id - 1]);
+
+    //    if (node.id + 1 < graphNodes.Count)
+    //        adjacentNodes.Add(graphNodes[node.id + 1]);
+
+        
+
+    //    return adjacentNodes;
+    //}
 
     public Node GetNearestNode(Vector3 pos)
     {
@@ -109,28 +74,23 @@ public class NodeGraph : MonoBehaviour
 
     public void ClearList()
     {
+        graphNodes.Clear();
+    }
 
+    public void Test()
+    {
+        GetComponent<AStarPathfinding>().CalculatePath(graphNodes[0], graphNodes[13]);
     }
 
     private void OnDrawGizmos()
     {
-        //if (showGrid && nodes != null)
-        //{
-        //    //outlines unwalkable tiles in red, walkable tiles in white
-        //    foreach (Node n in nodes)
-        //    {
-        //        if (n.isWalkable)
-        //        {
-        //            Gizmos.color = Color.white;
-        //        }
-        //        else
-        //        {
-        //            Gizmos.color = Color.red;
-        //        }
+        // Draw a yellow sphere at the transform's position
+        //Gizmos.color = Color.yellow;
 
-        //        Gizmos.DrawWireCube(n.worldPos, new Vector3(1, 1, 1) * nodeSize);
-        //    }
-        //}
+        //foreach(Vector3 pos in nodePositions)
+        //{
+        //    Gizmos.DrawWireSphere(pos, 0.5f);
+        //}    
     }
 }
 

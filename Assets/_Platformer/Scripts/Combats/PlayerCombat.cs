@@ -55,17 +55,6 @@ public class PlayerCombat : Combat
             currentAttackTimer = 0f;
             canFire = true;
         }
-
-        //if (aimingMode)
-        //{
-        //    float rot = 0;
-        //    rot -= Mouse.current.delta.y.ReadValue() * Time.deltaTime * 25.0f;
-
-        //    if (!(directionIndicator.transform.localEulerAngles.x + rot >= 45 && directionIndicator.transform.localEulerAngles.x + rot <= 315))
-        //    {
-        //        directionIndicator.transform.localEulerAngles += new Vector3(rot, 0, 0);
-        //    }
-        //}
     }
 
     public void Aiming(float moveValueY)
