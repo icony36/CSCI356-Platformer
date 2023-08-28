@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : GenericSingleton<GameManager>
 {
     [SerializeField] GameMenu gameMenu;
+    [SerializeField] Player player;
     public SceneReferences sceneRef;
     public PlayerData playerData;
     public PlayerData initData;
@@ -18,7 +19,7 @@ public class GameManager : GenericSingleton<GameManager>
     private bool isGameOver;
 
     private void Start()
-    {       
+    {
         Init();
     }
 
@@ -37,11 +38,9 @@ public class GameManager : GenericSingleton<GameManager>
     }
 
     private void HandleUIInput()
-    {
-        
+    {        
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("Escape");
+        { 
             gameMenu.TogglePauseMenu();
             
             if (gameMenu.GetInfoMenuIsOpen())
@@ -76,6 +75,17 @@ public class GameManager : GenericSingleton<GameManager>
     {
         gameState.restartGame = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void UpdateKeyIndicator()
+    {
+        string skillKeyText = player.PlayerInput?.actions["Skill"].GetBindingDisplayString(0);
+        string toggleKeyText = player.PlayerInput?.actions["Toggle"].GetBindingDisplayString(0);
+
+        KeyIndicator keyIndicator = gameMenu?.GetComponent<KeyIndicator>();
+
+        keyIndicator.SetSkillKeyText(skillKeyText);
+        keyIndicator.SetToggleKeyText(toggleKeyText);
     }
 
     public void Init() 

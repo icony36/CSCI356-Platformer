@@ -29,6 +29,7 @@ public class GameMenu : GenericSingleton<GameMenu>
     private void Start()
     {
         gameManager = GameManager.Instance.GetComponent<GameManager>();
+        gameManager.UpdateKeyIndicator();
         
         SwitchUIState(GameUIState.GamePlay);
     }
@@ -76,6 +77,8 @@ public class GameMenu : GenericSingleton<GameMenu>
         {
             SwitchUIState(GameUIState.GamePlay);
         }
+
+        gameManager.UpdateKeyIndicator();
 
         EventSystem.current.SetSelectedGameObject(null);
     }
