@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
             case PlayerState.Dead:
                 Animator.ResetTrigger(ANIM_DEAD);
                 EnableAllActions();
+                Movement.EnableCharacterController(true);
                 break;
             default:
                 break;
@@ -105,6 +106,7 @@ public class Player : MonoBehaviour
             case PlayerState.Dead:
                 Animator.SetTrigger(ANIM_DEAD);
                 DisableAllActions();
+                Movement.EnableCharacterController(false);
                 break;
             default:
                 break;
