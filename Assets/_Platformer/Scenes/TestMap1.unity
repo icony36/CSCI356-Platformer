@@ -1936,6 +1936,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 631741205832821445, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 631741205832821445, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 631741205832821445, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 2570042300145603590, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
       propertyPath: m_Name
       value: VictoryGroup
@@ -1959,6 +1971,10 @@ PrefabInstance:
     - target: {fileID: 4412057831401710456, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656663746940455972, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4685740942990827041, guid: a5df100f28eb4d142aed56bb9e952a03, type: 3}
       propertyPath: m_AnchorMax.x

@@ -118,6 +118,11 @@ public class GameMenu : GenericSingleton<GameMenu>
         gameManager.RestartGame();
     }
 
+    public void ReloadGame()
+    {
+        gameManager.ReloadGame();
+    }
+
     public void ShowGameOverMenu()
     {
         SwitchUIState(GameUIState.GameOver);

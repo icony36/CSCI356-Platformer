@@ -79,10 +79,10 @@ public class GameManager : GenericSingleton<GameManager>
     public void GameIsFinished()
     {
         Debug.Log("GAME FINISHED");
-        sceneRef.player.DisableAllActions();
-        sceneRef.player.PlayAnimVictory();
         gameMenu.ShowGameWinMenu();
         audioManager.ChangeBGM("Win");
+        sceneRef.player.DisableAllActions();
+        sceneRef.player.PlayAnimVictory();
     }
 
     public void ReturnToMainMenu()
@@ -95,6 +95,11 @@ public class GameManager : GenericSingleton<GameManager>
     public void RestartGame()
     {
         gameState.restartGame = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReloadGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
