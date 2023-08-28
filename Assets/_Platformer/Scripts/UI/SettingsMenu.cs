@@ -32,7 +32,6 @@ public class SettingsMenu : MonoBehaviour
 
         sfx.volume = savedSFXVolume;
         sfxSlider.value = savedSFXVolume;
-
         
         InitResolutionDropdown();
         SetCurrentResolution();

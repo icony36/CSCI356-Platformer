@@ -43,6 +43,11 @@ public class GameManager : GenericSingleton<GameManager>
         {
             Debug.Log("Escape");
             gameMenu.TogglePauseMenu();
+            
+            if (gameMenu.GetInfoMenuIsOpen())
+            {
+                gameMenu.CloseInfoMenu();
+            }
         }
     }
 

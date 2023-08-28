@@ -9,9 +9,12 @@ using static Player;
 public class GameMenu : GenericSingleton<GameMenu>
 {
     [SerializeField] private SettingsMenu settingsMenu;
+    [SerializeField] private ToggleMenu infoMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject gameWinMenu;
+
+    public bool IsRebindingKey = false;
 
     private GameManager gameManager;
 
@@ -92,6 +95,21 @@ public class GameMenu : GenericSingleton<GameMenu>
     public void CloseSettingsMenu()
     {
         settingsMenu.CloseSettingsMenu();
+    }
+
+    public bool GetInfoMenuIsOpen()
+    {
+        return infoMenu.IsOpened;
+    }
+
+    public void OpenInfoMenu()
+    {
+        infoMenu.OpenMenu();
+    }
+
+    public void CloseInfoMenu()
+    {
+        infoMenu.CloseMenu();
     }
 
     public void RestartGame()

@@ -407,6 +407,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 s_RebindActionUIs = null;
                 InputSystem.onActionChange -= OnActionChange;
             }
+
+            m_RebindOverlay?.SetActive(false);
         }
 
         // When the action system re-resolves bindings, we want to update our UI in response. While this will
