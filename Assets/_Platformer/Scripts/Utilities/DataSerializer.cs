@@ -11,8 +11,7 @@ public static class DataSerializer
         FileStream fileStream = new FileStream(filePath, FileMode.Create);
 
         string jsonString = JsonConvert.SerializeObject(saveData);
-        Debug.Log(jsonString);
-        Debug.Log(filePath);
+
         using (StreamWriter writer = new StreamWriter(fileStream))
         {
             writer.Write(jsonString);         
@@ -26,8 +25,7 @@ public static class DataSerializer
             using (StreamReader reader = new StreamReader(filePath))
             {
                 string jsonString = reader.ReadToEnd();
-                Debug.Log(jsonString);
-                Debug.Log(filePath);
+
                 SaveData saveData = JsonConvert.DeserializeObject<SaveData>(jsonString);
 
                 return saveData;

@@ -66,7 +66,6 @@ public class Movement : MonoBehaviour
         motionTrail.emitting = false;
 
         playerData = player.playerData;
-        playerData.currentHealth = playerData.maxHealth;
         playerData.currentAttackSpeed = playerData.baseAttackSpeed;
         playerData.currentMoveSpeed = playerData.baseMoveSpeed;
         startingColliderRadius = characterController.radius;

@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         PlayerController = GetComponent<PlayerController>();
         Movement = GetComponent<Movement>();
         PlayerInput = GetComponent<PlayerInput>();
-
+        
         InitState();
     }
 

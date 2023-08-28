@@ -18,7 +18,7 @@ public class GameManager : GenericSingleton<GameManager>
     private bool isGameOver;
 
     private void Start()
-    {
+    {       
         Init();
     }
 
@@ -80,7 +80,7 @@ public class GameManager : GenericSingleton<GameManager>
 
     public void Init() 
     {
-        if(gameState.newGame) 
+        if (gameState.newGame) 
         {
             if (sceneRef.powerupHolder != null)
                 foreach (Transform child in sceneRef.powerupHolder.transform)
@@ -103,10 +103,19 @@ public class GameManager : GenericSingleton<GameManager>
 
         if (gameState.restartGame)
         { 
-            LoadData();
+            SaveData saveData = LoadData();
+            UpdateGameState(saveData);
             gameState.restartGame = false;
             Debug.Log("restart game");
         }
+    }
+
+    public void LoadTest()
+    {
+        SaveData saveData = LoadData();
+        UpdateGameState(saveData);
+        gameState.restartGame = false;
+        Debug.Log("restart game");
     }
 
     public void AssignEnemyID() //used in editor
@@ -169,9 +178,9 @@ public class GameManager : GenericSingleton<GameManager>
         Debug.Log("Game saved.");
     }
 
-    public void LoadData()
+    public SaveData LoadData()
     {
-        SaveData savedData = new SaveData();
+        SaveData saveData = new SaveData();
 
         #if UNITY_STANDALONE
             string filePath = Application.streamingAssetsPath + "/savedata.sav";
@@ -181,11 +190,9 @@ public class GameManager : GenericSingleton<GameManager>
             string filePath = Application.persistentDataPath + "/savedata.sav";
         #endif
 
-        savedData = DataSerializer.LoadJson(filePath);
-
-        UpdateGameState(savedData);
-
+        saveData = DataSerializer.LoadJson(filePath);
         Debug.Log("Game loaded.");
+        return saveData;       
     }
 
     private void UpdateGameState(SaveData saveData)
@@ -193,7 +200,7 @@ public class GameManager : GenericSingleton<GameManager>
         playerData.currentHealth = saveData.currentHealth;
 
         sceneRef.player.transform.position = new Vector3(saveData.posX, saveData.posY, saveData.posZ);
-        Debug.Log(sceneRef.player.transform.position);
+
         enemyState = saveData.enemySaveState;
         powerUpState = saveData.powerupSaveState;
 
