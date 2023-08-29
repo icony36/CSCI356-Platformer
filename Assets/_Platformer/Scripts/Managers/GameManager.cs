@@ -54,6 +54,11 @@ public class GameManager : GenericSingleton<GameManager>
                 gameMenu.CloseInfoMenu();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            gameMenu.OpenDebugMenu();
+        }
     }
 
     public void SetIsFightingBoss(bool isFightingBoss)
@@ -192,13 +197,7 @@ public class GameManager : GenericSingleton<GameManager>
             powerupSaveState = powerUpState
         };
 
-        #if UNITY_STANDALONE
-            string filePath = Application.streamingAssetsPath + "/savedata.sav";
-        #endif
-
-        #if UNITY_WEBGL
-            string filePath = Application.persistentDataPath + "/savedata.sav";
-        #endif
+        string filePath = Application.persistentDataPath + "/savedata.sav";
 
         DataSerializer.SaveJson(savedData, filePath);
 
@@ -209,13 +208,7 @@ public class GameManager : GenericSingleton<GameManager>
     {
         SaveData saveData = new SaveData();
 
-        #if UNITY_STANDALONE
-            string filePath = Application.streamingAssetsPath + "/savedata.sav";
-        #endif
-
-        #if UNITY_WEBGL
-            string filePath = Application.persistentDataPath + "/savedata.sav";
-        #endif
+        string filePath = Application.persistentDataPath + "/savedata.sav";
 
         saveData = DataSerializer.LoadJson(filePath);
         Debug.Log("Game loaded.");

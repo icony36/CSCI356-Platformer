@@ -12,15 +12,22 @@ public class DamageOrb : MonoBehaviour
 
     private Rigidbody rigidBody;
     private AudioManager audioManager;
+    private float elapsedTime;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
         audioManager = AudioManager.Instance;
+        elapsedTime = 0f;
     }
 
     private void FixedUpdate()
     {
+        elapsedTime += Time.deltaTime;
+
+        if (elapsedTime >= 5f)
+            Destroy(gameObject);
+
         rigidBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
     }
 

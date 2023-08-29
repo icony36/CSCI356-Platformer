@@ -14,6 +14,7 @@ public class GameMenu : GenericSingleton<GameMenu>
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private GameObject gameWinMenu;
+    [SerializeField] private GameObject debugMenu;
 
     private GameManager gameManager;
     private KeyIndicator keyIndicator;
@@ -96,6 +97,11 @@ public class GameMenu : GenericSingleton<GameMenu>
         EventSystem.current.SetSelectedGameObject(null);
     }
 
+    public void OpenDebugMenu()
+    {
+        debugMenu.SetActive(!debugMenu.activeInHierarchy);
+    }
+
     public void GoToMainMenu()
     {
         gameManager.ReturnToMainMenu();
@@ -144,5 +150,31 @@ public class GameMenu : GenericSingleton<GameMenu>
     public void ShowGameWinMenu()
     {
         SwitchUIState(GameUIState.GameIsFinished);
-    }  
+    }
+
+    //Debug menu
+    public void ToggleInvincible()
+    {
+        gameManager.sceneRef.player.GetComponent<PlayerCombat>().ToggleInvincibility();
+    }
+    public void FirstCheckpoint()
+    {
+        gameManager.sceneRef.player.transform.position = gameManager.sceneRef.checkpoints[0].position;
+    }
+    public void SecondCheckpoint()
+    {
+        gameManager.sceneRef.player.transform.position = gameManager.sceneRef.checkpoints[1].position;
+    }
+    public void ThirdCheckpoint()
+    {
+        gameManager.sceneRef.player.transform.position = gameManager.sceneRef.checkpoints[2].position;
+    }
+    public void FourthCheckpoint()
+    {
+        gameManager.sceneRef.player.transform.position = gameManager.sceneRef.checkpoints[3].position;
+    }
+    public void FifthCheckpoint()
+    {
+        gameManager.sceneRef.player.transform.position = gameManager.sceneRef.checkpoints[4].position;
+    }
 }

@@ -19,13 +19,7 @@ public class MainMenu : MonoBehaviour
     {
         loadButton.SetActive(false);
 
-        #if UNITY_STANDALONE
-                string filePath = Application.streamingAssetsPath + "/savedata.sav";
-        #endif
-
-        #if UNITY_WEBGL
-                string filePath = Application.persistentDataPath + "/savedata.sav";
-        #endif
+        string filePath = Application.persistentDataPath + "/savedata.sav";
 
         if (System.IO.File.Exists(filePath))
         {

@@ -60,7 +60,12 @@ public class PlayerCombat : Combat
     public void Aiming(float moveValueY)
     {
         if (!aimingMode) { return; }
-        
+
+        if (player.Movement.facingRight)
+            transform.eulerAngles = new Vector3(0, 90, 0);
+        else
+            transform.eulerAngles = new Vector3(0, -90, 0);
+
         float rot = 0;
         rot -= moveValueY * Time.deltaTime * 80f;
 
@@ -187,6 +192,11 @@ public class PlayerCombat : Combat
         audioManager.PlaySFX("Hurt");
 
         CheckIsDead();
+    }
+
+    public void ToggleInvincibility()
+    {
+        isInvincible = !isInvincible;
     }
 
     // Animation Event

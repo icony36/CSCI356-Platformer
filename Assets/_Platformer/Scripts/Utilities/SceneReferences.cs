@@ -7,6 +7,7 @@ public class SceneReferences : MonoBehaviour
     public GameObject enemiesHolder;
     public GameObject powerupHolder;
     public Player player;
+    public List<Transform> checkpoints;    
     // Start is called before the first frame update
     void Start()
     {
