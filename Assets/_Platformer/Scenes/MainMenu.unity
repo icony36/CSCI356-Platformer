@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2055482934}
-  m_IndirectSpecularColor: {r: 0.64093244, g: 0.865737, b: 0.88079053, a: 1}
+  m_IndirectSpecularColor: {r: 0.6408289, g: 0.86570793, b: 0.8807874, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 4d904d50e41fe634f95e00dc7a2e12b8, type: 2}
   settingsMenu: {fileID: 1482795814}
-  gameLevel: Regina
+  gameLevel: Game
   loadButton: {fileID: 1875469671}
 --- !u!224 &1482795813 stripped
 RectTransform:

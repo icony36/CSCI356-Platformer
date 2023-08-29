@@ -55,7 +55,7 @@ public class GameManager : GenericSingleton<GameManager>
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.F1))
+        if(Input.GetKeyDown(KeyCode.F2))
         {
             gameMenu.OpenDebugMenu();
         }
