@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff77c3febbf623149a41cc58d386471c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMenu: {fileID: 0}
+  sceneRef: {fileID: 0}
   playerData: {fileID: 11400000, guid: 979bf486bbdd4ff488d791416b2d84d1, type: 2}
   initData: {fileID: 11400000, guid: 5b9d451060c606f419bfb6c9ddea1f41, type: 2}
-  enemiesHolder: {fileID: 0}
-  powerupHolder: {fileID: 0}
+  gameState: {fileID: 11400000, guid: 4d904d50e41fe634f95e00dc7a2e12b8, type: 2}
