@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : GenericSingleton<GameManager>
 {
-    [SerializeField] GameMenu gameMenu;
-    [SerializeField] Player player;
     public SceneReferences sceneRef;
     public PlayerData playerData;
     public PlayerData initData;
@@ -16,13 +14,17 @@ public class GameManager : GenericSingleton<GameManager>
     public Dictionary<int, bool> enemyState = new Dictionary<int, bool>();
     public Dictionary<int, bool> powerUpState = new Dictionary<int, bool>();
 
-    private bool isGameOver;
+    // References
     private AudioManager audioManager;
+    private GameMenu gameMenu;
+
+    private bool isGameOver;
     private bool isFightingBoss;
 
     private void Start()
     {
         audioManager = AudioManager.Instance;
+        gameMenu = GameMenu.Instance;
         
         Init();
     }
@@ -101,17 +103,6 @@ public class GameManager : GenericSingleton<GameManager>
     public void ReloadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void UpdateKeyIndicator()
-    {
-        string skillKeyText = player.PlayerInput?.actions["Skill"].GetBindingDisplayString(0);
-        string toggleKeyText = player.PlayerInput?.actions["Toggle"].GetBindingDisplayString(0);
-
-        KeyIndicator keyIndicator = gameMenu?.GetComponent<KeyIndicator>();
-
-        keyIndicator.SetSkillKeyText(skillKeyText);
-        keyIndicator.SetToggleKeyText(toggleKeyText);
     }
 
     public void Init() 

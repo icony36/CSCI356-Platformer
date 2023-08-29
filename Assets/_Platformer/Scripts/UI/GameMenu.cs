@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 using static Player;
 
 public class GameMenu : GenericSingleton<GameMenu>
-{
+{    
     [SerializeField] private SettingsMenu settingsMenu;
     [SerializeField] private ToggleMenu infoMenu;
     [SerializeField] private GameObject pauseMenu;
@@ -15,6 +16,7 @@ public class GameMenu : GenericSingleton<GameMenu>
     [SerializeField] private GameObject gameWinMenu;
 
     private GameManager gameManager;
+    private KeyIndicator keyIndicator;
 
     private enum GameUIState
     {
@@ -29,9 +31,11 @@ public class GameMenu : GenericSingleton<GameMenu>
     private void Start()
     {
         gameManager = GameManager.Instance.GetComponent<GameManager>();
-        gameManager.UpdateKeyIndicator();
+        
+        keyIndicator = GetComponent<KeyIndicator>();
         
         SwitchUIState(GameUIState.GamePlay);
+        UpdateKeyIndicator();
     }
 
     private void SwitchUIState(GameUIState state)
@@ -67,6 +71,15 @@ public class GameMenu : GenericSingleton<GameMenu>
         currentState = state;
     }
 
+    private void UpdateKeyIndicator()
+    {
+        string skillKeyText = gameManager.sceneRef.player.PlayerInput?.actions["Skill"].GetBindingDisplayString(0);
+        string toggleKeyText = gameManager.sceneRef.player.PlayerInput?.actions["Toggle"].GetBindingDisplayString(0);
+
+        keyIndicator.SetSkillKeyText(skillKeyText);
+        keyIndicator.SetToggleKeyText(toggleKeyText);
+    }
+
     public void TogglePauseMenu()
     {
         if (currentState == GameUIState.GamePlay)
@@ -78,7 +91,7 @@ public class GameMenu : GenericSingleton<GameMenu>
             SwitchUIState(GameUIState.GamePlay);
         }
 
-        gameManager.UpdateKeyIndicator();
+        UpdateKeyIndicator();
 
         EventSystem.current.SetSelectedGameObject(null);
     }
@@ -131,5 +144,5 @@ public class GameMenu : GenericSingleton<GameMenu>
     public void ShowGameWinMenu()
     {
         SwitchUIState(GameUIState.GameIsFinished);
-    }
+    }  
 }
