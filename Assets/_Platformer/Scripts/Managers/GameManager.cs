@@ -107,6 +107,8 @@ public class GameManager : GenericSingleton<GameManager>
 
     public void ReloadGame()
     {
+        gameState.newGame = true;
+        gameState.restartGame = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
