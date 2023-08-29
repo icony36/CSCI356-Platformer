@@ -194,7 +194,7 @@ public class PlayerCombat : Combat
         CheckIsDead();
     }
 
-    public void ToggleInvincibility()
+    public void GodMode()
     {
         isInvincible = !isInvincible;
     }

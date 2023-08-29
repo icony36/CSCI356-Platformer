@@ -409,7 +409,7 @@ MonoBehaviour:
   climbSpeed: 3
   CanMove: 1
   CanClimb: 1
-  facingRight: 0
+  facingRight: 1
   isNearLadder: 0
 --- !u!114 &2307570018985288636
 MonoBehaviour:

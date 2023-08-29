@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7879916177245757343}
   - component: {fileID: 8943767827364744352}
   - component: {fileID: 1311995231819597659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamageOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,16 +108,36 @@ PrefabInstance:
     m_TransformParent: {fileID: 5379296084444737836}
     m_Modifications:
     - target: {fileID: 8102155472102180646, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102155472102180646, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102155472241809480, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102155472272100139, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8102155472272100139, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8102155472799685471, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8102155473089344357, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
       propertyPath: m_Name
       value: Plasma Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102155473089344357, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8102155473089344358, guid: d56b87557a2d32340bf36655f72d7ef8, type: 3}
       propertyPath: m_RootOrder

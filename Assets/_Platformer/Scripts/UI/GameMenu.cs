@@ -153,9 +153,9 @@ public class GameMenu : GenericSingleton<GameMenu>
     }
 
     //Debug menu
-    public void ToggleInvincible()
+    public void ToggleGodMode()
     {
-        gameManager.sceneRef.player.GetComponent<PlayerCombat>().ToggleInvincibility();
+        gameManager.sceneRef.player.GetComponent<PlayerCombat>().GodMode();
     }
     public void FirstCheckpoint()
     {
